@@ -103,7 +103,7 @@ namespace CoolFarm {
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(750, 781);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(751, 781);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// label1
@@ -164,7 +164,7 @@ namespace CoolFarm {
 			   Point pos = (Point)boton->Tag;
 			   int fila = pos.X;
 			   int columna = pos.Y;
-			   this->label1->Text = "Boton " + (fila + 1) + "," + (columna + 1);
+			   this->label1->Text = "Boton " + (fila + 1) + ", " + (columna + 1);
 
 			   // Aquí puedes acceder a la matriz de árboles binarios
 			   // usando las coordenadas fila y columna.

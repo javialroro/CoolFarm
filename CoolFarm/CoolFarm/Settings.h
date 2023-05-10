@@ -1,13 +1,16 @@
 #pragma once
+#include <iostream>
 
 namespace CoolFarm {
 
+	using namespace std;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 
 	/// <summary>
 	/// Resumen de Settings
@@ -37,13 +40,15 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ porcentajeOvejas;
+	private: System::Windows::Forms::Label^ labelPorcentaje;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ Oveporciento;
+
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox4;
@@ -63,13 +68,14 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label17;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ oveporcentaje;
+
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -80,13 +86,13 @@ namespace CoolFarm {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->porcentajeOvejas = (gcnew System::Windows::Forms::Label());
+			this->labelPorcentaje = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Oveporciento = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -106,7 +112,7 @@ namespace CoolFarm {
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->oveporcentaje = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -127,14 +133,14 @@ namespace CoolFarm {
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"CUERVOS";
 			// 
-			// porcentajeOvejas
+			// labelPorcentaje
 			// 
-			this->porcentajeOvejas->AutoSize = true;
-			this->porcentajeOvejas->Location = System::Drawing::Point(109, 84);
-			this->porcentajeOvejas->Name = L"porcentajeOvejas";
-			this->porcentajeOvejas->Size = System::Drawing::Size(121, 25);
-			this->porcentajeOvejas->TabIndex = 2;
-			this->porcentajeOvejas->Text = L"Porcentaje:";
+			this->labelPorcentaje->AutoSize = true;
+			this->labelPorcentaje->Location = System::Drawing::Point(109, 84);
+			this->labelPorcentaje->Name = L"labelPorcentaje";
+			this->labelPorcentaje->Size = System::Drawing::Size(121, 25);
+			this->labelPorcentaje->TabIndex = 2;
+			this->labelPorcentaje->Text = L"Porcentaje:";
 			// 
 			// label4
 			// 
@@ -181,12 +187,12 @@ namespace CoolFarm {
 			this->label8->TabIndex = 5;
 			this->label8->Text = L"Porcentaje:";
 			// 
-			// textBox1
+			// Oveporciento
 			// 
-			this->textBox1->Location = System::Drawing::Point(402, 78);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(76, 31);
-			this->textBox1->TabIndex = 8;
+			this->Oveporciento->Location = System::Drawing::Point(402, 78);
+			this->Oveporciento->Name = L"Oveporciento";
+			this->Oveporciento->Size = System::Drawing::Size(76, 31);
+			this->Oveporciento->TabIndex = 8;
 			// 
 			// textBox2
 			// 
@@ -341,15 +347,16 @@ namespace CoolFarm {
 			this->label17->TabIndex = 27;
 			this->label17->Text = L"seg.";
 			// 
-			// button1
+			// oveporcentaje
 			// 
-			this->button1->BackColor = System::Drawing::Color::DarkGray;
-			this->button1->Location = System::Drawing::Point(760, 606);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(149, 43);
-			this->button1->TabIndex = 28;
-			this->button1->Text = L"GUARDAR";
-			this->button1->UseVisualStyleBackColor = false;
+			this->oveporcentaje->BackColor = System::Drawing::Color::DarkGray;
+			this->oveporcentaje->Location = System::Drawing::Point(758, 603);
+			this->oveporcentaje->Name = L"oveporcentaje";
+			this->oveporcentaje->Size = System::Drawing::Size(147, 45);
+			this->oveporcentaje->TabIndex = 28;
+			this->oveporcentaje->Text = L"GUARDAR";
+			this->oveporcentaje->UseVisualStyleBackColor = false;
+			this->oveporcentaje->Click += gcnew System::EventHandler(this, &Settings::oveporcentaje_Click);
 			// 
 			// Settings
 			// 
@@ -357,7 +364,7 @@ namespace CoolFarm {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
 			this->ClientSize = System::Drawing::Size(933, 673);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->oveporcentaje);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->label15);
@@ -377,13 +384,13 @@ namespace CoolFarm {
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->Oveporciento);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->porcentajeOvejas);
+			this->Controls->Add(this->labelPorcentaje);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"Settings";
@@ -392,6 +399,10 @@ namespace CoolFarm {
 			this->PerformLayout();
 
 		}
-#pragma endregion
+	#pragma endregion
+		
+		private: System::Void oveporcentaje_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+		}
 	};
 }
