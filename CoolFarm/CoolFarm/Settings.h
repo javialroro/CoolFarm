@@ -1,5 +1,7 @@
 #pragma once
+
 #include <iostream>
+#include "estructuras.h"
 
 namespace CoolFarm {
 
@@ -402,6 +404,7 @@ namespace CoolFarm {
 	#pragma endregion
 		
 		private: System::Void oveporcentaje_Click(System::Object^ sender, System::EventArgs^ e) {
+			porcentOvejas = 0;
 		
 		}
 	};

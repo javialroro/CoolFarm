@@ -1,12 +1,11 @@
 #pragma once
+//#include "Settings.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
-using namespace std;
-
 int arbolesBinarios[10][10];
 
+using namespace std;
 // Settings Ovejas
 int porcentOvejas;
 int aparicionOvejas;
@@ -19,6 +18,9 @@ int aparicionCuervos;
 int tiempoAparicionCuervos;
 int frutosCuervos;
 int tiempoFrutosCuervos;
+
+
+
 
 // Estructuras Oveja
 
@@ -63,14 +65,36 @@ struct ListaSimpleOvejas {
     }
 
     // Método para generar una oveja
-    void insertar(Oveja*);
+    void insertar(Oveja* oveja) {
+
+        if (primerNodo == NULL) {
+            ultimoNodo = primerNodo = new NodoOveja(oveja);
+        }
+
+        else {
+            NodoOveja* nuevo = new NodoOveja(oveja);
+            nuevo->siguiente = primerNodo;
+            primerNodo = nuevo;
+        }
+    }
 };
 
 // Lista Global Ovejas
 ListaSimpleOvejas* listaOvejas = new ListaSimpleOvejas();
 
 // Método para generar una oveja
-void generarOveja();
+void generarOveja() {
+    int cont = 0; // contador para generar las ovejas que se solicitan en settings
+    int aleatorio = rand() % 100 + 1; // Generar un número aleatorio entre 1 y 100
+    if (aleatorio <= porcentOvejas) {
+        while (cont <= aparicionOvejas) {
+            Oveja* borrego = new Oveja();
+            listaOvejas->insertar(borrego);
+            cont++;
+        }
+        return;
+    }
+}
 
 
 // Estructuras Cuervo
@@ -115,13 +139,36 @@ struct ListaSimpleCuervos {
     }
 
     // Método para generar una oveja
-    void insertar(Cuervo*);
+    void insertar(Cuervo* cuervo) {
+
+        if (primerNodo == NULL) {
+            ultimoNodo = primerNodo = new NodoCuervo(cuervo);
+        }
+
+        else {
+            NodoCuervo* nuevo = new NodoCuervo(cuervo);
+            nuevo->siguiente = primerNodo;
+            primerNodo = nuevo;
+        }
+    }
 };
 
 // Lista Global Ovejas
 ListaSimpleCuervos* listaCuervos = new ListaSimpleCuervos();
 
 // Método para generar un cuervo
-void generarCuervo();
+void generarCuervo() {
+    int cont = 0; // contador para generar los cuervos que se solicitan en settings
+    int aleatorio = rand() % 100 + 1; // Generar un número aleatorio entre 1 y 100
+    if (aleatorio <= porcentCuervos) {
+        while (cont <= aparicionCuervos) {
+            Cuervo* pollito = new Cuervo();
+            listaCuervos->insertar(pollito);
+            cont++;
+        }
+        return;
+    }
+}
+
 
 
