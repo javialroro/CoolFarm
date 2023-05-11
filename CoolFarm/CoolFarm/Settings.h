@@ -1,5 +1,7 @@
 #pragma once
+
 #include <iostream>
+#include "estructuras.h"
 
 namespace CoolFarm {
 
@@ -48,16 +50,25 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ Oveporciento;
+	private: System::Windows::Forms::TextBox^ oveAparicion;
+	private: System::Windows::Forms::TextBox^ oveMin;
+	private: System::Windows::Forms::TextBox^ oveFrutos;
+	private: System::Windows::Forms::TextBox^ oveSeg;
+	private: System::Windows::Forms::TextBox^ cuervPorciento;
+	private: System::Windows::Forms::TextBox^ cuervAparicion;
+	private: System::Windows::Forms::TextBox^ cuervMin;
+	private: System::Windows::Forms::TextBox^ cuervFrutos;
+	private: System::Windows::Forms::TextBox^ cuervSeg;
 
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::TextBox^ textBox9;
-	private: System::Windows::Forms::TextBox^ textBox10;
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label10;
@@ -68,7 +79,19 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label17;
-	private: System::Windows::Forms::Button^ oveporcentaje;
+	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::TextBox^ plagMin;
+
+	private: System::Windows::Forms::TextBox^ plagAparicion;
+
+	private: System::Windows::Forms::TextBox^ plagPorcentaje;
+
+	private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::Label^ label22;
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::Button^ guardarComponentes_button;
 
 
 	private:
@@ -93,15 +116,15 @@ namespace CoolFarm {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->Oveporciento = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->oveAparicion = (gcnew System::Windows::Forms::TextBox());
+			this->oveMin = (gcnew System::Windows::Forms::TextBox());
+			this->oveFrutos = (gcnew System::Windows::Forms::TextBox());
+			this->oveSeg = (gcnew System::Windows::Forms::TextBox());
+			this->cuervPorciento = (gcnew System::Windows::Forms::TextBox());
+			this->cuervAparicion = (gcnew System::Windows::Forms::TextBox());
+			this->cuervMin = (gcnew System::Windows::Forms::TextBox());
+			this->cuervFrutos = (gcnew System::Windows::Forms::TextBox());
+			this->cuervSeg = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -112,7 +135,16 @@ namespace CoolFarm {
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->oveporcentaje = (gcnew System::Windows::Forms::Button());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->plagMin = (gcnew System::Windows::Forms::TextBox());
+			this->plagAparicion = (gcnew System::Windows::Forms::TextBox());
+			this->plagPorcentaje = (gcnew System::Windows::Forms::TextBox());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->guardarComponentes_button = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -194,68 +226,68 @@ namespace CoolFarm {
 			this->Oveporciento->Size = System::Drawing::Size(76, 31);
 			this->Oveporciento->TabIndex = 8;
 			// 
-			// textBox2
+			// oveAparicion
 			// 
-			this->textBox2->Location = System::Drawing::Point(402, 150);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(76, 31);
-			this->textBox2->TabIndex = 9;
+			this->oveAparicion->Location = System::Drawing::Point(402, 150);
+			this->oveAparicion->Name = L"oveAparicion";
+			this->oveAparicion->Size = System::Drawing::Size(76, 31);
+			this->oveAparicion->TabIndex = 9;
 			// 
-			// textBox3
+			// oveMin
 			// 
-			this->textBox3->Location = System::Drawing::Point(629, 150);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(75, 31);
-			this->textBox3->TabIndex = 10;
+			this->oveMin->Location = System::Drawing::Point(629, 150);
+			this->oveMin->Name = L"oveMin";
+			this->oveMin->Size = System::Drawing::Size(75, 31);
+			this->oveMin->TabIndex = 10;
 			// 
-			// textBox4
+			// oveFrutos
 			// 
-			this->textBox4->Location = System::Drawing::Point(402, 227);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(76, 31);
-			this->textBox4->TabIndex = 11;
+			this->oveFrutos->Location = System::Drawing::Point(402, 227);
+			this->oveFrutos->Name = L"oveFrutos";
+			this->oveFrutos->Size = System::Drawing::Size(76, 31);
+			this->oveFrutos->TabIndex = 11;
 			// 
-			// textBox5
+			// oveSeg
 			// 
-			this->textBox5->Location = System::Drawing::Point(629, 227);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(75, 31);
-			this->textBox5->TabIndex = 12;
+			this->oveSeg->Location = System::Drawing::Point(629, 227);
+			this->oveSeg->Name = L"oveSeg";
+			this->oveSeg->Size = System::Drawing::Size(75, 31);
+			this->oveSeg->TabIndex = 12;
 			// 
-			// textBox6
+			// cuervPorciento
 			// 
-			this->textBox6->Location = System::Drawing::Point(402, 387);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(76, 31);
-			this->textBox6->TabIndex = 13;
+			this->cuervPorciento->Location = System::Drawing::Point(402, 387);
+			this->cuervPorciento->Name = L"cuervPorciento";
+			this->cuervPorciento->Size = System::Drawing::Size(76, 31);
+			this->cuervPorciento->TabIndex = 13;
 			// 
-			// textBox7
+			// cuervAparicion
 			// 
-			this->textBox7->Location = System::Drawing::Point(402, 465);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(76, 31);
-			this->textBox7->TabIndex = 14;
+			this->cuervAparicion->Location = System::Drawing::Point(402, 465);
+			this->cuervAparicion->Name = L"cuervAparicion";
+			this->cuervAparicion->Size = System::Drawing::Size(76, 31);
+			this->cuervAparicion->TabIndex = 14;
 			// 
-			// textBox8
+			// cuervMin
 			// 
-			this->textBox8->Location = System::Drawing::Point(629, 465);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(75, 31);
-			this->textBox8->TabIndex = 15;
+			this->cuervMin->Location = System::Drawing::Point(629, 465);
+			this->cuervMin->Name = L"cuervMin";
+			this->cuervMin->Size = System::Drawing::Size(75, 31);
+			this->cuervMin->TabIndex = 15;
 			// 
-			// textBox9
+			// cuervFrutos
 			// 
-			this->textBox9->Location = System::Drawing::Point(402, 539);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(76, 31);
-			this->textBox9->TabIndex = 16;
+			this->cuervFrutos->Location = System::Drawing::Point(402, 539);
+			this->cuervFrutos->Name = L"cuervFrutos";
+			this->cuervFrutos->Size = System::Drawing::Size(76, 31);
+			this->cuervFrutos->TabIndex = 16;
 			// 
-			// textBox10
+			// cuervSeg
 			// 
-			this->textBox10->Location = System::Drawing::Point(629, 542);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(75, 31);
-			this->textBox10->TabIndex = 17;
+			this->cuervSeg->Location = System::Drawing::Point(629, 542);
+			this->cuervSeg->Name = L"cuervSeg";
+			this->cuervSeg->Size = System::Drawing::Size(75, 31);
+			this->cuervSeg->TabIndex = 17;
 			// 
 			// label3
 			// 
@@ -347,24 +379,108 @@ namespace CoolFarm {
 			this->label17->TabIndex = 27;
 			this->label17->Text = L"seg.";
 			// 
-			// oveporcentaje
+			// label18
 			// 
-			this->oveporcentaje->BackColor = System::Drawing::Color::DarkGray;
-			this->oveporcentaje->Location = System::Drawing::Point(758, 603);
-			this->oveporcentaje->Name = L"oveporcentaje";
-			this->oveporcentaje->Size = System::Drawing::Size(147, 45);
-			this->oveporcentaje->TabIndex = 28;
-			this->oveporcentaje->Text = L"GUARDAR";
-			this->oveporcentaje->UseVisualStyleBackColor = false;
-			this->oveporcentaje->Click += gcnew System::EventHandler(this, &Settings::oveporcentaje_Click);
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(710, 760);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(52, 25);
+			this->label18->TabIndex = 36;
+			this->label18->Text = L"min.";
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(484, 760);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(129, 25);
+			this->label19->TabIndex = 35;
+			this->label19->Text = L"plagas cada";
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(484, 688);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(31, 25);
+			this->label20->TabIndex = 34;
+			this->label20->Text = L"%";
+			// 
+			// plagMin
+			// 
+			this->plagMin->Location = System::Drawing::Point(629, 757);
+			this->plagMin->Name = L"plagMin";
+			this->plagMin->Size = System::Drawing::Size(75, 31);
+			this->plagMin->TabIndex = 33;
+			// 
+			// plagAparicion
+			// 
+			this->plagAparicion->Location = System::Drawing::Point(402, 757);
+			this->plagAparicion->Name = L"plagAparicion";
+			this->plagAparicion->Size = System::Drawing::Size(76, 31);
+			this->plagAparicion->TabIndex = 32;
+			// 
+			// plagPorcentaje
+			// 
+			this->plagPorcentaje->Location = System::Drawing::Point(402, 685);
+			this->plagPorcentaje->Name = L"plagPorcentaje";
+			this->plagPorcentaje->Size = System::Drawing::Size(76, 31);
+			this->plagPorcentaje->TabIndex = 31;
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->Location = System::Drawing::Point(109, 763);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(215, 25);
+			this->label21->TabIndex = 30;
+			this->label21->Text = L"Tiempo de Aparición:";
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Location = System::Drawing::Point(109, 691);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(121, 25);
+			this->label22->TabIndex = 29;
+			this->label22->Text = L"Porcentaje:";
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Location = System::Drawing::Point(24, 634);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(96, 25);
+			this->label23->TabIndex = 28;
+			this->label23->Text = L"PLAGAS";
+			// 
+			// guardarComponentes_button
+			// 
+			this->guardarComponentes_button->BackColor = System::Drawing::Color::DarkGray;
+			this->guardarComponentes_button->Location = System::Drawing::Point(760, 821);
+			this->guardarComponentes_button->Name = L"guardarComponentes_button";
+			this->guardarComponentes_button->Size = System::Drawing::Size(150, 43);
+			this->guardarComponentes_button->TabIndex = 37;
+			this->guardarComponentes_button->Text = L"GUARDAR";
+			this->guardarComponentes_button->UseVisualStyleBackColor = false;
+			this->guardarComponentes_button->Click += gcnew System::EventHandler(this, &Settings::guardarComponentes_button_Click);
 			// 
 			// Settings
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
-			this->ClientSize = System::Drawing::Size(933, 673);
-			this->Controls->Add(this->oveporcentaje);
+			this->ClientSize = System::Drawing::Size(939, 892);
+			this->Controls->Add(this->guardarComponentes_button);
+			this->Controls->Add(this->label18);
+			this->Controls->Add(this->label19);
+			this->Controls->Add(this->label20);
+			this->Controls->Add(this->plagMin);
+			this->Controls->Add(this->plagAparicion);
+			this->Controls->Add(this->plagPorcentaje);
+			this->Controls->Add(this->label21);
+			this->Controls->Add(this->label22);
+			this->Controls->Add(this->label23);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->label15);
@@ -375,15 +491,15 @@ namespace CoolFarm {
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->textBox10);
-			this->Controls->Add(this->textBox9);
-			this->Controls->Add(this->textBox8);
-			this->Controls->Add(this->textBox7);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->cuervSeg);
+			this->Controls->Add(this->cuervFrutos);
+			this->Controls->Add(this->cuervMin);
+			this->Controls->Add(this->cuervAparicion);
+			this->Controls->Add(this->cuervPorciento);
+			this->Controls->Add(this->oveSeg);
+			this->Controls->Add(this->oveFrutos);
+			this->Controls->Add(this->oveMin);
+			this->Controls->Add(this->oveAparicion);
 			this->Controls->Add(this->Oveporciento);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label7);
@@ -399,10 +515,25 @@ namespace CoolFarm {
 			this->PerformLayout();
 
 		}
-	#pragma endregion
-		
-		private: System::Void oveporcentaje_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+		#pragma endregion
+		private: System::Void guardarComponentes_button_Click(System::Object^ sender, System::EventArgs^ e) {
+
+			porcentOvejas = Int32::Parse(this->Oveporciento->Text);
+			aparicionOvejas = Int32::Parse(this->oveAparicion->Text);
+			tiempoAparicionOvejas = Int32::Parse(this->oveMin->Text);
+			frutosOvejas = Int32::Parse(this->oveFrutos->Text);
+			tiempoFrutosOvejas = Int32::Parse(this->oveSeg->Text);
+
+			porcentCuervos = Int32::Parse(this->cuervPorciento->Text);
+			aparicionCuervos = Int32::Parse(this->cuervAparicion->Text);
+			tiempoAparicionCuervos = Int32::Parse(this->cuervMin->Text);
+			frutosCuervos = Int32::Parse(this->cuervFrutos->Text);
+			tiempoFrutosCuervos = Int32::Parse(this->cuervSeg->Text);
+
+			porcentPlagas = Int32::Parse(this->plagPorcentaje->Text);
+			aparicionPlagas = Int32::Parse(this->plagAparicion->Text);
+			tiempoAparicionPlagas = Int32::Parse(this->plagMin->Text);
 		}
+	
 	};
 }
