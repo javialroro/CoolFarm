@@ -86,18 +86,7 @@ struct ListaSimpleOvejas {
             primerNodo = nuevo;
         }
     }
-    void insertar(Oveja* oveja) {
 
-        if (primerNodo == NULL) {
-            ultimoNodo = primerNodo = new NodoOveja(oveja);
-        }
-
-        else {
-            NodoOveja* nuevo = new NodoOveja(oveja);
-            nuevo->siguiente = primerNodo;
-            primerNodo = nuevo;
-        }
-    }
 
     void actParametrosOvejas() {
         NodoOveja* tmp = primerNodo;
@@ -119,25 +108,14 @@ void generarOveja() {
     int aleatorio = rand() % 100 + 1; // Generar un número aleatorio entre 1 y 100
     if (aleatorio <= porcentOvejas) {
         while (cont <= aparicionOvejas) {
-            Oveja* borrego = new Oveja();
-            listaOvejas->insertar(borrego);
-            cont++;
-        }
-        return;
-    }
-}
-void generarOveja() {
-    int cont = 0; // contador para generar las ovejas que se solicitan en settings
-    int aleatorio = rand() % 100 + 1; // Generar un número aleatorio entre 1 y 100
-    if (aleatorio <= porcentOvejas) {
-        while (cont <= aparicionOvejas) {
-            //Oveja* borrego = new Oveja(); // falta la fila y columna pero eso se coloca cuando se hagan los árboles
+            //Oveja* borrego = new Oveja();
             //listaOvejas->insertar(borrego);
             cont++;
         }
         return;
     }
 }
+
 
 
 // Estructuras Cuervo
@@ -199,19 +177,6 @@ struct ListaSimpleCuervos {
             primerNodo = nuevo;
         }
     }
-    void insertar(Cuervo* cuervo) {
-
-        if (primerNodo == NULL) {
-            ultimoNodo = primerNodo = new NodoCuervo(cuervo);
-        }
-
-        else {
-            NodoCuervo* nuevo = new NodoCuervo(cuervo);
-            nuevo->siguiente = primerNodo;
-            primerNodo = nuevo;
-        }
-    }
-
     void actParametrosCuervos() {
         NodoCuervo* tmp = primerNodo;
         while (tmp != NULL) {
@@ -221,25 +186,15 @@ struct ListaSimpleCuervos {
         }
         return;
     }
+
 };
+
+
 
 // Lista Global Ovejas
 ListaSimpleCuervos* listaCuervos = new ListaSimpleCuervos();
 
 // Método para generar un cuervo
-void generarCuervo() {
-    int cont = 0; // contador para generar los cuervos que se solicitan en settings
-    int aleatorio = rand() % 100 + 1; // Generar un número aleatorio entre 1 y 100
-    if (aleatorio <= porcentCuervos) {
-        while (cont <= aparicionCuervos) {
-            Cuervo* pollito = new Cuervo();
-            listaCuervos->insertar(pollito);
-            cont++;
-        }
-        return;
-    }
-}
-
 void generarCuervo() {
     int cont = 0; // contador para generar los cuervos que se solicitan en settings
     int aleatorio = rand() % 100 + 1; // Generar un número aleatorio entre 1 y 100
@@ -252,6 +207,8 @@ void generarCuervo() {
         return;
     }
 }
+
+
 
 // Estructuras Plaga
 
