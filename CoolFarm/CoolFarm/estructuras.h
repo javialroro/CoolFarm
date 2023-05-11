@@ -1,5 +1,7 @@
 #pragma once
 //#include "Settings.h"
+//hola buenas
+int x = 0;
 #include <iostream>
 #include <string>
 #include <cstdlib>
