@@ -382,7 +382,7 @@ namespace CoolFarm {
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(710, 760);
+			this->label18->Location = System::Drawing::Point(1493, 160);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(52, 25);
 			this->label18->TabIndex = 36;
@@ -391,7 +391,7 @@ namespace CoolFarm {
 			// label19
 			// 
 			this->label19->AutoSize = true;
-			this->label19->Location = System::Drawing::Point(484, 760);
+			this->label19->Location = System::Drawing::Point(1267, 160);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(129, 25);
 			this->label19->TabIndex = 35;
@@ -400,7 +400,7 @@ namespace CoolFarm {
 			// label20
 			// 
 			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(484, 688);
+			this->label20->Location = System::Drawing::Point(1267, 88);
 			this->label20->Name = L"label20";
 			this->label20->Size = System::Drawing::Size(31, 25);
 			this->label20->TabIndex = 34;
@@ -408,21 +408,21 @@ namespace CoolFarm {
 			// 
 			// plagMin
 			// 
-			this->plagMin->Location = System::Drawing::Point(629, 757);
+			this->plagMin->Location = System::Drawing::Point(1412, 157);
 			this->plagMin->Name = L"plagMin";
 			this->plagMin->Size = System::Drawing::Size(75, 31);
 			this->plagMin->TabIndex = 33;
 			// 
 			// plagAparicion
 			// 
-			this->plagAparicion->Location = System::Drawing::Point(402, 757);
+			this->plagAparicion->Location = System::Drawing::Point(1185, 157);
 			this->plagAparicion->Name = L"plagAparicion";
 			this->plagAparicion->Size = System::Drawing::Size(76, 31);
 			this->plagAparicion->TabIndex = 32;
 			// 
 			// plagPorcentaje
 			// 
-			this->plagPorcentaje->Location = System::Drawing::Point(402, 685);
+			this->plagPorcentaje->Location = System::Drawing::Point(1185, 85);
 			this->plagPorcentaje->Name = L"plagPorcentaje";
 			this->plagPorcentaje->Size = System::Drawing::Size(76, 31);
 			this->plagPorcentaje->TabIndex = 31;
@@ -430,7 +430,7 @@ namespace CoolFarm {
 			// label21
 			// 
 			this->label21->AutoSize = true;
-			this->label21->Location = System::Drawing::Point(109, 763);
+			this->label21->Location = System::Drawing::Point(892, 163);
 			this->label21->Name = L"label21";
 			this->label21->Size = System::Drawing::Size(215, 25);
 			this->label21->TabIndex = 30;
@@ -439,7 +439,7 @@ namespace CoolFarm {
 			// label22
 			// 
 			this->label22->AutoSize = true;
-			this->label22->Location = System::Drawing::Point(109, 691);
+			this->label22->Location = System::Drawing::Point(892, 91);
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(121, 25);
 			this->label22->TabIndex = 29;
@@ -448,7 +448,7 @@ namespace CoolFarm {
 			// label23
 			// 
 			this->label23->AutoSize = true;
-			this->label23->Location = System::Drawing::Point(24, 634);
+			this->label23->Location = System::Drawing::Point(807, 34);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(96, 25);
 			this->label23->TabIndex = 28;
@@ -457,7 +457,7 @@ namespace CoolFarm {
 			// guardarComponentes_button
 			// 
 			this->guardarComponentes_button->BackColor = System::Drawing::Color::DarkGray;
-			this->guardarComponentes_button->Location = System::Drawing::Point(760, 821);
+			this->guardarComponentes_button->Location = System::Drawing::Point(1412, 545);
 			this->guardarComponentes_button->Name = L"guardarComponentes_button";
 			this->guardarComponentes_button->Size = System::Drawing::Size(150, 43);
 			this->guardarComponentes_button->TabIndex = 37;
@@ -470,7 +470,7 @@ namespace CoolFarm {
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
-			this->ClientSize = System::Drawing::Size(939, 892);
+			this->ClientSize = System::Drawing::Size(1580, 610);
 			this->Controls->Add(this->guardarComponentes_button);
 			this->Controls->Add(this->label18);
 			this->Controls->Add(this->label19);
