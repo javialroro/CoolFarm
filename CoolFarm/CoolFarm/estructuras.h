@@ -265,7 +265,7 @@ struct ListaSimplePlagas {
     }
 };
 
-// Lista Global Ovejas
+// Lista Global Plagas
 ListaSimplePlagas* listaPlagas = new ListaSimplePlagas();
 
 // Método para generar una plaga
@@ -282,5 +282,22 @@ void generarPlaga() {
     }
 }
 
+struct Granjero {
 
+    // Parámetros
+    int fila;
+    int columna;
+    int cantidad_frutos;
+    int frutos_por_segundo;
+
+    // Constructor
+    Granjero() {
+        fila = 5;
+        columna = 5;
+        cantidad_frutos = frutosCuervos;
+        frutos_por_segundo = tiempoFrutosCuervos;
+    }
+
+
+};
 

@@ -13,15 +13,21 @@ namespace CoolFarm {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	const int FILAS = 10;
+	const int COLUMNAS = 10;
+
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
+		Granjero* granjero = new Granjero();
 		MyForm(void)
 		{
+			
 			InitializeComponent();
+			
 			//
 			//TODO: Add the constructor code here
 			//
@@ -45,6 +51,9 @@ namespace CoolFarm {
 	protected:
 
 	private:
+		cli::array<System::Windows::Forms::Button^, 2>^ botones;  // Matriz de botones
+		
+
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -57,6 +66,10 @@ namespace CoolFarm {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			
+			this->KeyPreview = true;
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
+			this->Focus();
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -144,37 +157,107 @@ namespace CoolFarm {
 
 		}
 #pragma endregion
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				Button^ boton = gcnew Button();
-				boton->Text = "Boton " + (i + 1) + "," + (j + 1);
-				boton->Tag = gcnew Point(i, j);
-				boton->Click += gcnew EventHandler(this, &MyForm::Boton_Click);
-				std::cout << "Hizo botones";
-				tableLayoutPanel1->Controls->Add(boton, j, i);
+	private: 
+		System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+			
+			botones = gcnew cli::array<System::Windows::Forms::Button^, 2>(FILAS, COLUMNAS);
+			for (int fila = 0; fila < FILAS; fila++)
+			{
+				for (int columna = 0; columna < COLUMNAS; columna++)
+				{
+					System::Windows::Forms::Button^ boton = gcnew System::Windows::Forms::Button();
+					boton->Text = "Boton " + (fila + 1) + ", " + (columna + 1);
+					boton->Tag = gcnew System::Drawing::Point(fila, columna);
+					boton->Click += gcnew System::EventHandler(this, &MyForm::Boton_Click);
+
+					// Agregar el botón al arreglo
+					botones[fila, columna] = boton;
+
+					// Agregar el botón al tableLayoutPanel1
+					tableLayoutPanel1->Controls->Add(boton, columna, fila);
+				}
+			}
+			// Crear y configurar los botone
+			// Dibujar la matriz inicial
+			DibujarMatriz();
+		}
+	
+
+		void MyForm::Boton_Click(System::Object^ sender, System::EventArgs^ e)
+		{
+			Button^ boton = dynamic_cast<Button^>(sender);
+			Point pos = (Point)boton->Tag;
+			int fila = pos.X;
+			int columna = pos.Y;
+			this->label1->Text = "Boton " + (fila + 1) + ", " + (columna + 1);
+
+			// Aquí puedes acceder a la matriz de árboles binarios
+			// usando las coordenadas fila y columna.
+			// Por ejemplo:
+			arbolesBinarios[fila][columna]=10;
+		}
+
+
+		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+			CoolFarm::Settings^ settings = gcnew CoolFarm::Settings();
+			settings->Show();
+		}
+
+		void DibujarMatriz() {
+			for (int i = 0; i < FILAS; i++) {
+				for (int j = 0; j < COLUMNAS; j++) {
+					if (i == granjero->columna && j == granjero->fila) {
+						botones[i, j]->Text = "O";
+						botones[i, j]->BackColor = Color::Red;
+					}
+					else {
+						botones[i, j]->Text = "-";
+						botones[i, j]->BackColor = Color::YellowGreen;
+					}
+				}
 			}
 		}
-	}
 
-		   void MyForm::Boton_Click(System::Object^ sender, System::EventArgs^ e)
-		   {
-			   Button^ boton = dynamic_cast<Button^>(sender);
-			   Point pos = (Point)boton->Tag;
-			   int fila = pos.X;
-			   int columna = pos.Y;
-			   this->label1->Text = "Boton " + (fila + 1) + ", " + (columna + 1);
+		void MoverObjeto(int x, int y) {
+			// Verificar que las nuevas coordenadas estén dentro de los límites de la matriz
+			if (x >= 0 && x < COLUMNAS && y >= 0 && y < FILAS) {
+				granjero->fila = x;
+				granjero->columna = y;
+				DibujarMatriz();
+			}
+		}
 
-			   // Aquí puedes acceder a la matriz de árboles binarios
-			   // usando las coordenadas fila y columna.
-			   // Por ejemplo:
-			   arbolesBinarios[fila][columna]=10;
-		   }
+		void MyForm_KeyDown(Object^ sender, KeyEventArgs^ e) {
+			// Obtener la tecla presionada
+			Keys tecla = e->KeyCode;
 
+			// Mover el objeto en función de la tecla presionada
+			switch (tecla) {
+			case Keys::W:
+				MoverObjeto(granjero->fila, granjero->columna - 1);
+				label1->Text = "arriba";
+				break;
+			case Keys::S:
+				MoverObjeto(granjero->fila, granjero->columna + 1);
+				label1->Text="abajo";
+				break;
+			case Keys::A:
+				MoverObjeto(granjero->fila - 1, granjero->columna);
+				label1->Text = "izquierda";
+				break;
+			case Keys::D:
+				MoverObjeto(granjero->fila + 1, granjero->columna);
+				label1->Text = "derecha";
+				break;
+			}
+		}
+		void CambiarTextoLabel() {
+			this->label1->Text = "winchis";
+		}
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		CoolFarm::Settings^ settings = gcnew CoolFarm::Settings();
-		settings->Show();
-	}
+		/*void MyForm_KeyDown(Object^ sender, KeyEventArgs^ e) {
+			// Llamar al método para cambiar el texto del Label
+			CambiarTextoLabel();
+		}*/
 };
 }
