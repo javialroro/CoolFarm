@@ -52,7 +52,9 @@ namespace CoolFarm {
 
 	private:
 		cli::array<System::Windows::Forms::Button^, 2>^ botones;  // Matriz de botones
-		
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+
 
 		/// <summary>
 		/// Required designer variable.
@@ -66,20 +68,16 @@ namespace CoolFarm {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			
-			this->KeyPreview = true;
-			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
-			this->Focus();
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
 			// 
-			this->tableLayoutPanel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
+			this->tableLayoutPanel1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->tableLayoutPanel1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->tableLayoutPanel1->BackColor = System::Drawing::Color::YellowGreen;
 			this->tableLayoutPanel1->ColumnCount = 10;
@@ -132,7 +130,7 @@ namespace CoolFarm {
 			// 
 			this->button1->BackColor = System::Drawing::Color::NavajoWhite;
 			this->button1->Location = System::Drawing::Point(14, 20);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(99, 34);
 			this->button1->TabIndex = 2;
@@ -140,18 +138,44 @@ namespace CoolFarm {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
+			// label2
+			// 
+			this->label2->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label2->Location = System::Drawing::Point(1003, 26);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(79, 20);
+			this->label2->TabIndex = 3;
+			this->label2->Text = L"DINERO:";
+			// 
+			// label3
+			// 
+			this->label3->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label3->Location = System::Drawing::Point(1088, 26);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(53, 20);
+			this->label3->TabIndex = 4;
+			this->label3->Text = L"label3";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
 			this->ClientSize = System::Drawing::Size(1283, 613);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->tableLayoutPanel1);
+			this->KeyPreview = true;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -259,5 +283,6 @@ namespace CoolFarm {
 			// Llamar al método para cambiar el texto del Label
 			CambiarTextoLabel();
 		}*/
+
 };
 }
