@@ -75,6 +75,14 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Button^ buttonComprarAVL;
 	private: System::Windows::Forms::Button^ buttonComprarSp;
 	private: System::Windows::Forms::Button^ buttonComprarEspan;
+	private: System::Windows::Forms::TextBox^ textBoxBi;
+	private: System::Windows::Forms::TextBox^ textBoxHe;
+	private: System::Windows::Forms::TextBox^ textBoxAVL;
+	private: System::Windows::Forms::TextBox^ textBoxSp;
+	private: System::Windows::Forms::Button^ venderBi;
+	private: System::Windows::Forms::Button^ venderHe;
+	private: System::Windows::Forms::Button^ venderAVL;
+	private: System::Windows::Forms::Button^ venderSp;
 
 	private:
 		/// <summary>
@@ -89,8 +97,6 @@ namespace CoolFarm {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-
-
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -130,6 +136,14 @@ namespace CoolFarm {
 			this->buttonComprarAVL = (gcnew System::Windows::Forms::Button());
 			this->buttonComprarSp = (gcnew System::Windows::Forms::Button());
 			this->buttonComprarEspan = (gcnew System::Windows::Forms::Button());
+			this->textBoxBi = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxHe = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAVL = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxSp = (gcnew System::Windows::Forms::TextBox());
+			this->venderBi = (gcnew System::Windows::Forms::Button());
+			this->venderHe = (gcnew System::Windows::Forms::Button());
+			this->venderAVL = (gcnew System::Windows::Forms::Button());
+			this->venderSp = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -191,45 +205,45 @@ namespace CoolFarm {
 			this->labelDinero->AutoSize = true;
 			this->labelDinero->Location = System::Drawing::Point(851, 35);
 			this->labelDinero->Name = L"labelDinero";
-			this->labelDinero->Size = System::Drawing::Size(66, 25);
+			this->labelDinero->Size = System::Drawing::Size(0, 25);
 			this->labelDinero->TabIndex = 6;
-			this->labelDinero->Text = L"         ";
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
 			// 
 			// cantidadSp
 			// 
 			this->cantidadSp->AutoSize = true;
 			this->cantidadSp->Location = System::Drawing::Point(326, 224);
 			this->cantidadSp->Name = L"cantidadSp";
-			this->cantidadSp->Size = System::Drawing::Size(72, 25);
+			this->cantidadSp->Size = System::Drawing::Size(0, 25);
 			this->cantidadSp->TabIndex = 10;
-			this->cantidadSp->Text = L"          ";
+			this->cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
 			// 
 			// cantidadAvl
 			// 
 			this->cantidadAvl->AutoSize = true;
 			this->cantidadAvl->Location = System::Drawing::Point(326, 186);
 			this->cantidadAvl->Name = L"cantidadAvl";
-			this->cantidadAvl->Size = System::Drawing::Size(72, 25);
+			this->cantidadAvl->Size = System::Drawing::Size(0, 25);
 			this->cantidadAvl->TabIndex = 9;
-			this->cantidadAvl->Text = L"          ";
+			this->cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
 			// 
 			// CantidadHe
 			// 
 			this->CantidadHe->AutoSize = true;
 			this->CantidadHe->Location = System::Drawing::Point(326, 148);
 			this->CantidadHe->Name = L"CantidadHe";
-			this->CantidadHe->Size = System::Drawing::Size(72, 25);
+			this->CantidadHe->Size = System::Drawing::Size(0, 25);
 			this->CantidadHe->TabIndex = 8;
-			this->CantidadHe->Text = L"          ";
+			this->CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
 			// 
 			// cantidadBi
 			// 
 			this->cantidadBi->AutoSize = true;
 			this->cantidadBi->Location = System::Drawing::Point(326, 110);
 			this->cantidadBi->Name = L"cantidadBi";
-			this->cantidadBi->Size = System::Drawing::Size(72, 25);
+			this->cantidadBi->Size = System::Drawing::Size(0, 25);
 			this->cantidadBi->TabIndex = 7;
-			this->cantidadBi->Text = L"          ";
+			this->toSystemString(to_string(frutosBinario));
 			// 
 			// label7
 			// 
@@ -300,8 +314,9 @@ namespace CoolFarm {
 			this->venderTodoButt->Name = L"venderTodoButt";
 			this->venderTodoButt->Size = System::Drawing::Size(381, 59);
 			this->venderTodoButt->TabIndex = 18;
-			this->venderTodoButt->Text = L"Vender todo";
+			this->venderTodoButt->Text = L"Vender todos los frutos";
 			this->venderTodoButt->UseVisualStyleBackColor = true;
+			this->venderTodoButt->Click += gcnew System::EventHandler(this, &Mercadoh::venderTodoButt_Click);
 			// 
 			// label14
 			// 
@@ -483,12 +498,84 @@ namespace CoolFarm {
 			this->buttonComprarEspan->Text = L"comprar";
 			this->buttonComprarEspan->UseVisualStyleBackColor = true;
 			// 
+			// textBoxBi
+			// 
+			this->textBoxBi->Location = System::Drawing::Point(1069, 402);
+			this->textBoxBi->Name = L"textBoxBi";
+			this->textBoxBi->Size = System::Drawing::Size(92, 31);
+			this->textBoxBi->TabIndex = 39;
+			// 
+			// textBoxHe
+			// 
+			this->textBoxHe->Location = System::Drawing::Point(1069, 440);
+			this->textBoxHe->Name = L"textBoxHe";
+			this->textBoxHe->Size = System::Drawing::Size(92, 31);
+			this->textBoxHe->TabIndex = 40;
+			// 
+			// textBoxAVL
+			// 
+			this->textBoxAVL->Location = System::Drawing::Point(1069, 478);
+			this->textBoxAVL->Name = L"textBoxAVL";
+			this->textBoxAVL->Size = System::Drawing::Size(92, 31);
+			this->textBoxAVL->TabIndex = 41;
+			// 
+			// textBoxSp
+			// 
+			this->textBoxSp->Location = System::Drawing::Point(1069, 516);
+			this->textBoxSp->Name = L"textBoxSp";
+			this->textBoxSp->Size = System::Drawing::Size(92, 31);
+			this->textBoxSp->TabIndex = 42;
+			// 
+			// venderBi
+			// 
+			this->venderBi->Location = System::Drawing::Point(1191, 399);
+			this->venderBi->Name = L"venderBi";
+			this->venderBi->Size = System::Drawing::Size(129, 34);
+			this->venderBi->TabIndex = 43;
+			this->venderBi->Text = L"vender";
+			this->venderBi->UseVisualStyleBackColor = true;
+			// 
+			// venderHe
+			// 
+			this->venderHe->Location = System::Drawing::Point(1191, 439);
+			this->venderHe->Name = L"venderHe";
+			this->venderHe->Size = System::Drawing::Size(129, 35);
+			this->venderHe->TabIndex = 44;
+			this->venderHe->Text = L"vender";
+			this->venderHe->UseVisualStyleBackColor = true;
+			// 
+			// venderAVL
+			// 
+			this->venderAVL->Location = System::Drawing::Point(1191, 480);
+			this->venderAVL->Name = L"venderAVL";
+			this->venderAVL->Size = System::Drawing::Size(129, 32);
+			this->venderAVL->TabIndex = 45;
+			this->venderAVL->Text = L"vender";
+			this->venderAVL->UseVisualStyleBackColor = true;
+			// 
+			// venderSp
+			// 
+			this->venderSp->Location = System::Drawing::Point(1191, 519);
+			this->venderSp->Name = L"venderSp";
+			this->venderSp->Size = System::Drawing::Size(129, 31);
+			this->venderSp->TabIndex = 46;
+			this->venderSp->Text = L"vender";
+			this->venderSp->UseVisualStyleBackColor = true;
+			// 
 			// Mercadoh
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightSkyBlue;
 			this->ClientSize = System::Drawing::Size(1361, 838);
+			this->Controls->Add(this->venderSp);
+			this->Controls->Add(this->venderAVL);
+			this->Controls->Add(this->venderHe);
+			this->Controls->Add(this->venderBi);
+			this->Controls->Add(this->textBoxSp);
+			this->Controls->Add(this->textBoxAVL);
+			this->Controls->Add(this->textBoxHe);
+			this->Controls->Add(this->textBoxBi);
 			this->Controls->Add(this->buttonComprarEspan);
 			this->Controls->Add(this->buttonComprarSp);
 			this->Controls->Add(this->buttonComprarAVL);
@@ -534,7 +621,24 @@ namespace CoolFarm {
 			this->PerformLayout();
 
 		}
-#pragma endregion
-	
+	#pragma endregion
+		private:  static String^ toSystemString(string str) {
+			return gcnew String(str.c_str());
+		}
+		private: System::Void venderTodoButt_Click(System::Object^ sender, System::EventArgs^ e) {
+			dinero += mercado->obtenerPrecioFrutosBinario(frutosBinario);
+			dinero += mercado->obtenerPrecioFrutosHeap(frutosHeap);
+			dinero += mercado->obtenerPrecioFrutosAVL(frutosAVL);
+			dinero += mercado->obtenerPrecioFrutosSplay(frutosSplay);
+			frutosBinario = 0;
+			frutosHeap = 0;
+			frutosAVL = 0;
+			frutosSplay = 0;
+			this->cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
+			this->CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
+			this->cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
+			this->cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));;
+		}
 };
 }

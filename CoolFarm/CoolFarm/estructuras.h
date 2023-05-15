@@ -329,47 +329,43 @@ struct Mercado {
     }
 
     // Métodos
-    int obtenerPrecioFrutosBinario(int numeroFrutos) {
+    float obtenerPrecioFrutosBinario(int numeroFrutos) {
         float valorTotal = 0;
         while (numeroFrutos > 0) {
             int precio = 1 + rand() % 5000;
             valorTotal += precio / 1000.0;
             numeroFrutos--;
         }
-        frutosBinario -= numeroFrutos;
         return valorTotal;
     }
 
-    int obtenerPrecioFrutosHeap(int numeroFrutos) {
+    float obtenerPrecioFrutosHeap(int numeroFrutos) {
         float valorTotal = 0;
         while (numeroFrutos > 0) {
             int precio = 1 + rand() % 5000;
             valorTotal += precio / 1000.0;
             numeroFrutos--;
         }
-        frutosHeap -= numeroFrutos;
         return valorTotal;
     }
 
-    int obtenerPrecioFrutosAVL(int numeroFrutos){
+    float obtenerPrecioFrutosAVL(int numeroFrutos){
         float valorTotal = 0;
         while (numeroFrutos > 0) {
             int precio = 1 + rand() % 20000;
             valorTotal =  valorTotal + precio / 1000.0;
             numeroFrutos--;
         }
-        frutosAVL -= numeroFrutos;
         return valorTotal;
     }
 
-    int obtenerPrecioFrutosSplay(int numeroFrutos) {
+    float obtenerPrecioFrutosSplay(int numeroFrutos) {
         float valorTotal = 0;
         while (numeroFrutos > 0) {
             int precio = 1 + rand() % 50000;
             valorTotal += precio / 1000.0;
             numeroFrutos--;
         }
-        frutosSplay -= numeroFrutos;
         return valorTotal;
     }
 
