@@ -122,11 +122,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="estructuras.cpp" />
+    <ClCompile Include="Mercadoh.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="estructuras.h" />
+    <ClInclude Include="Mercadoh.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -135,6 +139,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Mercadoh.resx">
+      <DependentUpon>Mercadoh.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

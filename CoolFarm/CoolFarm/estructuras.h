@@ -1,6 +1,5 @@
 #pragma once
-//#include "Settings.h"
-//hola buenas
+
 int x = 0;
 
 #include <iostream>
@@ -25,6 +24,16 @@ int tiempoFrutosCuervos;
 int porcentPlagas;
 int aparicionPlagas;
 int tiempoAparicionPlagas;
+// Settings Mercado
+int mercadoAparicion;
+int mercadoApertura;
+// Frutos por Arbol
+int frutosBinario = 7;
+int frutosHeap = 74;
+int frutosAVL = 2;
+int frutosSplay = 17;
+// Dinero Jugador
+float dinero = 0;
 
 
 
@@ -56,7 +65,7 @@ struct NodoOveja {
     NodoOveja* siguiente;
 
     // Constructor
-    NodoOveja (Oveja* inOveja) {
+    NodoOveja(Oveja* inOveja) {
         oveja = inOveja;
         siguiente = NULL;
     }
@@ -146,7 +155,7 @@ struct NodoCuervo {
     NodoCuervo* siguiente;
 
     // Constructor
-     
+
     NodoCuervo(Cuervo* inCuervo) {
         cuervo = inCuervo;
         siguiente = NULL;
@@ -300,5 +309,72 @@ struct Granjero {
 
 
 };
+
+struct Mercado {
+
+    // Parámetros
+    float precioArbBinario;
+    float precioArbHeap;
+    float precioArbAVL;
+    float precioArbSplay;
+    float precioEspantapajaros;
+
+    // Constructor
+    Mercado() {
+        precioArbBinario = 100.0;
+        precioArbHeap = 130.0;
+        precioArbAVL = 350.0;
+        precioArbSplay = 600.0;
+        precioEspantapajaros = 200.0;
+    }
+
+    // Métodos
+    int obtenerPrecioFrutosBinario(int numeroFrutos) {
+        float valorTotal = 0;
+        while (numeroFrutos > 0) {
+            int precio = 1 + rand() % 5000;
+            valorTotal += precio / 1000.0;
+            numeroFrutos--;
+        }
+        frutosBinario -= numeroFrutos;
+        return valorTotal;
+    }
+
+    int obtenerPrecioFrutosHeap(int numeroFrutos) {
+        float valorTotal = 0;
+        while (numeroFrutos > 0) {
+            int precio = 1 + rand() % 5000;
+            valorTotal += precio / 1000.0;
+            numeroFrutos--;
+        }
+        frutosHeap -= numeroFrutos;
+        return valorTotal;
+    }
+
+    int obtenerPrecioFrutosAVL(int numeroFrutos){
+        float valorTotal = 0;
+        while (numeroFrutos > 0) {
+            int precio = 1 + rand() % 20000;
+            valorTotal =  valorTotal + precio / 1000.0;
+            numeroFrutos--;
+        }
+        frutosAVL -= numeroFrutos;
+        return valorTotal;
+    }
+
+    int obtenerPrecioFrutosSplay(int numeroFrutos) {
+        float valorTotal = 0;
+        while (numeroFrutos > 0) {
+            int precio = 1 + rand() % 50000;
+            valorTotal += precio / 1000.0;
+            numeroFrutos--;
+        }
+        frutosSplay -= numeroFrutos;
+        return valorTotal;
+    }
+
+};
+
+Mercado* mercado = new Mercado();
 
 

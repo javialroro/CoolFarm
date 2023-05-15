@@ -24,6 +24,9 @@
     <ClCompile Include="Settings.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Mercadoh.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mercadoh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

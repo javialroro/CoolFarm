@@ -54,6 +54,7 @@ namespace CoolFarm {
 		cli::array<System::Windows::Forms::Button^, 2>^ botones;  // Matriz de botones
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ abrirMercadoButt;
 
 
 		/// <summary>
@@ -73,6 +74,7 @@ namespace CoolFarm {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->abrirMercadoButt = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -82,57 +84,58 @@ namespace CoolFarm {
 			this->tableLayoutPanel1->BackColor = System::Drawing::Color::YellowGreen;
 			this->tableLayoutPanel1->ColumnCount = 10;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				50)));
+				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
-			this->tableLayoutPanel1->Location = System::Drawing::Point(414, 42);
+				76)));
+			this->tableLayoutPanel1->Location = System::Drawing::Point(621, 66);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 10;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(501, 500);
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(752, 781);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(939, 64);
+			this->label1->Location = System::Drawing::Point(1408, 100);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(16, 16);
+			this->label1->Size = System::Drawing::Size(30, 25);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"   ";
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::NavajoWhite;
-			this->button1->Location = System::Drawing::Point(14, 20);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(21, 31);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(99, 34);
+			this->button1->Size = System::Drawing::Size(148, 53);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"SETTINGS";
 			this->button1->UseVisualStyleBackColor = false;
@@ -143,9 +146,10 @@ namespace CoolFarm {
 			this->label2->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->label2->Location = System::Drawing::Point(1003, 26);
+			this->label2->Location = System::Drawing::Point(1504, 41);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(79, 20);
+			this->label2->Size = System::Drawing::Size(129, 31);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"DINERO:";
 			// 
@@ -154,24 +158,38 @@ namespace CoolFarm {
 			this->label3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->label3->Location = System::Drawing::Point(1088, 26);
+			this->label3->Location = System::Drawing::Point(1632, 41);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(53, 20);
+			this->label3->Size = System::Drawing::Size(86, 31);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"label3";
 			// 
+			// abrirMercadoButt
+			// 
+			this->abrirMercadoButt->BackColor = System::Drawing::Color::NavajoWhite;
+			this->abrirMercadoButt->Location = System::Drawing::Point(21, 100);
+			this->abrirMercadoButt->Name = L"abrirMercadoButt";
+			this->abrirMercadoButt->Size = System::Drawing::Size(148, 50);
+			this->abrirMercadoButt->TabIndex = 5;
+			this->abrirMercadoButt->Text = L"MERCADO";
+			this->abrirMercadoButt->UseVisualStyleBackColor = false;
+			this->abrirMercadoButt->Click += gcnew System::EventHandler(this, &MyForm::abrirMercadoButt_Click);
+			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
-			this->ClientSize = System::Drawing::Size(1283, 613);
+			this->ClientSize = System::Drawing::Size(1924, 958);
+			this->Controls->Add(this->abrirMercadoButt);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->KeyPreview = true;
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
@@ -284,5 +302,9 @@ namespace CoolFarm {
 			CambiarTextoLabel();
 		}*/
 
-};
+		private: System::Void abrirMercadoButt_Click(System::Object^ sender, System::EventArgs^ e) {
+			CoolFarm::Mercadoh^ mercado = gcnew CoolFarm::Mercadoh();
+			mercado->Show();
+		}
+	};
 }

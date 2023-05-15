@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "estructuras.h"
+#include "Mercadoh.h"
 
 namespace CoolFarm {
 
@@ -92,6 +92,13 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Label^ label22;
 	private: System::Windows::Forms::Label^ label23;
 	private: System::Windows::Forms::Button^ guardarComponentes_button;
+	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::Label^ label25;
+	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::TextBox^ mercAparicion;
+	private: System::Windows::Forms::TextBox^ mercAbierto;
+	private: System::Windows::Forms::Label^ label27;
+	private: System::Windows::Forms::Label^ label28;
 
 
 	private:
@@ -145,6 +152,13 @@ namespace CoolFarm {
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->guardarComponentes_button = (gcnew System::Windows::Forms::Button());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->mercAparicion = (gcnew System::Windows::Forms::TextBox());
+			this->mercAbierto = (gcnew System::Windows::Forms::TextBox());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -457,7 +471,7 @@ namespace CoolFarm {
 			// guardarComponentes_button
 			// 
 			this->guardarComponentes_button->BackColor = System::Drawing::Color::DarkGray;
-			this->guardarComponentes_button->Location = System::Drawing::Point(1412, 545);
+			this->guardarComponentes_button->Location = System::Drawing::Point(1395, 545);
 			this->guardarComponentes_button->Name = L"guardarComponentes_button";
 			this->guardarComponentes_button->Size = System::Drawing::Size(150, 43);
 			this->guardarComponentes_button->TabIndex = 37;
@@ -465,12 +479,78 @@ namespace CoolFarm {
 			this->guardarComponentes_button->UseVisualStyleBackColor = false;
 			this->guardarComponentes_button->Click += gcnew System::EventHandler(this, &Settings::guardarComponentes_button_Click);
 			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(807, 330);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(119, 25);
+			this->label24->TabIndex = 38;
+			this->label24->Text = L"MERCADO";
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(892, 387);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(215, 25);
+			this->label25->TabIndex = 39;
+			this->label25->Text = L"Tiempo de Aparición:";
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Location = System::Drawing::Point(892, 471);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(165, 25);
+			this->label26->TabIndex = 40;
+			this->label26->Text = L"Abierto durante:";
+			// 
+			// mercAparicion
+			// 
+			this->mercAparicion->Location = System::Drawing::Point(1185, 384);
+			this->mercAparicion->Name = L"mercAparicion";
+			this->mercAparicion->Size = System::Drawing::Size(76, 31);
+			this->mercAparicion->TabIndex = 41;
+			// 
+			// mercAbierto
+			// 
+			this->mercAbierto->Location = System::Drawing::Point(1185, 471);
+			this->mercAbierto->Name = L"mercAbierto";
+			this->mercAbierto->Size = System::Drawing::Size(76, 31);
+			this->mercAbierto->TabIndex = 42;
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Location = System::Drawing::Point(1286, 387);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(53, 25);
+			this->label27->TabIndex = 43;
+			this->label27->Text = L"seg.";
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(1286, 477);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(53, 25);
+			this->label28->TabIndex = 44;
+			this->label28->Text = L"seg.";
+			// 
 			// Settings
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PapayaWhip;
 			this->ClientSize = System::Drawing::Size(1580, 610);
+			this->Controls->Add(this->label28);
+			this->Controls->Add(this->label27);
+			this->Controls->Add(this->mercAbierto);
+			this->Controls->Add(this->mercAparicion);
+			this->Controls->Add(this->label26);
+			this->Controls->Add(this->label25);
+			this->Controls->Add(this->label24);
 			this->Controls->Add(this->guardarComponentes_button);
 			this->Controls->Add(this->label18);
 			this->Controls->Add(this->label19);
@@ -533,6 +613,9 @@ namespace CoolFarm {
 			porcentPlagas = Int32::Parse(this->plagPorcentaje->Text);
 			aparicionPlagas = Int32::Parse(this->plagAparicion->Text);
 			tiempoAparicionPlagas = Int32::Parse(this->plagMin->Text);
+
+			mercadoAparicion = Int32::Parse(this->mercAparicion->Text);
+			mercadoApertura = Int32::Parse(this->mercAbierto->Text);
 		}
 	
 	};
