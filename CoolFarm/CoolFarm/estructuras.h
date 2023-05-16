@@ -5,7 +5,18 @@ int x = 0;
 #include <iostream>
 #include <string>
 #include <cstdlib>
-int arbolesBinarios[10][10];
+#include "arboles.h"
+#include <queue>
+arbol * arbolesBinarios[10][10];
+
+
+queue<Heap*> colaHeap;
+
+
+
+queue<avl_tree*> colaAVL;
+queue<SplayTree*> colaSplay;
+queue<BinarioOrdenado*> colaBinarioOrdenado;
 
 using namespace std;
 // Settings Ovejas
@@ -33,7 +44,8 @@ int frutosHeap = 74;
 int frutosAVL = 2;
 int frutosSplay = 17;
 // Dinero Jugador
-float dinero = 0;
+//float dinero = 0;
+float dinero = 99999;
 
 
 
