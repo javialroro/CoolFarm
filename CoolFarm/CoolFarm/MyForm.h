@@ -114,7 +114,7 @@ namespace CoolFarm {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				75)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				76)));
+				77)));
 			this->tableLayoutPanel1->Location = System::Drawing::Point(584, 61);
 			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
@@ -217,6 +217,7 @@ namespace CoolFarm {
 			this->buttonPonerEspanta->TabIndex = 10;
 			this->buttonPonerEspanta->Text = L"COLOCAR ESPANTAPAJAROS";
 			this->buttonPonerEspanta->UseVisualStyleBackColor = false;
+			this->buttonPonerEspanta->Click += gcnew System::EventHandler(this, &MyForm::buttonPonerEspanta_Click);
 			// 
 			// MyForm
 			// 
@@ -384,7 +385,7 @@ namespace CoolFarm {
 
 
 		}
-		void colocarEspanta(arbol* arbol) {
+		/*void colocarEspanta(arbol* arbol) {
 			for (int i = 0; i < FILAS; i++) {
 				for (int j = 0; j < COLUMNAS; j++) {
 					if (i == granjero->columna && j == granjero->fila) {
@@ -400,14 +401,14 @@ namespace CoolFarm {
 					}
 				}
 			}
-		}
+		}*/
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (colaHeap.empty()) {
 			MessageBox::Show("No hay arboles de este tipo");
 		}
 		else if (arbolesBinarios[granjero->columna][granjero->fila] != NULL) {
-			MessageBox::Show("Ya hay un arbol en esta posicion");
+			MessageBox::Show("Ya hay un elemento en esta posicion");
 			return;
 		}
 		else{
@@ -424,7 +425,7 @@ private: System::Void botonPlantarAVL_Click(System::Object^ sender, System::Even
 		return;
 	}
 	else if (arbolesBinarios[granjero->columna][granjero->fila] != NULL) {
-		MessageBox::Show("Ya hay un arbol en esta posicion");
+		MessageBox::Show("Ya hay un elemento en esta posicion");
 		return;
 	}
 	else {
@@ -439,7 +440,7 @@ private: System::Void botonPlantarSplay_Click(System::Object^ sender, System::Ev
 		return;
 	}
 	else if (arbolesBinarios[granjero->columna][granjero->fila] != NULL) {
-		MessageBox::Show("Ya hay un arbol en esta posicion");
+		MessageBox::Show("Ya hay un elemento en esta posicion");
 		return;
 	}
 	else {
@@ -455,7 +456,7 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 		return;
 	}
 	else if (arbolesBinarios[granjero->columna][granjero->fila] != NULL) {
-		MessageBox::Show("Ya hay un arbol en esta posicion");
+		MessageBox::Show("Ya hay un elemento en esta posicion");
 		return;
 	}
 	else {
@@ -464,5 +465,21 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 		colaBinarioOrdenado.pop();
 	}
 }
+private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (colaEspantapajaro.empty()) {
+		MessageBox::Show("No tienes espantapajaros");
+		return;
+	}
+	else if (arbolesBinarios[granjero->columna][granjero->fila] != NULL) {
+			MessageBox::Show("Ya hay un elemento en esta posicion");
+			return;
+	}
+	else {
+		arbol* a = colaEspantapajaro.front();
+		plantar(a, "E");
+		colaEspantapajaro.pop();
+	}
+}
+
 };
 }

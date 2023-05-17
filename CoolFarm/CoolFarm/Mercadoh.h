@@ -207,14 +207,6 @@ namespace CoolFarm {
 			this->labelDinero->Name = L"labelDinero";
 			this->labelDinero->Size = System::Drawing::Size(0, 25);
 			this->labelDinero->TabIndex = 6;
-			// 
-			// labelDinero
-			// 
-			this->labelDinero->AutoSize = true;
-			this->labelDinero->Location = System::Drawing::Point(850, 34);
-			this->labelDinero->Name = L"labelDinero";
-			this->labelDinero->Size = System::Drawing::Size(0, 25);
-			this->labelDinero->TabIndex = 6;
 			this->labelDinero->Text = this->toSystemString(to_string(dinero));
 			// 
 			// cantidadSp
@@ -349,7 +341,7 @@ namespace CoolFarm {
 			this->labelPrecioBi->AutoSize = true;
 			this->labelPrecioBi->Location = System::Drawing::Point(128, 691);
 			this->labelPrecioBi->Name = L"labelPrecioBi";
-			this->labelPrecioBi->Size = System::Drawing::Size(54, 25);
+			this->labelPrecioBi->Size = System::Drawing::Size(0, 25);
 			this->labelPrecioBi->TabIndex = 21;
 			this->labelPrecioBi->Text = this->toSystemString(to_string(precioBinario));
 			// 
@@ -358,7 +350,7 @@ namespace CoolFarm {
 			this->labelPrecioHe->AutoSize = true;
 			this->labelPrecioHe->Location = System::Drawing::Point(394, 691);
 			this->labelPrecioHe->Name = L"labelPrecioHe";
-			this->labelPrecioHe->Size = System::Drawing::Size(54, 25);
+			this->labelPrecioHe->Size = System::Drawing::Size(0, 25);
 			this->labelPrecioHe->TabIndex = 24;
 			this->labelPrecioHe->Text = this->toSystemString(to_string(precioHeap));
 			// 
@@ -412,7 +404,7 @@ namespace CoolFarm {
 			this->labelPrecioSp->AutoSize = true;
 			this->labelPrecioSp->Location = System::Drawing::Point(888, 691);
 			this->labelPrecioSp->Name = L"labelPrecioSp";
-			this->labelPrecioSp->Size = System::Drawing::Size(54, 25);
+			this->labelPrecioSp->Size = System::Drawing::Size(0, 25);
 			this->labelPrecioSp->TabIndex = 30;
 			this->labelPrecioSp->Text = this->toSystemString(to_string(precioSplay));
 			// 
@@ -509,6 +501,7 @@ namespace CoolFarm {
 			this->buttonComprarEspan->TabIndex = 38;
 			this->buttonComprarEspan->Text = L"comprar";
 			this->buttonComprarEspan->UseVisualStyleBackColor = true;
+			this->buttonComprarEspan->Click += gcnew System::EventHandler(this, &Mercadoh::buttonComprarEspan_Click_1);
 			// 
 			// textBoxBi
 			// 
@@ -704,18 +697,7 @@ namespace CoolFarm {
 			noDinero();
 		}
 	};
-	
-	private: System::Void buttonComprarEspan_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (espantapajarosDispo > 0) {
-			dinero -= mercado->precioEspantapajaros;
-			this->labelDinero->Text = this->toSystemString(to_string(dinero));
-			Espantapajaros* a = new Espantapajaros();
-			colaEspantapajaro.push(a);
-		}
-		else {
-			noEspanta();
-		}
-	};
+
 	
 	void noEspanta() {
 		MessageBox::Show("No puedes comprar más de dos espantapajaros");
@@ -777,6 +759,18 @@ namespace CoolFarm {
 		}
 		else {
 			noFrutas();
+		}
+	}
+	private: System::Void buttonComprarEspan_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		if (espantapajarosDispo > 0) {
+			dinero -= mercado->precioEspantapajaros;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			Espantapajaros* a = new Espantapajaros();
+			colaEspantapajaro.push(a);
+			espantapajarosDispo -= 1;
+		}
+		else {
+			noEspanta();
 		}
 	}
 };
