@@ -308,9 +308,24 @@ namespace CoolFarm {
 					if (i == granjero->columna && j == granjero->fila) {
 						botones[i, j]->BackColor = Color::Red;
 					}
+
 					else {
-						//botones[i, j]->Text = "";
 						botones[i, j]->BackColor = Color::YellowGreen;
+					}
+					if (botones[i, j]->Text == "E") {
+						botones[i, j]->BackColor = Color::Gold;
+						botones[i, j + 1]->BackColor = Color::Gold;
+						botones[i, j - 1]->BackColor = Color::Gold;
+						botones[i + 1, j]->BackColor = Color::Gold;
+						botones[i + 1, j + 1]->BackColor = Color::Gold;
+						botones[i + 1, j + 1]->Text = "Color::Gold;";
+						botones[i + 1, j - 1]->BackColor = Color::Gold;
+						botones[i - 1, j]->BackColor = Color::Gold;
+						botones[i - 1, j + 1]->BackColor = Color::Gold;
+						botones[i - 1, j - 1]->BackColor = Color::Gold;
+					}
+					if (i == granjero->columna && j == granjero->fila) {
+						botones[i, j]->BackColor = Color::Red;
 					}
 				}
 			}
@@ -478,6 +493,7 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		arbol* a = colaEspantapajaro.front();
 		plantar(a, "E");
 		colaEspantapajaro.pop();
+		DibujarMatriz();
 	}
 }
 
