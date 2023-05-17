@@ -207,6 +207,14 @@ namespace CoolFarm {
 			this->labelDinero->Name = L"labelDinero";
 			this->labelDinero->Size = System::Drawing::Size(0, 25);
 			this->labelDinero->TabIndex = 6;
+			// 
+			// labelDinero
+			// 
+			this->labelDinero->AutoSize = true;
+			this->labelDinero->Location = System::Drawing::Point(850, 34);
+			this->labelDinero->Name = L"labelDinero";
+			this->labelDinero->Size = System::Drawing::Size(0, 25);
+			this->labelDinero->TabIndex = 6;
 			this->labelDinero->Text = this->toSystemString(to_string(dinero));
 			// 
 			// cantidadSp
@@ -377,7 +385,7 @@ namespace CoolFarm {
 			this->labelPrecioAVL->AutoSize = true;
 			this->labelPrecioAVL->Location = System::Drawing::Point(648, 691);
 			this->labelPrecioAVL->Name = L"labelPrecioAVL";
-			this->labelPrecioAVL->Size = System::Drawing::Size(54, 25);
+			this->labelPrecioAVL->Size = System::Drawing::Size(0, 25);
 			this->labelPrecioAVL->TabIndex = 27;
 			this->labelPrecioAVL->Text = this->toSystemString(to_string(precioAVL));
 			// 
@@ -431,7 +439,7 @@ namespace CoolFarm {
 			this->labelPrecioEspanta->AutoSize = true;
 			this->labelPrecioEspanta->Location = System::Drawing::Point(1136, 691);
 			this->labelPrecioEspanta->Name = L"labelPrecioEspanta";
-			this->labelPrecioEspanta->Size = System::Drawing::Size(54, 25);
+			this->labelPrecioEspanta->Size = System::Drawing::Size(0, 25);
 			this->labelPrecioEspanta->TabIndex = 33;
 			this->labelPrecioEspanta->Text = this->toSystemString(to_string(precioEspanta));
 			// 
@@ -538,6 +546,7 @@ namespace CoolFarm {
 			this->venderBi->TabIndex = 43;
 			this->venderBi->Text = L"vender";
 			this->venderBi->UseVisualStyleBackColor = true;
+			this->venderBi->Click += gcnew System::EventHandler(this, &Mercadoh::venderBi_Click);
 			// 
 			// venderHe
 			// 
@@ -547,6 +556,7 @@ namespace CoolFarm {
 			this->venderHe->TabIndex = 44;
 			this->venderHe->Text = L"vender";
 			this->venderHe->UseVisualStyleBackColor = true;
+			this->venderHe->Click += gcnew System::EventHandler(this, &Mercadoh::venderHe_Click);
 			// 
 			// venderAVL
 			// 
@@ -556,6 +566,7 @@ namespace CoolFarm {
 			this->venderAVL->TabIndex = 45;
 			this->venderAVL->Text = L"vender";
 			this->venderAVL->UseVisualStyleBackColor = true;
+			this->venderAVL->Click += gcnew System::EventHandler(this, &Mercadoh::venderAVL_Click);
 			// 
 			// venderSp
 			// 
@@ -565,6 +576,7 @@ namespace CoolFarm {
 			this->venderSp->TabIndex = 46;
 			this->venderSp->Text = L"vender";
 			this->venderSp->UseVisualStyleBackColor = true;
+			this->venderSp->Click += gcnew System::EventHandler(this, &Mercadoh::venderSp_Click);
 			// 
 			// Mercadoh
 			// 
@@ -630,10 +642,14 @@ namespace CoolFarm {
 			return gcnew String(str.c_str());
 		}
 		private: System::Void venderTodoButt_Click(System::Object^ sender, System::EventArgs^ e) {
-			dinero += mercado->obtenerPrecioFrutosBinario(frutosBinario);
-			dinero += mercado->obtenerPrecioFrutosHeap(frutosHeap);
-			dinero += mercado->obtenerPrecioFrutosAVL(frutosAVL);
-			dinero += mercado->obtenerPrecioFrutosSplay(frutosSplay);
+			if (frutosBinario > 0)
+				dinero += mercado->obtenerPrecioFrutosBinario(frutosBinario);
+			if (frutosHeap > 0)
+				dinero += mercado->obtenerPrecioFrutosHeap(frutosHeap);
+			if (frutosAVL > 0)
+				dinero += mercado->obtenerPrecioFrutosAVL(frutosAVL);
+			if (frutosSplay > 0)
+				dinero += mercado->obtenerPrecioFrutosSplay(frutosSplay);
 			frutosBinario = 0;
 			frutosHeap = 0;
 			frutosAVL = 0;
@@ -644,52 +660,108 @@ namespace CoolFarm {
 			this->cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
 			this->labelDinero->Text = this->toSystemString(to_string(dinero));;
 		}
-private: System::Void buttonComprarBi_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (dinero >= mercado->precioArbBinario) {
-		dinero -= mercado->precioArbBinario;
-		this->labelDinero->Text = this->toSystemString(to_string(dinero));
-		BinarioOrdenado* a = new BinarioOrdenado();
-		colaBinarioOrdenado.push(a);
-	}
-	else {
-		noDinero();
-	}
-};
-private: System::Void buttonComprarHe_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (dinero >= mercado->precioArbHeap) {
-		Heap* a = new Heap(10);
-		colaHeap.push(a);
-		dinero -= mercado->precioArbHeap;
-		this->labelDinero->Text = this->toSystemString(to_string(dinero));
+	private: System::Void buttonComprarBi_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (dinero >= mercado->precioArbBinario) {
+			dinero -= mercado->precioArbBinario;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			BinarioOrdenado* a = new BinarioOrdenado();
+			colaBinarioOrdenado.push(a);
+		}
+		else {
+			noDinero();
+		}
+	};
+	private: System::Void buttonComprarHe_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (dinero >= mercado->precioArbHeap) {
+			Heap* a = new Heap(10);
+			colaHeap.push(a);
+			dinero -= mercado->precioArbHeap;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
 
+		}
+		else {
+			noDinero();
+		}
+	};
+	private: System::Void buttonComprarAVL_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (dinero >= mercado->precioArbAVL) {
+			dinero -= mercado->precioArbAVL;
+			avl_tree* a = new avl_tree();
+			colaAVL.push(a);
+		}
+		else {
+			noDinero();
+		}
+	};
+	private: System::Void buttonComprarSp_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (dinero >= mercado->precioArbSplay) {
+			dinero -= mercado->precioArbSplay;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			SplayTree* a = new SplayTree();
+			colaSplay.push(a);
+		}
+		else {
+			noDinero();
+		}
+	};
+
+	void noDinero() {
+		MessageBox::Show("No tienes suficiente dinero");
 	}
-	else {
-		noDinero();
+	void noFrutas() {
+		MessageBox::Show("No tienes suficiente frutas");
 	}
-};
-private: System::Void buttonComprarAVL_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (dinero >= mercado->precioArbAVL) {
-		dinero -= mercado->precioArbAVL;
-		avl_tree* a = new avl_tree();
-		colaAVL.push(a);
+	private: System::Void venderBi_Click(System::Object^ sender, System::EventArgs^ e) {
+		int cajita = Int32::Parse(this->textBoxBi->Text);
+		
+		if (frutosBinario >= cajita) {
+			dinero += mercado->obtenerPrecioFrutosBinario(cajita);
+			frutosBinario -= cajita;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			this->cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
+		}
+		else {
+			noFrutas();
+		}
 	}
-	else {
-		noDinero();
+	private: System::Void venderHe_Click(System::Object^ sender, System::EventArgs^ e) {
+		int cajita = Int32::Parse(this->textBoxHe->Text);
+
+		if (frutosHeap >= cajita) {
+			dinero += mercado->obtenerPrecioFrutosHeap(cajita);
+			frutosHeap -= cajita;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			this->CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
+		}
+		else {
+			noFrutas();
+		}
 	}
-};
-private: System::Void buttonComprarSp_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (dinero >= mercado->precioArbSplay) {
-		dinero -= mercado->precioArbSplay;
-		this->labelDinero->Text = this->toSystemString(to_string(dinero));
-		SplayTree* a = new SplayTree();
-		colaSplay.push(a);
+	private: System::Void venderAVL_Click(System::Object^ sender, System::EventArgs^ e) {
+		int cajita = Int32::Parse(this->textBoxAVL->Text);
+
+		if (frutosAVL >= cajita) {
+			dinero += mercado->obtenerPrecioFrutosAVL(cajita);
+			frutosAVL -= cajita;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			this->cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
+		}
+		else {
+			noFrutas();
+		}
 	}
-	else {
-		noDinero();
+	private: System::Void venderSp_Click(System::Object^ sender, System::EventArgs^ e) {
+		int cajita = Int32::Parse(this->textBoxSp->Text);
+
+		if (frutosSplay >= cajita) {
+			dinero += mercado->obtenerPrecioFrutosSplay(cajita);
+			frutosSplay -= cajita;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			this->cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
+		}
+		else {
+			noFrutas();
+		}
 	}
-};
-	   void noDinero() {
-		   MessageBox::Show("No tienes suficiente dinero");
-	   }
 };
 };
