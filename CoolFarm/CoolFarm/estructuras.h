@@ -43,6 +43,12 @@ int frutosBinario = 7;
 int frutosHeap = 74;
 int frutosAVL = 2;
 int frutosSplay = 17;
+// Precios Mercado
+float precioBinario = 100;
+float precioHeap = 130;
+float precioAVL = 350;
+float precioSplay = 600;
+float precioEspanta = 200;
 // Dinero Jugador
 //float dinero = 0;
 float dinero = 99999;
@@ -344,7 +350,7 @@ struct Mercado {
     float obtenerPrecioFrutosBinario(int numeroFrutos) {
         float valorTotal = 0;
         while (numeroFrutos > 0) {
-            int precio = 1 + rand() % 5000;
+            float precio = 1 + rand() % 5000;
             valorTotal += precio / 1000.0;
             numeroFrutos--;
         }
@@ -354,7 +360,7 @@ struct Mercado {
     float obtenerPrecioFrutosHeap(int numeroFrutos) {
         float valorTotal = 0;
         while (numeroFrutos > 0) {
-            int precio = 1 + rand() % 5000;
+            float precio = 1 + rand() % 5000;
             valorTotal += precio / 1000.0;
             numeroFrutos--;
         }
@@ -364,7 +370,7 @@ struct Mercado {
     float obtenerPrecioFrutosAVL(int numeroFrutos){
         float valorTotal = 0;
         while (numeroFrutos > 0) {
-            int precio = 1 + rand() % 20000;
+            float precio = 1 + rand() % 20000;
             valorTotal =  valorTotal + precio / 1000.0;
             numeroFrutos--;
         }
@@ -374,7 +380,7 @@ struct Mercado {
     float obtenerPrecioFrutosSplay(int numeroFrutos) {
         float valorTotal = 0;
         while (numeroFrutos > 0) {
-            int precio = 1 + rand() % 50000;
+            float precio = 1 + rand() % 50000;
             valorTotal += precio / 1000.0;
             numeroFrutos--;
         }

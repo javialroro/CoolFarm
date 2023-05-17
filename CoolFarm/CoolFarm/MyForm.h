@@ -345,7 +345,26 @@ namespace CoolFarm {
 
 		private: System::Void abrirMercadoButt_Click(System::Object^ sender, System::EventArgs^ e) {
 			CoolFarm::Mercadoh^ mercado = gcnew CoolFarm::Mercadoh();
+			float precios = this->calcularPrecio();
+			precioBinario += precios;
+			precioHeap += precios;
+			precioAVL += precios;
+			precioSplay += precios;
+			precioEspanta += precios;
 			mercado->Show();
+		}
+
+		float calcularPrecio() {
+			float resul;
+			float precio = 1 + rand() % 20;
+			int rebaja = rand() % 2;
+			if (rebaja == 0) {
+				resul = -(precio / 100.0);
+			}
+			else {
+				resul = precio / 100.0;
+			}
+			return resul;
 		}
 
 		void plantar(arbol * arbol, System::String^ letra) {
