@@ -704,13 +704,29 @@ namespace CoolFarm {
 			noDinero();
 		}
 	};
-
+	
+	private: System::Void buttonComprarEspan_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (espantapajarosDispo > 0) {
+			dinero -= mercado->precioEspantapajaros;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
+			Espantapajaros* a = new Espantapajaros();
+			colaEspantapajaro.push(a);
+		}
+		else {
+			noEspanta();
+		}
+	};
+	
+	void noEspanta() {
+		MessageBox::Show("No puedes comprar más de dos espantapajaros");
+	}
 	void noDinero() {
 		MessageBox::Show("No tienes suficiente dinero");
 	}
 	void noFrutas() {
 		MessageBox::Show("No tienes suficiente frutas");
 	}
+
 	private: System::Void venderBi_Click(System::Object^ sender, System::EventArgs^ e) {
 		int cajita = Int32::Parse(this->textBoxBi->Text);
 		

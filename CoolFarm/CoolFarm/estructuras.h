@@ -17,6 +17,7 @@ queue<Heap*> colaHeap;
 queue<avl_tree*> colaAVL;
 queue<SplayTree*> colaSplay;
 queue<BinarioOrdenado*> colaBinarioOrdenado;
+queue<Espantapajaros*> colaEspantapajaro;
 
 using namespace std;
 // Settings Ovejas
@@ -49,6 +50,8 @@ float precioHeap = 130;
 float precioAVL = 350;
 float precioSplay = 600;
 float precioEspanta = 200;
+// Espantapajaros
+int espantapajarosDispo = 2;
 // Dinero Jugador
 //float dinero = 0;
 float dinero = 99999;
@@ -327,6 +330,8 @@ struct Granjero {
 
 
 };
+
+
 
 struct Mercado {
 

@@ -415,3 +415,14 @@ public:
         cout << endl;
     }
 };
+
+
+class Espantapajaros : public arbol {
+public:
+    int fila;
+    int columna;
+
+    void cobertura(int x, int j) {
+
+    }
+};
