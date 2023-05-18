@@ -305,24 +305,20 @@ namespace CoolFarm {
 		void DibujarMatriz() {
 			for (int i = 0; i < FILAS; i++) {
 				for (int j = 0; j < COLUMNAS; j++) {
-					if (i == granjero->columna && j == granjero->fila) {
-						botones[i, j]->BackColor = Color::Red;
-					}
 
-					else {
-						botones[i, j]->BackColor = Color::YellowGreen;
-					}
 					if (botones[i, j]->Text == "E") {
 						botones[i, j]->BackColor = Color::Gold;
 						botones[i, j + 1]->BackColor = Color::Gold;
 						botones[i, j - 1]->BackColor = Color::Gold;
 						botones[i + 1, j]->BackColor = Color::Gold;
 						botones[i + 1, j + 1]->BackColor = Color::Gold;
-						botones[i + 1, j + 1]->Text = "Color::Gold;";
 						botones[i + 1, j - 1]->BackColor = Color::Gold;
 						botones[i - 1, j]->BackColor = Color::Gold;
 						botones[i - 1, j + 1]->BackColor = Color::Gold;
 						botones[i - 1, j - 1]->BackColor = Color::Gold;
+					}
+					if (botones[i, j]->BackColor != Color::Gold) {
+						botones[i, j]->BackColor = Color::YellowGreen;
 					}
 					if (i == granjero->columna && j == granjero->fila) {
 						botones[i, j]->BackColor = Color::Red;
