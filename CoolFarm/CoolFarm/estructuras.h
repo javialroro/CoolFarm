@@ -51,7 +51,7 @@ float precioAVL = 350;
 float precioSplay = 600;
 float precioEspanta = 200;
 // Espantapajaros
-int espantapajarosDispo = 2;
+int espantapajarosDispo = 9;
 // Dinero Jugador
 //float dinero = 0;
 float dinero = 99999;

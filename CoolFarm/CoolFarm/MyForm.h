@@ -223,7 +223,7 @@ namespace CoolFarm {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::PapayaWhip;
+			this->BackColor = System::Drawing::Color::SaddleBrown;
 			this->ClientSize = System::Drawing::Size(1924, 958);
 			this->Controls->Add(this->buttonPonerEspanta);
 			this->Controls->Add(this->botonPlantarOrdenado);
@@ -308,14 +308,32 @@ namespace CoolFarm {
 
 					if (botones[i, j]->Text == "E") {
 						botones[i, j]->BackColor = Color::Gold;
-						botones[i, j + 1]->BackColor = Color::Gold;
-						botones[i, j - 1]->BackColor = Color::Gold;
-						botones[i + 1, j]->BackColor = Color::Gold;
-						botones[i + 1, j + 1]->BackColor = Color::Gold;
-						botones[i + 1, j - 1]->BackColor = Color::Gold;
-						botones[i - 1, j]->BackColor = Color::Gold;
-						botones[i - 1, j + 1]->BackColor = Color::Gold;
-						botones[i - 1, j - 1]->BackColor = Color::Gold;
+
+						// Verificar si las posiciones adyacentes existen
+						if (j + 1 < COLUMNAS) {
+							botones[i, j + 1]->BackColor = Color::Gold;
+						}
+						if (j - 1 >= 0) {
+							botones[i, j - 1]->BackColor = Color::Gold;
+						}
+						if (i + 1 < FILAS) {
+							botones[i + 1, j]->BackColor = Color::Gold;
+							if (j + 1 < COLUMNAS) {
+								botones[i + 1, j + 1]->BackColor = Color::Gold;
+							}
+							if (j - 1 >= 0) {
+								botones[i + 1, j - 1]->BackColor = Color::Gold;
+							}
+						}
+						if (i - 1 >= 0) {
+							botones[i - 1, j]->BackColor = Color::Gold;
+							if (j + 1 < COLUMNAS) {
+								botones[i - 1, j + 1]->BackColor = Color::Gold;
+							}
+							if (j - 1 >= 0) {
+								botones[i - 1, j - 1]->BackColor = Color::Gold;
+							}
+						}
 					}
 					if (botones[i, j]->BackColor != Color::Gold) {
 						botones[i, j]->BackColor = Color::YellowGreen;
