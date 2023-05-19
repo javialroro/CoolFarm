@@ -7,19 +7,20 @@ int x = 0;
 #include <cstdlib>
 #include "arboles.h"
 #include <queue>
+using namespace std;
+
 arbol * arbolesBinarios[10][10];
 
 
 queue<Heap*> colaHeap;
-
-
-
 queue<avl_tree*> colaAVL;
 queue<SplayTree*> colaSplay;
 queue<BinarioOrdenado*> colaBinarioOrdenado;
 queue<Espantapajaros*> colaEspantapajaro;
 
-using namespace std;
+// Datos Partida
+string nombrePartida;
+
 // Settings Ovejas
 int porcentOvejas;
 int aparicionOvejas;

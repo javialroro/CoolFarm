@@ -4,7 +4,6 @@
 #include <iostream>
 #include <fstream>
 
-
 namespace CoolFarm {
 
 	using namespace System;
@@ -61,6 +60,10 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Button^ botonPlantarSplay;
 	private: System::Windows::Forms::Button^ botonPlantarOrdenado;
 	private: System::Windows::Forms::Button^ buttonPonerEspanta;
+	private: System::Windows::Forms::Button^ buttonNuevaPartida;
+	private: System::Windows::Forms::Button^ buttonCargarPartida;
+	private: System::Windows::Forms::Button^ buttonPausarPartida;
+	private: System::Windows::Forms::Button^ buttonGuardarPartida;
 
 
 
@@ -88,6 +91,10 @@ namespace CoolFarm {
 			this->botonPlantarSplay = (gcnew System::Windows::Forms::Button());
 			this->botonPlantarOrdenado = (gcnew System::Windows::Forms::Button());
 			this->buttonPonerEspanta = (gcnew System::Windows::Forms::Button());
+			this->buttonNuevaPartida = (gcnew System::Windows::Forms::Button());
+			this->buttonCargarPartida = (gcnew System::Windows::Forms::Button());
+			this->buttonPausarPartida = (gcnew System::Windows::Forms::Button());
+			this->buttonGuardarPartida = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -136,7 +143,7 @@ namespace CoolFarm {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(1408, 100);
+			this->label1->Location = System::Drawing::Point(956, 872);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(30, 25);
@@ -220,12 +227,56 @@ namespace CoolFarm {
 			this->buttonPonerEspanta->UseVisualStyleBackColor = false;
 			this->buttonPonerEspanta->Click += gcnew System::EventHandler(this, &MyForm::buttonPonerEspanta_Click);
 			// 
+			// buttonNuevaPartida
+			// 
+			this->buttonNuevaPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->buttonNuevaPartida->Location = System::Drawing::Point(1466, 57);
+			this->buttonNuevaPartida->Name = L"buttonNuevaPartida";
+			this->buttonNuevaPartida->Size = System::Drawing::Size(364, 93);
+			this->buttonNuevaPartida->TabIndex = 11;
+			this->buttonNuevaPartida->Text = L"NUEVA PARTIDA";
+			this->buttonNuevaPartida->UseVisualStyleBackColor = false;
+			// 
+			// buttonCargarPartida
+			// 
+			this->buttonCargarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->buttonCargarPartida->Location = System::Drawing::Point(1466, 184);
+			this->buttonCargarPartida->Name = L"buttonCargarPartida";
+			this->buttonCargarPartida->Size = System::Drawing::Size(364, 93);
+			this->buttonCargarPartida->TabIndex = 12;
+			this->buttonCargarPartida->Text = L"CARGAR PARTIDA";
+			this->buttonCargarPartida->UseVisualStyleBackColor = false;
+			// 
+			// buttonPausarPartida
+			// 
+			this->buttonPausarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->buttonPausarPartida->Location = System::Drawing::Point(1466, 310);
+			this->buttonPausarPartida->Name = L"buttonPausarPartida";
+			this->buttonPausarPartida->Size = System::Drawing::Size(364, 93);
+			this->buttonPausarPartida->TabIndex = 13;
+			this->buttonPausarPartida->Text = L"PAUSAR PARTIDA";
+			this->buttonPausarPartida->UseVisualStyleBackColor = false;
+			// 
+			// buttonGuardarPartida
+			// 
+			this->buttonGuardarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->buttonGuardarPartida->Location = System::Drawing::Point(1466, 434);
+			this->buttonGuardarPartida->Name = L"buttonGuardarPartida";
+			this->buttonGuardarPartida->Size = System::Drawing::Size(364, 93);
+			this->buttonGuardarPartida->TabIndex = 14;
+			this->buttonGuardarPartida->Text = L"GUARDAR PARTIDA";
+			this->buttonGuardarPartida->UseVisualStyleBackColor = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::MediumSlateBlue;
 			this->ClientSize = System::Drawing::Size(1924, 958);
+			this->Controls->Add(this->buttonGuardarPartida);
+			this->Controls->Add(this->buttonPausarPartida);
+			this->Controls->Add(this->buttonCargarPartida);
+			this->Controls->Add(this->buttonNuevaPartida);
 			this->Controls->Add(this->buttonPonerEspanta);
 			this->Controls->Add(this->botonPlantarOrdenado);
 			this->Controls->Add(this->botonPlantarSplay);
@@ -478,6 +529,7 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 		colaBinarioOrdenado.pop();
 	}
 }
+
 private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (colaEspantapajaro.empty()) {
 		MessageBox::Show("No tienes espantapajaros");
@@ -495,5 +547,7 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 	}
 }
 
+
 };
 }
+
