@@ -8,7 +8,6 @@ int x = 0;
 #include "arboles.h"
 #include <queue>
 using namespace std;
-
 arbol * arbolesBinarios[10][10];
 
 

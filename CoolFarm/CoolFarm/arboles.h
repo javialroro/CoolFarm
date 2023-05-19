@@ -3,12 +3,19 @@
 #include<cstdio>
 #include<sstream>
 #include<algorithm>
+#include <thread>
+#include <Windows.h>
+
 #define pow2(n) (1 << (n))
 using namespace std;
+using namespace System::Windows::Forms;
 
 class arbol {
+public:
     int fila;
     int columna;
+    string letra;
+    bool ejecutando;
 };
 
 
@@ -36,6 +43,8 @@ public:
     avl_tree() {
         r = NULL;
     }
+
+
 };
 int avl_tree::height(avl* t) {
     int h = 0;
@@ -298,17 +307,23 @@ public:
         }
     }
 };
+struct Node {
+    int value;
+    Node* left;
+    Node* right;
 
+    Node(int val) : value(val), left(nullptr), right(nullptr) {}
+};
 
 class BinarioOrdenado : public arbol {
-private:
-    struct Node {
-        int value;
-        Node* left;
-        Node* right;
+public:
+    
+    BinarioOrdenado() {
+		root = nullptr;
+        //crecer = thread(&BinarioOrdenado::generateFruits, this);
+	}
 
-        Node(int val) : value(val), left(nullptr), right(nullptr) {}
-    };
+    
 
     Node* root;
 
