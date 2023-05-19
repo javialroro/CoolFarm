@@ -88,7 +88,7 @@ namespace CoolFarm {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -149,6 +149,7 @@ namespace CoolFarm {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label1->Location = System::Drawing::Point(27, 34);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(248, 25);
@@ -158,6 +159,7 @@ namespace CoolFarm {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label2->Location = System::Drawing::Point(729, 34);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(116, 25);
@@ -167,6 +169,7 @@ namespace CoolFarm {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label3->Location = System::Drawing::Point(75, 109);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(244, 25);
@@ -176,6 +179,7 @@ namespace CoolFarm {
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label4->Location = System::Drawing::Point(75, 148);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(234, 25);
@@ -185,6 +189,7 @@ namespace CoolFarm {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label5->Location = System::Drawing::Point(75, 186);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(217, 25);
@@ -194,6 +199,7 @@ namespace CoolFarm {
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label6->Location = System::Drawing::Point(75, 223);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(231, 25);
@@ -203,6 +209,7 @@ namespace CoolFarm {
 			// labelDinero
 			// 
 			this->labelDinero->AutoSize = true;
+			this->labelDinero->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->labelDinero->Location = System::Drawing::Point(850, 34);
 			this->labelDinero->Name = L"labelDinero";
 			this->labelDinero->Size = System::Drawing::Size(0, 25);
@@ -212,6 +219,7 @@ namespace CoolFarm {
 			// cantidadSp
 			// 
 			this->cantidadSp->AutoSize = true;
+			this->cantidadSp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->cantidadSp->Location = System::Drawing::Point(326, 223);
 			this->cantidadSp->Name = L"cantidadSp";
 			this->cantidadSp->Size = System::Drawing::Size(0, 25);
@@ -221,6 +229,7 @@ namespace CoolFarm {
 			// cantidadAvl
 			// 
 			this->cantidadAvl->AutoSize = true;
+			this->cantidadAvl->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->cantidadAvl->Location = System::Drawing::Point(326, 186);
 			this->cantidadAvl->Name = L"cantidadAvl";
 			this->cantidadAvl->Size = System::Drawing::Size(0, 25);
@@ -230,6 +239,7 @@ namespace CoolFarm {
 			// CantidadHe
 			// 
 			this->CantidadHe->AutoSize = true;
+			this->CantidadHe->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->CantidadHe->Location = System::Drawing::Point(326, 148);
 			this->CantidadHe->Name = L"CantidadHe";
 			this->CantidadHe->Size = System::Drawing::Size(0, 25);
@@ -239,6 +249,7 @@ namespace CoolFarm {
 			// cantidadBi
 			// 
 			this->cantidadBi->AutoSize = true;
+			this->cantidadBi->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->cantidadBi->Location = System::Drawing::Point(326, 109);
 			this->cantidadBi->Name = L"cantidadBi";
 			this->cantidadBi->Size = System::Drawing::Size(0, 25);
@@ -248,6 +259,7 @@ namespace CoolFarm {
 			// label7
 			// 
 			this->label7->AutoSize = true;
+			this->label7->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label7->Location = System::Drawing::Point(796, 519);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(231, 25);
@@ -257,6 +269,7 @@ namespace CoolFarm {
 			// label8
 			// 
 			this->label8->AutoSize = true;
+			this->label8->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label8->Location = System::Drawing::Point(796, 481);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(217, 25);
@@ -266,6 +279,7 @@ namespace CoolFarm {
 			// label9
 			// 
 			this->label9->AutoSize = true;
+			this->label9->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label9->Location = System::Drawing::Point(796, 444);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(234, 25);
@@ -275,6 +289,7 @@ namespace CoolFarm {
 			// label10
 			// 
 			this->label10->AutoSize = true;
+			this->label10->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label10->Location = System::Drawing::Point(796, 405);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(244, 25);
@@ -284,6 +299,7 @@ namespace CoolFarm {
 			// label11
 			// 
 			this->label11->AutoSize = true;
+			this->label11->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label11->Location = System::Drawing::Point(26, 327);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(165, 25);
@@ -293,6 +309,7 @@ namespace CoolFarm {
 			// label12
 			// 
 			this->label12->AutoSize = true;
+			this->label12->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label12->Location = System::Drawing::Point(728, 325);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(262, 25);
@@ -302,6 +319,7 @@ namespace CoolFarm {
 			// label13
 			// 
 			this->label13->AutoSize = true;
+			this->label13->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label13->Location = System::Drawing::Point(18, 594);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(119, 25);
@@ -321,6 +339,7 @@ namespace CoolFarm {
 			// label14
 			// 
 			this->label14->AutoSize = true;
+			this->label14->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label14->Location = System::Drawing::Point(82, 656);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(135, 25);
@@ -330,6 +349,7 @@ namespace CoolFarm {
 			// label15
 			// 
 			this->label15->AutoSize = true;
+			this->label15->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label15->Location = System::Drawing::Point(98, 691);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(24, 25);
@@ -339,6 +359,7 @@ namespace CoolFarm {
 			// labelPrecioBi
 			// 
 			this->labelPrecioBi->AutoSize = true;
+			this->labelPrecioBi->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->labelPrecioBi->Location = System::Drawing::Point(128, 691);
 			this->labelPrecioBi->Name = L"labelPrecioBi";
 			this->labelPrecioBi->Size = System::Drawing::Size(0, 25);
@@ -348,6 +369,7 @@ namespace CoolFarm {
 			// labelPrecioHe
 			// 
 			this->labelPrecioHe->AutoSize = true;
+			this->labelPrecioHe->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->labelPrecioHe->Location = System::Drawing::Point(394, 691);
 			this->labelPrecioHe->Name = L"labelPrecioHe";
 			this->labelPrecioHe->Size = System::Drawing::Size(0, 25);
@@ -357,6 +379,7 @@ namespace CoolFarm {
 			// label17
 			// 
 			this->label17->AutoSize = true;
+			this->label17->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label17->Location = System::Drawing::Point(364, 691);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(24, 25);
@@ -366,6 +389,7 @@ namespace CoolFarm {
 			// label18
 			// 
 			this->label18->AutoSize = true;
+			this->label18->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label18->Location = System::Drawing::Point(350, 656);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(119, 25);
@@ -375,6 +399,7 @@ namespace CoolFarm {
 			// labelPrecioAVL
 			// 
 			this->labelPrecioAVL->AutoSize = true;
+			this->labelPrecioAVL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->labelPrecioAVL->Location = System::Drawing::Point(648, 691);
 			this->labelPrecioAVL->Name = L"labelPrecioAVL";
 			this->labelPrecioAVL->Size = System::Drawing::Size(0, 25);
@@ -384,6 +409,7 @@ namespace CoolFarm {
 			// label20
 			// 
 			this->label20->AutoSize = true;
+			this->label20->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label20->Location = System::Drawing::Point(618, 691);
 			this->label20->Name = L"label20";
 			this->label20->Size = System::Drawing::Size(24, 25);
@@ -393,6 +419,7 @@ namespace CoolFarm {
 			// label21
 			// 
 			this->label21->AutoSize = true;
+			this->label21->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label21->Location = System::Drawing::Point(603, 656);
 			this->label21->Name = L"label21";
 			this->label21->Size = System::Drawing::Size(108, 25);
@@ -402,6 +429,7 @@ namespace CoolFarm {
 			// labelPrecioSp
 			// 
 			this->labelPrecioSp->AutoSize = true;
+			this->labelPrecioSp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->labelPrecioSp->Location = System::Drawing::Point(888, 691);
 			this->labelPrecioSp->Name = L"labelPrecioSp";
 			this->labelPrecioSp->Size = System::Drawing::Size(0, 25);
@@ -411,6 +439,7 @@ namespace CoolFarm {
 			// label23
 			// 
 			this->label23->AutoSize = true;
+			this->label23->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label23->Location = System::Drawing::Point(858, 691);
 			this->label23->Name = L"label23";
 			this->label23->Size = System::Drawing::Size(24, 25);
@@ -420,6 +449,7 @@ namespace CoolFarm {
 			// label24
 			// 
 			this->label24->AutoSize = true;
+			this->label24->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label24->Location = System::Drawing::Point(843, 656);
 			this->label24->Name = L"label24";
 			this->label24->Size = System::Drawing::Size(122, 25);
@@ -429,6 +459,7 @@ namespace CoolFarm {
 			// labelPrecioEspanta
 			// 
 			this->labelPrecioEspanta->AutoSize = true;
+			this->labelPrecioEspanta->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->labelPrecioEspanta->Location = System::Drawing::Point(1136, 691);
 			this->labelPrecioEspanta->Name = L"labelPrecioEspanta";
 			this->labelPrecioEspanta->Size = System::Drawing::Size(0, 25);
@@ -438,6 +469,7 @@ namespace CoolFarm {
 			// label26
 			// 
 			this->label26->AutoSize = true;
+			this->label26->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label26->Location = System::Drawing::Point(1106, 691);
 			this->label26->Name = L"label26";
 			this->label26->Size = System::Drawing::Size(24, 25);
@@ -447,6 +479,7 @@ namespace CoolFarm {
 			// label27
 			// 
 			this->label27->AutoSize = true;
+			this->label27->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label27->Location = System::Drawing::Point(1090, 656);
 			this->label27->Name = L"label27";
 			this->label27->Size = System::Drawing::Size(162, 25);
@@ -575,7 +608,7 @@ namespace CoolFarm {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::LightSkyBlue;
+			this->BackColor = System::Drawing::Color::MediumPurple;
 			this->ClientSize = System::Drawing::Size(1360, 838);
 			this->Controls->Add(this->venderSp);
 			this->Controls->Add(this->venderAVL);
@@ -630,29 +663,29 @@ namespace CoolFarm {
 			this->PerformLayout();
 
 		}
-	#pragma endregion
-		private:  static String^ toSystemString(string str) {
-			return gcnew String(str.c_str());
-		}
-		private: System::Void venderTodoButt_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (frutosBinario > 0)
-				dinero += mercado->obtenerPrecioFrutosBinario(frutosBinario);
-			if (frutosHeap > 0)
-				dinero += mercado->obtenerPrecioFrutosHeap(frutosHeap);
-			if (frutosAVL > 0)
-				dinero += mercado->obtenerPrecioFrutosAVL(frutosAVL);
-			if (frutosSplay > 0)
-				dinero += mercado->obtenerPrecioFrutosSplay(frutosSplay);
-			frutosBinario = 0;
-			frutosHeap = 0;
-			frutosAVL = 0;
-			frutosSplay = 0;
-			this->cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
-			this->CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
-			this->cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
-			this->cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
-			this->labelDinero->Text = this->toSystemString(to_string(dinero));;
-		}
+#pragma endregion
+	private:  static String^ toSystemString(string str) {
+		return gcnew String(str.c_str());
+	}
+	private: System::Void venderTodoButt_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (frutosBinario > 0)
+			dinero += mercado->obtenerPrecioFrutosBinario(frutosBinario);
+		if (frutosHeap > 0)
+			dinero += mercado->obtenerPrecioFrutosHeap(frutosHeap);
+		if (frutosAVL > 0)
+			dinero += mercado->obtenerPrecioFrutosAVL(frutosAVL);
+		if (frutosSplay > 0)
+			dinero += mercado->obtenerPrecioFrutosSplay(frutosSplay);
+		frutosBinario = 0;
+		frutosHeap = 0;
+		frutosAVL = 0;
+		frutosSplay = 0;
+		this->cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
+		this->CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
+		this->cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
+		this->cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
+		this->labelDinero->Text = this->toSystemString(to_string(dinero));;
+	}
 	private: System::Void buttonComprarBi_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (dinero >= mercado->precioArbBinario) {
 			dinero -= mercado->precioArbBinario;
@@ -698,20 +731,20 @@ namespace CoolFarm {
 		}
 	};
 
-	
-	void noEspanta() {
-		MessageBox::Show("No puedes comprar más de dos espantapajaros");
-	}
-	void noDinero() {
-		MessageBox::Show("No tienes suficiente dinero");
-	}
-	void noFrutas() {
-		MessageBox::Show("No tienes suficiente frutas");
-	}
+
+		   void noEspanta() {
+			   MessageBox::Show("No puedes comprar más de dos espantapajaros");
+		   }
+		   void noDinero() {
+			   MessageBox::Show("No tienes suficiente dinero");
+		   }
+		   void noFrutas() {
+			   MessageBox::Show("No tienes suficiente frutas");
+		   }
 
 	private: System::Void venderBi_Click(System::Object^ sender, System::EventArgs^ e) {
 		int cajita = Int32::Parse(this->textBoxBi->Text);
-		
+
 		if (frutosBinario >= cajita) {
 			dinero += mercado->obtenerPrecioFrutosBinario(cajita);
 			frutosBinario -= cajita;
@@ -773,5 +806,5 @@ namespace CoolFarm {
 			noEspanta();
 		}
 	}
-};
+	};
 };

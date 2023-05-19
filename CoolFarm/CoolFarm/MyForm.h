@@ -2,6 +2,7 @@
 
 #include "Settings.h"
 #include <iostream>
+#include <fstream>
 
 
 namespace CoolFarm {
@@ -144,7 +145,7 @@ namespace CoolFarm {
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::Color::NavajoWhite;
+			this->button1->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->button1->Location = System::Drawing::Point(21, 31);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(148, 53);
@@ -155,7 +156,7 @@ namespace CoolFarm {
 			// 
 			// abrirMercadoButt
 			// 
-			this->abrirMercadoButt->BackColor = System::Drawing::Color::NavajoWhite;
+			this->abrirMercadoButt->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->abrirMercadoButt->Location = System::Drawing::Point(21, 100);
 			this->abrirMercadoButt->Name = L"abrirMercadoButt";
 			this->abrirMercadoButt->Size = System::Drawing::Size(148, 50);
@@ -166,7 +167,7 @@ namespace CoolFarm {
 			// 
 			// botonPlantarHeap
 			// 
-			this->botonPlantarHeap->BackColor = System::Drawing::Color::NavajoWhite;
+			this->botonPlantarHeap->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->botonPlantarHeap->Location = System::Drawing::Point(21, 455);
 			this->botonPlantarHeap->Name = L"botonPlantarHeap";
 			this->botonPlantarHeap->Size = System::Drawing::Size(222, 50);
@@ -177,7 +178,7 @@ namespace CoolFarm {
 			// 
 			// botonPlantarAVL
 			// 
-			this->botonPlantarAVL->BackColor = System::Drawing::Color::NavajoWhite;
+			this->botonPlantarAVL->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->botonPlantarAVL->Location = System::Drawing::Point(21, 533);
 			this->botonPlantarAVL->Name = L"botonPlantarAVL";
 			this->botonPlantarAVL->Size = System::Drawing::Size(222, 50);
@@ -188,7 +189,7 @@ namespace CoolFarm {
 			// 
 			// botonPlantarSplay
 			// 
-			this->botonPlantarSplay->BackColor = System::Drawing::Color::NavajoWhite;
+			this->botonPlantarSplay->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->botonPlantarSplay->Location = System::Drawing::Point(21, 608);
 			this->botonPlantarSplay->Name = L"botonPlantarSplay";
 			this->botonPlantarSplay->Size = System::Drawing::Size(222, 50);
@@ -199,7 +200,7 @@ namespace CoolFarm {
 			// 
 			// botonPlantarOrdenado
 			// 
-			this->botonPlantarOrdenado->BackColor = System::Drawing::Color::NavajoWhite;
+			this->botonPlantarOrdenado->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->botonPlantarOrdenado->Location = System::Drawing::Point(21, 680);
 			this->botonPlantarOrdenado->Name = L"botonPlantarOrdenado";
 			this->botonPlantarOrdenado->Size = System::Drawing::Size(222, 67);
@@ -210,7 +211,7 @@ namespace CoolFarm {
 			// 
 			// buttonPonerEspanta
 			// 
-			this->buttonPonerEspanta->BackColor = System::Drawing::Color::NavajoWhite;
+			this->buttonPonerEspanta->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->buttonPonerEspanta->Location = System::Drawing::Point(21, 770);
 			this->buttonPonerEspanta->Name = L"buttonPonerEspanta";
 			this->buttonPonerEspanta->Size = System::Drawing::Size(222, 72);
@@ -223,7 +224,7 @@ namespace CoolFarm {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::SaddleBrown;
+			this->BackColor = System::Drawing::Color::MediumSlateBlue;
 			this->ClientSize = System::Drawing::Size(1924, 958);
 			this->Controls->Add(this->buttonPonerEspanta);
 			this->Controls->Add(this->botonPlantarOrdenado);
@@ -341,6 +342,7 @@ namespace CoolFarm {
 					if (i == granjero->columna && j == granjero->fila) {
 						botones[i, j]->BackColor = Color::Red;
 					}
+					
 				}
 			}
 		}
@@ -412,25 +414,7 @@ namespace CoolFarm {
 			arbolesBinarios[granjero->columna][granjero->fila] = arbol;
 			botones[granjero->columna, granjero->fila]->Text = letra;
 
-
 		}
-		/*void colocarEspanta(arbol* arbol) {
-			for (int i = 0; i < FILAS; i++) {
-				for (int j = 0; j < COLUMNAS; j++) {
-					if (i == granjero->columna && j == granjero->fila) {
-						botones[i, j-1]->BackColor = Color::Gold;
-						botones[i, j]->BackColor = Color::Gold;
-						botones[i, j+1]->BackColor = Color::Gold;
-						botones[i+1, j-1]->BackColor = Color::Gold;
-						botones[i+1, j]->BackColor = Color::Gold;
-						botones[i+1, j+1]->BackColor = Color::Gold;
-						botones[i-1, j-1]->BackColor = Color::Gold;
-						botones[i-1, j]->BackColor = Color::Gold;
-						botones[i-1, j+1]->BackColor = Color::Gold;
-					}
-				}
-			}
-		}*/
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (colaHeap.empty()) {
