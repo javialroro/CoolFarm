@@ -30,6 +30,9 @@
     <ClCompile Include="arboles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dist\jsoncpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -45,6 +48,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="arboles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dist\json\json.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dist\json\json-forwards.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuscarPartida.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

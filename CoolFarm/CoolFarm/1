@@ -1,0 +1,167 @@
+{
+	"Dinero" : 99469.0,
+	"EspantapajarosDispo" : 0,
+	"FrutosAVL" : 2,
+	"FrutosBinario" : 7,
+	"FrutosHeap" : 74,
+	"FrutosSplay" : 17,
+	"Matriz" : 
+	[
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			{
+				"columna" : 1,
+				"ejecutando" : false,
+				"fila" : 1,
+				"letra" : "E"
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"columna" : 1,
+				"ejecutando" : false,
+				"fila" : 8,
+				"letra" : "E"
+			},
+			null
+		],
+		[
+			null,
+			null,
+			{
+				"columna" : 2,
+				"ejecutando" : true,
+				"fila" : 2,
+				"letra" : "H"
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		]
+	],
+	"NombrePartida" : 1,
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 100.01999664306641,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
+	"SettingAparicionCuervos" : 0,
+	"SettingAparicionOveja" : 0,
+	"SettingAparicionPlagas" : 0,
+	"SettingPorcentCuervos" : 0,
+	"SettingPorcentOveja" : 0,
+	"SettingPorcentPlagas" : 0,
+	"SettingTiempoCuervos" : 0,
+	"SettingTiempoFrutosCuervos" : 0,
+	"SettingTiempoFrutosOveja" : 0,
+	"SettingTiempoOveja" : 0,
+	"SettingTiempoPlagas" : 0,
+	"SettingfrutosCuervos" : 0,
+	"SettingfrutosOveja" : 0,
+	"SettingsMercadoAparicion" : 0,
+	"SettingsMercadoApertura" : 0
+}

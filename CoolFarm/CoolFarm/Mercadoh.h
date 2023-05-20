@@ -1,5 +1,6 @@
 #pragma once
-#include "estructuras.h"
+
+#include "BuscarPartida.h"
 
 namespace CoolFarm {
 

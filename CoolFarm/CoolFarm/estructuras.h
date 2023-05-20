@@ -7,6 +7,7 @@ int x = 0;
 #include <cstdlib>
 #include "arboles.h"
 #include <queue>
+
 using namespace std;
 arbol * arbolesBinarios[10][10];
 
@@ -18,7 +19,9 @@ queue<BinarioOrdenado*> colaBinarioOrdenado;
 queue<Espantapajaros*> colaEspantapajaro;
 
 // Datos Partida
-string nombrePartida;
+int nombrePartida;
+bool isRunning = false;
+int contNombrePar = 0;
 
 // Settings Ovejas
 int porcentOvejas;
