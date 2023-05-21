@@ -1,10 +1,10 @@
 {
 	"ColaAVL" : 0,
-	"ColaBinario" : 0,
+	"ColaBinario" : 3,
 	"ColaEspanta" : 0,
 	"ColaHEAP" : 0,
-	"ColaSplay" : 2,
-	"Dinero" : 97799.0,
+	"ColaSplay" : 0,
+	"Dinero" : 99099.0,
 	"EspantapajarosDispo" : 0,
 	"FrutosAVL" : 2,
 	"FrutosBinario" : 7,
@@ -14,8 +14,8 @@
 	[
 		[
 			{
-				"ejecutando" : false,
-				"letra" : "S"
+				"ejecutando" : true,
+				"letra" : "O"
 			},
 			null,
 			null,
@@ -44,7 +44,10 @@
 			null,
 			null,
 			null,
-			null,
+			{
+				"ejecutando" : true,
+				"letra" : "O"
+			},
 			{
 				"ejecutando" : false,
 				"letra" : "E"
@@ -142,7 +145,6 @@
 			null
 		]
 	],
-	"NombrePartida" : 1,
 	"PrecioAVL" : 350.01998901367188,
 	"PrecioBinario" : 100.01999664306641,
 	"PrecioEspanta" : 200.02000427246094,
@@ -162,5 +164,6 @@
 	"SettingfrutosCuervos" : 0,
 	"SettingfrutosOveja" : 0,
 	"SettingsMercadoAparicion" : 0,
-	"SettingsMercadoApertura" : 0
+	"SettingsMercadoApertura" : 0,
+	"tmpNombrePartida" : "partida1.json"
 }

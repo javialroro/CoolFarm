@@ -143,17 +143,11 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="BuscarPartida.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Settings.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BuscarPartida.resx">
-      <DependentUpon>BuscarPartida.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mercadoh.resx">
       <DependentUpon>Mercadoh.h</DependentUpon>
     </EmbeddedResource>

@@ -20,6 +20,7 @@ queue<Espantapajaros*> colaEspantapajaro;
 
 // Datos Partida
 int nombrePartida;
+string tmpnombrePartida;
 bool isRunning = false;
 int contNombrePar = 0;
 
