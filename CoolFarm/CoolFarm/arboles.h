@@ -10,19 +10,31 @@
 using namespace std;
 using namespace System::Windows::Forms;
 
+
+// Frutos por Arbol
+int frutosBinario = 0;
+int frutosHeap = 0;
+int frutosAVL = 0;
+int frutosSplay = 0;
+
 class arbol {
 public:
+    string tipo;
     int fila;
     int columna;
-    string letra;
+    int cantidadFrutosA=0;
+    int cantidadFrutosVendidos=0;
+    double montoTotal=0.0;
+    int cantidadFrutosPerdidos=0;
     bool ejecutando;
+    
 };
 
 
 
 
 struct avl  {
-    int d;
+    double d;
     struct avl* l;
     struct avl* r;
 }*r;
@@ -35,8 +47,8 @@ public:
     avl* lr_rotat(avl*);
     avl* rl_rotat(avl*);
     avl* balance(avl*);
-    avl* insert(avl*, int);
-    void show(avl*, int);
+    avl* insert(avl*, double);
+    void show(avl*, double);
     void inorder(avl*);
     void preorder(avl*);
     void postorder(avl*);
@@ -108,12 +120,16 @@ avl* avl_tree::balance(avl* t) {
     }
     return t;
 }
-avl* avl_tree::insert(avl* r, int v) {
+avl* avl_tree::insert(avl* r, double v) {
+    
     if (r == NULL) {
         r = new avl;
         r->d = v;
         r->l = NULL;
         r->r = NULL;
+        cantidadFrutosA++;
+        frutosAVL++;
+        montoTotal += v;
         return r;
     }
     else if (v < r->d) {
@@ -125,7 +141,7 @@ avl* avl_tree::insert(avl* r, int v) {
         r = balance(r);
     } return r;
 }
-void avl_tree::show(avl* p, int l) {
+void avl_tree::show(avl* p, double l) {
     int i;
     if (p != NULL) {
         show(p->r, l + 1);
@@ -148,7 +164,7 @@ void avl_tree::inorder(avl* t) {
 
 struct s//node declaration
 {
-    int k;
+    double k;
     s* lch;
     s* rch;
 };
@@ -169,7 +185,7 @@ public:
         k1->lch = k2;
         return k1;
     }
-    s* Splay(int key, s* root)
+    s* Splay(double key, s* root)
     {
         if (!root)
             return NULL;
@@ -218,7 +234,7 @@ public:
         root->rch = header.lch;
         return root;
     }
-    s* New_Node(int key)
+    s* New_Node(double key)
     {
         s* p_node = new s;
         if (!p_node)
@@ -230,8 +246,11 @@ public:
         p_node->lch = p_node->rch = NULL;
         return p_node;
     }
-    s* Insert(int key, s* root)
+    s* Insert(double key, s* root)
     {
+        cantidadFrutosA++;
+        frutosSplay++;
+        montoTotal+=key;
         static s* p_node = NULL;
         if (!p_node)
             p_node = New_Node(key);
@@ -263,7 +282,7 @@ public:
         p_node = NULL;
         return root;
     }
-    s* Delete(int key, s* root)//delete node
+    s* Delete(double key, s* root)//delete node
     {
         s* temp;
         if (!root)//if tree is empty
@@ -288,7 +307,7 @@ public:
             return root;
         }
     }
-    s* Search(int key, s* root)//seraching
+    s* Search(double key, s* root)//seraching
     {
         return Splay(key, root);
     }
@@ -308,11 +327,11 @@ public:
     }
 };
 struct Node {
-    int value;
+    double value;
     Node* left;
     Node* right;
 
-    Node(int val) : value(val), left(nullptr), right(nullptr) {}
+    Node(double val) : value(val), left(nullptr), right(nullptr) {}
 };
 
 class BinarioOrdenado : public arbol {
@@ -320,14 +339,16 @@ public:
     
     BinarioOrdenado() {
 		root = nullptr;
-        //crecer = thread(&BinarioOrdenado::generateFruits, this);
 	}
 
     
 
     Node* root;
 
-    Node* insertNode(Node* node, int value) {
+    Node* insertNode(Node* node, double value) {
+        cantidadFrutosA++;
+        frutosBinario++;
+        montoTotal += value;
         if (node == nullptr) {
             node = new Node(value);
         }
@@ -365,16 +386,16 @@ public:
 
 };
 
-class Heap : public arbol{
+class Heap : public arbol {
 public:
-    int* arr;
+    double* arr;
     int tamano;
     int tamanoMaximo;
 
     Heap(int tamanoMaximo) {
         this->tamanoMaximo = tamanoMaximo;
         this->tamano = 0;
-        arr = new int[tamanoMaximo];
+        arr = new double[tamanoMaximo];
     }
 
     void heapify(int i) {
@@ -388,21 +409,24 @@ public:
             mayor = der;
         }
         if (mayor != i) {
-            swap(arr[i], arr[mayor]);
+            std::swap(arr[i], arr[mayor]);
             heapify(mayor);
         }
     }
 
-    void insertar(int val) {
+    void insertar(double val) {
         if (tamano == tamanoMaximo) {
-            cout << "Error: Heap lleno" << endl;
+            std::cout << "Error: Heap lleno" << std::endl;
             return;
         }
         arr[tamano] = val;
         int i = tamano;
         tamano++;
+        cantidadFrutosA++;
+        frutosHeap++;
+        montoTotal += val;
         while (i > 0 && arr[(i - 1) / 2] < arr[i]) {
-            swap(arr[(i - 1) / 2], arr[i]);
+            std::swap(arr[(i - 1) / 2], arr[i]);
             i = (i - 1) / 2;
         }
     }
@@ -421,13 +445,13 @@ public:
         int nodosNivel = 1;
         for (int i = 0; i < tamano; i++) {
             if (i == nodosNivel) {
-                cout << endl;
+                std::cout << std::endl;
                 nivel++;
                 nodosNivel += (1 << nivel);
             }
-            cout << arr[i] << " ";
+            std::cout << arr[i] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 };
 

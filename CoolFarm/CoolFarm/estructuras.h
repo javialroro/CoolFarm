@@ -21,7 +21,7 @@ queue<Espantapajaros*> colaEspantapajaro;
 // Datos Partida
 int nombrePartida;
 string tmpnombrePartida;
-bool isRunning = false;
+bool isRunning = true;
 int contNombrePar = 0;
 
 // Settings Ovejas
@@ -43,16 +43,30 @@ int tiempoAparicionPlagas;
 // Settings Mercado
 int mercadoAparicion;
 int mercadoApertura;
-// Frutos por Arbol
-int frutosBinario = 7;
-int frutosHeap = 74;
-int frutosAVL = 2;
-int frutosSplay = 17;
+
 // Precios Mercado
 float precioBinario = 100;
+int creceBinario = 200;
+int cosechaB = 1;
+int tiempoCosechaB = 20;
+
 float precioHeap = 130;
+int creceH = 150;
+int cosechaH = 2;
+int tiempoCosechaH = 35;
+
+
 float precioAVL = 350;
+int creceA = 500;
+int cosechaA = 1;
+int tiempoCosechaA = 60;
+
 float precioSplay = 600;
+int creceS = 500;
+int cosechaS = 2;
+int tiempoCosechaS = 60;
+
+
 float precioEspanta = 200;
 // Espantapajaros
 int espantapajarosDispo = 2;

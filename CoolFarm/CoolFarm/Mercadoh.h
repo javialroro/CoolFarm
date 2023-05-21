@@ -713,6 +713,7 @@ namespace CoolFarm {
 	private: System::Void buttonComprarAVL_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (dinero >= mercado->precioArbAVL) {
 			dinero -= mercado->precioArbAVL;
+			this->labelDinero->Text = this->toSystemString(to_string(dinero));
 			avl_tree* a = new avl_tree();
 			colaAVL.push(a);
 		}

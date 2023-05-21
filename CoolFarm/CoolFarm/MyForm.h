@@ -8,6 +8,7 @@
 #include <string>
 #include <locale>
 #include <msclr/marshal_cppstd.h>
+#include <random>
 
 
 namespace CoolFarm {
@@ -394,11 +395,13 @@ namespace CoolFarm {
 			Point pos = (Point)boton->Tag;
 			int fila = pos.X;
 			int columna = pos.Y;
-			this->label1->Text = "Boton " + (fila + 1) + ", " + (columna + 1);
-
-			// Aquí puedes acceder a la matriz de árboles binarios
-			// usando las coordenadas fila y columna.
-			// Por ejemplo:
+			if (arbolesBinarios[fila][columna]!=NULL) {
+				MessageBox::Show("Ubicacion: "+ arbolesBinarios[fila][columna]->fila+","+ arbolesBinarios[fila][columna]->columna+
+					" Cantidad de frutos: " + arbolesBinarios[fila][columna]->cantidadFrutosA+ " Monto total: "+ arbolesBinarios
+				[fila][columna]->montoTotal+ " Vendidos: "+ arbolesBinarios[fila][columna]->cantidadFrutosVendidos+ " Perdidos: "
+				+ arbolesBinarios[fila][columna]->cantidadFrutosPerdidos);
+			}
+			
 		}
 
 
@@ -522,6 +525,11 @@ namespace CoolFarm {
 
 		}
 
+		BinarioOrdenado* BTemp = new BinarioOrdenado();
+		Heap* HTemp = new Heap(10);
+		avl_tree* AVTemp = new avl_tree();
+		SplayTree* STemp = new SplayTree();
+
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (colaHeap.empty()) {
 			MessageBox::Show("No hay arboles de este tipo");
@@ -531,8 +539,14 @@ namespace CoolFarm {
 			return;
 		}
 		else{
-			arbol * a = colaHeap.front();
-			plantar(a, "H");
+			Heap * a = colaHeap.front();
+			HTemp = a;
+			System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadHeap);
+			System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
+			numHilos++;
+			hilos[numHilos - 1] = thread;
+			thread->Start();
+			plantar(a, "h");
 			colaHeap.pop();
 		}
 	}
@@ -548,8 +562,14 @@ private: System::Void botonPlantarAVL_Click(System::Object^ sender, System::Even
 		return;
 	}
 	else {
-		arbol * a = colaAVL.front();
-		plantar(a, "A");
+		avl_tree * a = colaAVL.front();
+		AVTemp = a;
+		System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadAVL);
+		System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
+		numHilos++;
+		hilos[numHilos - 1] = thread;
+		thread->Start();
+		plantar(a, "a");
 		colaAVL.pop();
 	}
 }
@@ -563,12 +583,18 @@ private: System::Void botonPlantarSplay_Click(System::Object^ sender, System::Ev
 		return;
 	}
 	else {
-		arbol * a = colaSplay.front();
-		plantar(a, "S");
+		SplayTree * a = colaSplay.front();
+		STemp = a;
+		System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadSplay);
+		System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
+		numHilos++;
+		hilos[numHilos - 1] = thread;
+		thread->Start();
+		plantar(a, "s");
 		colaSplay.pop();
 	}
 }	
-	   BinarioOrdenado*  BTemp= new BinarioOrdenado();
+	   
 
 private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (colaBinarioOrdenado.empty()) {
@@ -587,7 +613,7 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 		numHilos++;
 		hilos[numHilos-1] = thread;
 		thread->Start();
-		plantar(a, "O");
+		plantar(a, "o");
 		colaBinarioOrdenado.pop();
 	}
 	
@@ -598,6 +624,33 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 			   // Llamada al método generateFruits con los parámetros requeridos
 			   while (isRunning) {
 				   generateFruits(BTemp);
+			   }
+		   }
+	   }
+
+	   void GenerateFruitsThreadHeap() {
+		   while (true) {
+			   // Llamada al método generateFruits con los parámetros requeridos
+			   while (isRunning) {
+				   generateFruitsHeap(HTemp);
+			   }
+		   }
+	   }
+
+	   void GenerateFruitsThreadAVL() {
+		   while (true) {
+			   // Llamada al método generateFruits con los parámetros requeridos
+			   while (isRunning) {
+				   generateFruitsAVL(AVTemp);
+			   }
+		   }
+	   }
+
+	   void GenerateFruitsThreadSplay() {
+		   while (true) {
+			   // Llamada al método generateFruits con los parámetros requeridos
+			   while (isRunning) {
+				   generateFruitsSplay(STemp);
 			   }
 		   }
 	   }
@@ -617,34 +670,115 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		colaEspantapajaro.pop();
 		DibujarMatriz();
 	}
+	
 
 }
+	   double generateRandomNumber(double min, double max) {
+		   // Crea un generador de números aleatorios
+		   std::random_device rd;
+		   std::mt19937 gen(rd());
+
+		   // Crea una distribución uniforme en el rango especificado
+		   std::uniform_real_distribution<double> dis(min, max);
+
+		   // Genera y devuelve un número aleatorio en el rango especificado
+		   return dis(gen);
+	   }
+
 	   void generateFruits(BinarioOrdenado * arbol) {
-			   String^ columna = System::Convert::ToString(arbol->columna);
-			   String^ fila = System::Convert::ToString(arbol->fila);
-			   label1->Text = columna + " " + fila;
+			   //label1->Text = columna + " " + fila;
 
 			   // Esperar 5 segundos
-			   std::this_thread::sleep_for(std::chrono::seconds(5));
+			   std::this_thread::sleep_for(std::chrono::seconds(creceBinario));
+			   botones[arbol->columna, arbol->fila]->Text = "O";
+			   while (isRunning) {
+				// Esperar 5 segundos
+				   botones[arbol->columna, arbol->fila]->Text = "O";
+				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaB));
+				   for (int i = 0; i < cosechaB; i++) {
+					   double random = generateRandomNumber(0.001, 5.0);
+					   Node* nodo = new Node(random);
+					   arbol->insertNode(nodo, random);
+					   label1->Text = System::Convert::ToString(random);
+					   botones[arbol->columna, arbol->fila]->Text = "g";
+					   this->Refresh();
+				   }
 
-			   // Poner el label en blanco
-			   label1->Text = "";
-
-			   // Esperar 5 segundos antes de la próxima actualización
-			   std::this_thread::sleep_for(std::chrono::seconds(5));
-
-
-
-			   //std::this_thread::sleep_for(std::chrono::seconds(5));
+				   
+			   }
 
 			   // Espera 5 segundos
 
-			   // Código para generar frutos y agregarlos al árbol Binario
-			   // ...
-			   //int random = rand() % 100 + 1;
-			   //Node* nodo = new Node(random);
-			   //arbol->insertNode(nodo, random);
+	   }
 
+	   void generateFruitsHeap(Heap* arbol) {
+		   //label1->Text = columna + " " + fila;
+		   // Esperar 5 segundos
+		   std::this_thread::sleep_for(std::chrono::seconds(creceH));
+		   botones[arbol->columna, arbol->fila]->Text = "H";
+		   int counter;
+		   while (isRunning) {
+			   if (counter < arbol->tamanoMaximo) {
+				   counter++;
+				   // Esperar 5 segundos
+				   botones[arbol->columna, arbol->fila]->Text = "H";
+				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaH));
+				   for (int i = 0; i < cosechaH;i++) {
+					   double random = generateRandomNumber(0.001, 5.0);
+					   arbol->insertar(random);
+					   label1->Text = System::Convert::ToString(random);
+					   botones[arbol->columna, arbol->fila]->Text = "g";
+					   this->Refresh();
+				   }
+
+			   }
+			   else {
+				   botones[arbol->columna, arbol->fila]->Text = "H";
+			   }
+
+		   
+		   }
+		   // Espera 5 segundos
+	   }
+
+	   void generateFruitsAVL(avl_tree* arbol) {
+		   //label1->Text = columna + " " + fila;
+		   // Esperar 5 segundos
+		   std::this_thread::sleep_for(std::chrono::seconds(creceA));
+		   botones[arbol->columna, arbol->fila]->Text = "A";
+		   while (isRunning) {
+			   // Esperar 5 segundos
+			   botones[arbol->columna, arbol->fila]->Text = "A";
+			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
+			   for (int i = 0; i < cosechaA;i++) {
+				   double random = generateRandomNumber(0.001, 5.0);
+				   avl* nodo = new avl();
+				   arbol->insert(nodo, random);
+				   label1->Text = System::Convert::ToString(random);
+				   botones[arbol->columna, arbol->fila]->Text = "g";
+				   this->Refresh();
+			   }
+		   }
+		   // Espera 5 segundos
+	   }
+
+	   void generateFruitsSplay(SplayTree* arbol) {
+
+		   std::this_thread::sleep_for(std::chrono::seconds(creceS));
+		   botones[arbol->columna, arbol->fila]->Text = "S";
+		   while (isRunning) {
+			   // Esperar 5 segundos
+			   botones[arbol->columna, arbol->fila]->Text = "S";
+			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaS));
+			   for (int i = 0; i < cosechaS; i++) {
+				   double random = generateRandomNumber(0.001, 5.0);
+				   s* nodo = new s();
+				   arbol->Insert(random, nodo);
+				   label1->Text = System::Convert::ToString(random);
+				   botones[arbol->columna, arbol->fila]->Text = "g";
+				   this->Refresh();
+			   }
+		   }
 	   }
 
 
@@ -656,7 +790,7 @@ private: System::Void buttonPausarPartida_Click(System::Object^ sender, System::
 	}
 	else {
 		isRunning = true;
-		MessageBox::Show("Partida Despausada");
+		MessageBox::Show("Partida Reanudada");
 	}
 }
 private: System::Void MyForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
