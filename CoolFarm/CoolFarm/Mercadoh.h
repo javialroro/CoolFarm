@@ -701,7 +701,7 @@ namespace CoolFarm {
 	};
 	private: System::Void buttonComprarHe_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (dinero >= mercado->precioArbHeap) {
-			Heap* a = new Heap(10);
+			Heap* a = new Heap(30);
 			colaHeap.push(a);
 			dinero -= mercado->precioArbHeap;
 			this->labelDinero->Text = this->toSystemString(to_string(dinero));

@@ -756,7 +756,6 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 					   Node* nodo = new Node(random);
 					   arbol->insertNode(nodo, random);
 					   label1->Text = System::Convert::ToString(random);
-					   botones[arbol->columna, arbol->fila]->Text = "g";
 					   this->Refresh();
 				   }
 
@@ -772,7 +771,7 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   // Esperar 5 segundos
 		   std::this_thread::sleep_for(std::chrono::seconds(creceH));
 		   botones[arbol->columna, arbol->fila]->Text = "H";
-		   int counter;
+		   int counter=0;
 		   while (isRunning) {
 			   if (counter < arbol->tamanoMaximo) {
 				   counter++;
@@ -783,7 +782,6 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 					   double random = generateRandomNumber(0.001, 5.0);
 					   arbol->insertar(random);
 					   label1->Text = System::Convert::ToString(random);
-					   botones[arbol->columna, arbol->fila]->Text = "g";
 					   this->Refresh();
 				   }
 
@@ -997,7 +995,9 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 
 		if (Json::parseFromStream(builder, archivo, &root, &errs)) {
 			nombreJson = root["NombrePartida"].asString();
-			MessageBox::Show(toSystemString(nombreJson));
+			if (botones[0,0]->Text== "S") {
+				MessageBox::Show(toSystemString(nombreJson));
+			}
 			/*for (int i = 0; i < 10; ++i) {
 				for (int j = 0; j < 10; ++j) {
 					if (root["Matriz"][i][j]["letra"] != NULL) {

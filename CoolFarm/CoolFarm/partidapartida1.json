@@ -4,7 +4,7 @@
 	"ColaEspanta" : 0,
 	"ColaHEAP" : 0,
 	"ColaSplay" : 0,
-	"Dinero" : 99399.0,
+	"Dinero" : 97599.0,
 	"EspantapajarosDispo" : 2,
 	"FrutosAVL" : 0,
 	"FrutosBinario" : 0,
@@ -13,6 +13,74 @@
 	"Matriz" : 
 	[
 		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			{
+				"ejecutando" : false,
+				"letra" : "S"
+			},
 			{
 				"ejecutando" : false,
 				"letra" : "S"
@@ -20,11 +88,6 @@
 			null,
 			null,
 			null,
-			null,
-			null,
-			null,
-			null,
-			null,
 			null
 		],
 		[
@@ -32,68 +95,14 @@
 			null,
 			null,
 			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
+			{
+				"ejecutando" : false,
+				"letra" : "S"
+			},
+			{
+				"ejecutando" : false,
+				"letra" : "S"
+			},
 			null,
 			null,
 			null,
@@ -136,7 +145,7 @@
 			null
 		]
 	],
-	"NombrePartida" : "partida1.json",
+	"NombrePartida" : "partidapartida1.json",
 	"PrecioAVL" : 350.01998901367188,
 	"PrecioBinario" : 100.01999664306641,
 	"PrecioEspanta" : 200.02000427246094,
