@@ -1,6 +1,7 @@
 #pragma once
 
-#include "estructuras.h"
+
+#include "Puntajes.h"
 
 namespace CoolFarm {
 

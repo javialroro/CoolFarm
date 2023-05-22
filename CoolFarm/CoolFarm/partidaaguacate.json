@@ -3,19 +3,81 @@
 	"ColaBinario" : 0,
 	"ColaEspanta" : 0,
 	"ColaHEAP" : 0,
-	"ColaSplay" : 1,
-	"Dinero" : 95534.84375,
+	"ColaSplay" : 4,
+	"Dinero" : 95999.0,
 	"EspantapajarosDispo" : 0,
 	"FrutosAVL" : 0,
 	"FrutosBinario" : 0,
 	"FrutosHeap" : 0,
-	"FrutosSplay" : 16,
+	"FrutosSplay" : 44,
 	"Matriz" : 
 	[
 		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
 			{
 				"ejecutando" : false,
-				"letra" : "S"
+				"letra" : "E"
 			},
 			{
 				"ejecutando" : false,
@@ -24,40 +86,11 @@
 			null,
 			null,
 			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			{
-				"ejecutando" : false,
-				"letra" : "S"
-			},
-			null,
-			null,
 			{
 				"ejecutando" : false,
 				"letra" : "E"
 			},
 			null,
-			null,
-			null,
 			null
 		],
 		[
@@ -69,52 +102,7 @@
 			null,
 			{
 				"ejecutando" : false,
-				"letra" : "S"
-			},
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			{
-				"ejecutando" : false,
-				"letra" : "S"
-			},
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			{
-				"ejecutando" : false,
-				"letra" : "E"
-			},
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			{
-				"ejecutando" : false,
-				"letra" : "S"
+				"letra" : "g"
 			},
 			null,
 			null,
@@ -157,12 +145,12 @@
 			null
 		]
 	],
-	"NombrePartida" : "partida1.json",
-	"PrecioAVL" : -0.43999999761581421,
-	"PrecioBinario" : -0.43999999761581421,
-	"PrecioEspanta" : 199.58000183105469,
-	"PrecioHeap" : -0.43999999761581421,
-	"PrecioSplay" : 499.55999755859375,
+	"NombrePartida" : "partidaaguacate.json",
+	"PrecioAVL" : 349.8699951171875,
+	"PrecioBinario" : 99.8699951171875,
+	"PrecioEspanta" : 199.87001037597656,
+	"PrecioHeap" : 129.87001037597656,
+	"PrecioSplay" : 599.8499755859375,
 	"SettingAparicionCuervos" : 0,
 	"SettingAparicionOveja" : 0,
 	"SettingAparicionPlagas" : 0,
@@ -177,6 +165,5 @@
 	"SettingfrutosCuervos" : 0,
 	"SettingfrutosOveja" : 0,
 	"SettingsMercadoAparicion" : 0,
-	"SettingsMercadoApertura" : 0,
-	"tmpNombrePartida" : "partida1.json"
+	"SettingsMercadoApertura" : 0
 }

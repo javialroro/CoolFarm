@@ -7,6 +7,8 @@ int x = 0;
 #include <cstdlib>
 #include "arboles.h"
 #include <queue>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 arbol * arbolesBinarios[10][10];
@@ -19,10 +21,11 @@ queue<BinarioOrdenado*> colaBinarioOrdenado;
 queue<Espantapajaros*> colaEspantapajaro;
 
 // Datos Partida
-int nombrePartida;
-string tmpnombrePartida;
+string directoryPath = "C:\\Users\\lmaag\\OneDrive\\Escritorio\\C++\\Proyectos\\CoolFarm\\CoolFarm\\CoolFarm";
+string nombrePartida;
+string nombreJson;
 bool isRunning = true;
-int contNombrePar = 0;
+
 
 // Settings Ovejas
 int porcentOvejas;
@@ -74,8 +77,33 @@ int espantapajarosDispo = 2;
 //float dinero = 0;
 float dinero = 99999;
 
+// ranking
+string Nombre1;
+float dinero1;
+string Nombre2;
+float dinero2;
+string Nombre3;
+float dinero3;
+string Nombre4;
+float dinero4;
+string Nombre5;
+float dinero5;
+string Nombre6;
+float dinero6;
+string Nombre7;
+float dinero7;
+string Nombre8;
+float dinero8;
+string Nombre9;
+float dinero9;
+string Nombre10;
+float dinero10;
 
-
+struct CompareFloat {
+    bool operator()(const std::pair<std::string, float>& pair1, const std::pair<std::string, float>& pair2) const {
+        return pair1.second > pair2.second;
+    }
+};
 
 // Estructuras Oveja
 
@@ -414,4 +442,76 @@ struct Mercado {
 
 Mercado* mercado = new Mercado();
 
+struct Jugador {
 
+    float dineroJugador;
+    string nombreJugador;
+
+    Jugador(float inDinero, string inNombre) {
+        dineroJugador = inDinero;
+        nombreJugador = inNombre;
+    }
+};
+
+struct NodoJugador {
+    Jugador* jugador;
+    NodoJugador* siguiente;
+
+    NodoJugador() {
+        jugador = NULL;
+        siguiente = NULL;
+    }
+    NodoJugador(Jugador* injugador) {
+        jugador = injugador;
+        siguiente = NULL;
+    }
+};
+
+struct listaSimpleJugadores {
+    NodoJugador* primerNodo, * ultimoNodo;
+
+    listaSimpleJugadores() {
+        primerNodo = ultimoNodo = NULL;
+    }
+
+    void insertar(Jugador* jugador) {
+        if (primerNodo == NULL)
+        {
+            ultimoNodo = primerNodo = new NodoJugador(jugador);
+        }
+        else
+        {
+            NodoJugador* nuevo = new NodoJugador(jugador);
+            nuevo->siguiente = primerNodo;
+            primerNodo = nuevo;
+        }
+    }
+    
+};
+
+listaSimpleJugadores* ranking = new listaSimpleJugadores();
+
+void ordenarLista() {
+    if (ranking->primerNodo == NULL || ranking->primerNodo->siguiente == NULL) {
+        // La lista está vacía o tiene solo un elemento, no es necesario ordenar
+        return;
+    }
+
+    bool intercambio = true;
+    while (intercambio) {
+        intercambio = false;
+        NodoJugador* actual = ranking->primerNodo;
+        NodoJugador* siguiente = actual->siguiente;
+        while (siguiente != NULL) {
+            if (actual->jugador->dineroJugador < siguiente->jugador->dineroJugador) {
+                // Intercambiar los nodos
+                Jugador* temp = actual->jugador;
+                actual->jugador = siguiente->jugador;
+                siguiente->jugador = temp;
+                intercambio = true;
+            }
+            actual = siguiente;
+            siguiente = siguiente->siguiente;
+        }
+    }
+}

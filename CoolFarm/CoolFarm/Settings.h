@@ -122,37 +122,37 @@ namespace CoolFarm {
 
 	private: System::Windows::Forms::TextBox^ textBoxCrecimientoHeap;
 
-private: System::Windows::Forms::TextBox^ textBoxCostoHeap;
+	private: System::Windows::Forms::TextBox^ textBoxCostoHeap;
 
 	private: System::Windows::Forms::Label^ label40;
 	private: System::Windows::Forms::Label^ label41;
 	private: System::Windows::Forms::Label^ label42;
-private: System::Windows::Forms::Label^ label43;
-private: System::Windows::Forms::Label^ label44;
-private: System::Windows::Forms::Label^ label45;
-private: System::Windows::Forms::TextBox^ textBoxCosSegS;
-private: System::Windows::Forms::Label^ label46;
-private: System::Windows::Forms::Label^ label47;
-private: System::Windows::Forms::Label^ label48;
-private: System::Windows::Forms::TextBox^ textBoxCosechaS;
-private: System::Windows::Forms::TextBox^ textBoxCrecimientoS;
+	private: System::Windows::Forms::Label^ label43;
+	private: System::Windows::Forms::Label^ label44;
+	private: System::Windows::Forms::Label^ label45;
+	private: System::Windows::Forms::TextBox^ textBoxCosSegS;
+	private: System::Windows::Forms::Label^ label46;
+	private: System::Windows::Forms::Label^ label47;
+	private: System::Windows::Forms::Label^ label48;
+	private: System::Windows::Forms::TextBox^ textBoxCosechaS;
+	private: System::Windows::Forms::TextBox^ textBoxCrecimientoS;
 
-private: System::Windows::Forms::TextBox^ textBoxCostoS;
-private: System::Windows::Forms::Label^ label49;
-private: System::Windows::Forms::Label^ label50;
-private: System::Windows::Forms::Label^ label51;
-private: System::Windows::Forms::Label^ label52;
-private: System::Windows::Forms::Label^ label53;
-private: System::Windows::Forms::TextBox^ textBoxCosSegA;
-private: System::Windows::Forms::Label^ label54;
-private: System::Windows::Forms::Label^ label55;
-private: System::Windows::Forms::Label^ label56;
-private: System::Windows::Forms::TextBox^ textBoxCosechaA;
-private: System::Windows::Forms::TextBox^ textBoxCrecimientoA;
-private: System::Windows::Forms::TextBox^ textBoxCostoA;
-private: System::Windows::Forms::Label^ label57;
-private: System::Windows::Forms::Label^ label58;
-private: System::Windows::Forms::Label^ label59;
+	private: System::Windows::Forms::TextBox^ textBoxCostoS;
+	private: System::Windows::Forms::Label^ label49;
+	private: System::Windows::Forms::Label^ label50;
+	private: System::Windows::Forms::Label^ label51;
+	private: System::Windows::Forms::Label^ label52;
+	private: System::Windows::Forms::Label^ label53;
+	private: System::Windows::Forms::TextBox^ textBoxCosSegA;
+	private: System::Windows::Forms::Label^ label54;
+	private: System::Windows::Forms::Label^ label55;
+	private: System::Windows::Forms::Label^ label56;
+	private: System::Windows::Forms::TextBox^ textBoxCosechaA;
+	private: System::Windows::Forms::TextBox^ textBoxCrecimientoA;
+	private: System::Windows::Forms::TextBox^ textBoxCostoA;
+	private: System::Windows::Forms::Label^ label57;
+	private: System::Windows::Forms::Label^ label58;
+	private: System::Windows::Forms::Label^ label59;
 
 
 	private:
@@ -1313,116 +1313,115 @@ private: System::Windows::Forms::Label^ label59;
 			this->PerformLayout();
 
 		}
-		#pragma endregion
-		private: System::Void guardarComponentes_button_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (this->Oveporciento->Text != "") {
-				porcentOvejas = Int32::Parse(this->Oveporciento->Text);
-			}
-			if (this->oveAparicion->Text != "") {
-				aparicionOvejas = Int32::Parse(this->oveAparicion->Text);
-			}
-			if (this->oveMin->Text != "") {
-				tiempoAparicionOvejas = Int32::Parse(this->oveMin->Text);
-			}
-			if (this->oveFrutos->Text != "") {
-				frutosOvejas = Int32::Parse(this->oveFrutos->Text);
-			}
-			if (this->oveSeg->Text != "") {
-				tiempoFrutosOvejas = Int32::Parse(this->oveSeg->Text);
-			}
-
-			if(this->cuervPorciento->Text !=""){
-				porcentCuervos = Int32::Parse(this->cuervPorciento->Text);
-			}
-			if (this->cuervAparicion->Text != "") {
-				aparicionCuervos = Int32::Parse(this->cuervAparicion->Text);
-			}
-			if (this->cuervMin->Text != "") {
-				tiempoAparicionCuervos = Int32::Parse(this->cuervMin->Text);
-			}
-			if (this->cuervFrutos->Text != "") {
-				frutosCuervos = Int32::Parse(this->cuervFrutos->Text);
-			}
-			if (this->cuervSeg->Text != "") {
-				tiempoFrutosCuervos = Int32::Parse(this->cuervSeg->Text);
-			}
-
-			if (this->plagPorcentaje->Text != "") {
-				porcentPlagas = Int32::Parse(this->plagPorcentaje->Text);
-			}
-			if (this->plagAparicion->Text != "") {
-				aparicionPlagas = Int32::Parse(this->plagAparicion->Text);
-			}
-			if (this->plagMin->Text != "") {
-				tiempoAparicionPlagas = Int32::Parse(this->plagMin->Text);
-			}
-			
-			if (this->mercAparicion->Text != "") {
-				mercadoAparicion = Int32::Parse(this->mercAparicion->Text);
-			}
-			if (this->mercAbierto->Text != "") {
-				mercadoApertura = Int32::Parse(this->mercAbierto->Text);
-			}
-
-			if (this->textBoxCostoB->Text != "") {
-				precioBinario = Int32::Parse(this->textBoxCostoB->Text);
-			}
-			if (this->textBoxCrecimientoB->Text != "") {
-				creceBinario = Int32::Parse(this->textBoxCrecimientoB->Text);
-			}
-			if (this->textBoxCosechaB->Text != "") {
-				 cosechaB= Int32::Parse(this->textBoxCosechaB->Text);
-			}
-			if (this->textBoxCosSegB->Text != "") {
-				tiempoCosechaB = Int32::Parse(this->textBoxCosSegB->Text);
-			}
-
-
-			if (this->textBoxCostoHeap->Text != "") {
-				precioHeap = Int32::Parse(this->textBoxCostoHeap->Text);
-			}
-			if (this->textBoxCrecimientoHeap->Text != "") {
-				creceH = Int32::Parse(this->textBoxCrecimientoHeap->Text);
-			}
-			if (this->textBoxCosechaHeap->Text != "") {
-				 cosechaH= Int32::Parse(this->textBoxCosechaHeap->Text);
-			}
-			if (this->textBoxCosSegHeap->Text != "") {
-				tiempoCosechaH = Int32::Parse(this->textBoxCosSegHeap->Text);
-			}
-
-
-			if (this->textBoxCostoA->Text != "") {
-				precioAVL = Int32::Parse(this->textBoxCostoA->Text);
-			}
-			if (this->textBoxCrecimientoA->Text != "") {
-				creceA = Int32::Parse(this->textBoxCrecimientoA->Text);
-			}
-			if (this->textBoxCosechaA->Text != "") {
-				cosechaA = Int32::Parse(this->textBoxCosechaA->Text);
-			}
-			if (this->textBoxCosSegA->Text != "") {
-				 tiempoCosechaA= Int32::Parse(this->textBoxCosSegA->Text);
-			}
-
-
-			if (this->textBoxCostoS->Text != "") {
-				precioSplay = Int32::Parse(this->textBoxCostoS->Text);
-			}
-			if (this->textBoxCrecimientoS->Text != "") {
-				creceS = Int32::Parse(this->textBoxCrecimientoS->Text);
-			}
-			if (this->textBoxCosechaS->Text != "") {
-				 cosechaS= Int32::Parse(this->textBoxCosechaS->Text);
-			}
-			if (this->textBoxCosSegS->Text != "") {
-				 tiempoCosechaS= Int32::Parse(this->textBoxCosSegS->Text);
-			}
-
-
+#pragma endregion
+	private: System::Void guardarComponentes_button_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->Oveporciento->Text != "") {
+			porcentOvejas = Int32::Parse(this->Oveporciento->Text);
 		}
-	
+		if (this->oveAparicion->Text != "") {
+			aparicionOvejas = Int32::Parse(this->oveAparicion->Text);
+		}
+		if (this->oveMin->Text != "") {
+			tiempoAparicionOvejas = Int32::Parse(this->oveMin->Text);
+		}
+		if (this->oveFrutos->Text != "") {
+			frutosOvejas = Int32::Parse(this->oveFrutos->Text);
+		}
+		if (this->oveSeg->Text != "") {
+			tiempoFrutosOvejas = Int32::Parse(this->oveSeg->Text);
+		}
+
+		if (this->cuervPorciento->Text != "") {
+			porcentCuervos = Int32::Parse(this->cuervPorciento->Text);
+		}
+		if (this->cuervAparicion->Text != "") {
+			aparicionCuervos = Int32::Parse(this->cuervAparicion->Text);
+		}
+		if (this->cuervMin->Text != "") {
+			tiempoAparicionCuervos = Int32::Parse(this->cuervMin->Text);
+		}
+		if (this->cuervFrutos->Text != "") {
+			frutosCuervos = Int32::Parse(this->cuervFrutos->Text);
+		}
+		if (this->cuervSeg->Text != "") {
+			tiempoFrutosCuervos = Int32::Parse(this->cuervSeg->Text);
+		}
+
+		if (this->plagPorcentaje->Text != "") {
+			porcentPlagas = Int32::Parse(this->plagPorcentaje->Text);
+		}
+		if (this->plagAparicion->Text != "") {
+			aparicionPlagas = Int32::Parse(this->plagAparicion->Text);
+		}
+		if (this->plagMin->Text != "") {
+			tiempoAparicionPlagas = Int32::Parse(this->plagMin->Text);
+		}
+
+		if (this->mercAparicion->Text != "") {
+			mercadoAparicion = Int32::Parse(this->mercAparicion->Text);
+		}
+		if (this->mercAbierto->Text != "") {
+			mercadoApertura = Int32::Parse(this->mercAbierto->Text);
+		}
+
+		if (this->textBoxCostoB->Text != "") {
+			precioBinario = Int32::Parse(this->textBoxCostoB->Text);
+		}
+		if (this->textBoxCrecimientoB->Text != "") {
+			creceBinario = Int32::Parse(this->textBoxCrecimientoB->Text);
+		}
+		if (this->textBoxCosechaB->Text != "") {
+			cosechaB = Int32::Parse(this->textBoxCosechaB->Text);
+		}
+		if (this->textBoxCosSegB->Text != "") {
+			tiempoCosechaB = Int32::Parse(this->textBoxCosSegB->Text);
+		}
 
 
-};
+		if (this->textBoxCostoHeap->Text != "") {
+			precioHeap = Int32::Parse(this->textBoxCostoHeap->Text);
+		}
+		if (this->textBoxCrecimientoHeap->Text != "") {
+			creceH = Int32::Parse(this->textBoxCrecimientoHeap->Text);
+		}
+		if (this->textBoxCosechaHeap->Text != "") {
+			cosechaH = Int32::Parse(this->textBoxCosechaHeap->Text);
+		}
+		if (this->textBoxCosSegHeap->Text != "") {
+			tiempoCosechaH = Int32::Parse(this->textBoxCosSegHeap->Text);
+		}
+
+
+		if (this->textBoxCostoA->Text != "") {
+			precioAVL = Int32::Parse(this->textBoxCostoA->Text);
+		}
+		if (this->textBoxCrecimientoA->Text != "") {
+			creceA = Int32::Parse(this->textBoxCrecimientoA->Text);
+		}
+		if (this->textBoxCosechaA->Text != "") {
+			cosechaA = Int32::Parse(this->textBoxCosechaA->Text);
+		}
+		if (this->textBoxCosSegA->Text != "") {
+			tiempoCosechaA = Int32::Parse(this->textBoxCosSegA->Text);
+		}
+
+
+		if (this->textBoxCostoS->Text != "") {
+			precioSplay = Int32::Parse(this->textBoxCostoS->Text);
+		}
+		if (this->textBoxCrecimientoS->Text != "") {
+			creceS = Int32::Parse(this->textBoxCrecimientoS->Text);
+		}
+		if (this->textBoxCosechaS->Text != "") {
+			cosechaS = Int32::Parse(this->textBoxCosechaS->Text);
+		}
+		if (this->textBoxCosSegS->Text != "") {
+			tiempoCosechaS = Int32::Parse(this->textBoxCosSegS->Text);
+		}
+		MessageBox::Show("Datos guardados correctamente.");
+	}
+
+
+
+	};
 }

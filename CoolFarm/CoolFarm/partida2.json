@@ -136,6 +136,7 @@
 			null
 		]
 	],
+	"NombrePartida" : "partida2.json",
 	"PrecioAVL" : 350.01998901367188,
 	"PrecioBinario" : 100.01999664306641,
 	"PrecioEspanta" : 200.02000427246094,

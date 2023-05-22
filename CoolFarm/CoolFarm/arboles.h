@@ -22,18 +22,18 @@ public:
     string tipo;
     int fila;
     int columna;
-    int cantidadFrutosA=0;
-    int cantidadFrutosVendidos=0;
-    double montoTotal=0.0;
-    int cantidadFrutosPerdidos=0;
+    int cantidadFrutosA = 0;
+    int cantidadFrutosVendidos = 0;
+    double montoTotal = 0.0;
+    int cantidadFrutosPerdidos = 0;
     bool ejecutando;
-    
+
 };
 
 
 
 
-struct avl  {
+struct avl {
     double d;
     struct avl* l;
     struct avl* r;
@@ -121,7 +121,7 @@ avl* avl_tree::balance(avl* t) {
     return t;
 }
 avl* avl_tree::insert(avl* r, double v) {
-    
+
     if (r == NULL) {
         r = new avl;
         r->d = v;
@@ -250,7 +250,7 @@ public:
     {
         cantidadFrutosA++;
         frutosSplay++;
-        montoTotal+=key;
+        montoTotal += key;
         static s* p_node = NULL;
         if (!p_node)
             p_node = New_Node(key);
@@ -336,12 +336,12 @@ struct Node {
 
 class BinarioOrdenado : public arbol {
 public:
-    
-    BinarioOrdenado() {
-		root = nullptr;
-	}
 
-    
+    BinarioOrdenado() {
+        root = nullptr;
+    }
+
+
 
     Node* root;
 
@@ -465,3 +465,5 @@ public:
 
     }
 };
+
+

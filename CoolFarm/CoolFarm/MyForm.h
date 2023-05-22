@@ -9,10 +9,14 @@
 #include <locale>
 #include <msclr/marshal_cppstd.h>
 #include <random>
+#include <filesystem>
+#include <utility>
+#include <algorithm>  
+#include <vector>
 
 
 namespace CoolFarm {
-
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -31,6 +35,11 @@ namespace CoolFarm {
 	{
 	public:
 		int numHilos;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::TextBox^ textboxNomPartida;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+	public:
 		Granjero* granjero = new Granjero();
 		MyForm(void)
 		{
@@ -111,6 +120,10 @@ namespace CoolFarm {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBoxPartida = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->textboxNomPartida = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -253,7 +266,7 @@ namespace CoolFarm {
 			// buttonNuevaPartida
 			// 
 			this->buttonNuevaPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonNuevaPartida->Location = System::Drawing::Point(733, 29);
+			this->buttonNuevaPartida->Location = System::Drawing::Point(732, 81);
 			this->buttonNuevaPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonNuevaPartida->Name = L"buttonNuevaPartida";
 			this->buttonNuevaPartida->Size = System::Drawing::Size(182, 49);
@@ -265,7 +278,7 @@ namespace CoolFarm {
 			// buttonCargarPartida
 			// 
 			this->buttonCargarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonCargarPartida->Location = System::Drawing::Point(733, 284);
+			this->buttonCargarPartida->Location = System::Drawing::Point(732, 405);
 			this->buttonCargarPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonCargarPartida->Name = L"buttonCargarPartida";
 			this->buttonCargarPartida->Size = System::Drawing::Size(182, 49);
@@ -277,7 +290,7 @@ namespace CoolFarm {
 			// buttonPausarPartida
 			// 
 			this->buttonPausarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonPausarPartida->Location = System::Drawing::Point(733, 161);
+			this->buttonPausarPartida->Location = System::Drawing::Point(732, 213);
 			this->buttonPausarPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonPausarPartida->Name = L"buttonPausarPartida";
 			this->buttonPausarPartida->Size = System::Drawing::Size(182, 49);
@@ -289,7 +302,7 @@ namespace CoolFarm {
 			// buttonGuardarPartida
 			// 
 			this->buttonGuardarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonGuardarPartida->Location = System::Drawing::Point(733, 94);
+			this->buttonGuardarPartida->Location = System::Drawing::Point(732, 146);
 			this->buttonGuardarPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonGuardarPartida->Name = L"buttonGuardarPartida";
 			this->buttonGuardarPartida->Size = System::Drawing::Size(182, 49);
@@ -301,7 +314,7 @@ namespace CoolFarm {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(751, 230);
+			this->label2->Location = System::Drawing::Point(750, 351);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(143, 13);
@@ -311,7 +324,7 @@ namespace CoolFarm {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(739, 243);
+			this->label3->Location = System::Drawing::Point(738, 364);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(167, 13);
@@ -320,10 +333,49 @@ namespace CoolFarm {
 			// 
 			// textBoxPartida
 			// 
-			this->textBoxPartida->Location = System::Drawing::Point(773, 259);
+			this->textBoxPartida->Location = System::Drawing::Point(772, 380);
 			this->textBoxPartida->Name = L"textBoxPartida";
 			this->textBoxPartida->Size = System::Drawing::Size(100, 20);
 			this->textBoxPartida->TabIndex = 17;
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->button2->Location = System::Drawing::Point(732, 277);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(182, 49);
+			this->button2->TabIndex = 18;
+			this->button2->Text = L"LISTA DE PUNTAJES";
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click_1);
+			// 
+			// textboxNomPartida
+			// 
+			this->textboxNomPartida->Location = System::Drawing::Point(772, 57);
+			this->textboxNomPartida->Name = L"textboxNomPartida";
+			this->textboxNomPartida->Size = System::Drawing::Size(100, 20);
+			this->textboxNomPartida->TabIndex = 21;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(762, 41);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(110, 13);
+			this->label4->TabIndex = 20;
+			this->label4->Text = L"LA NUEVA PARTIDA";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(750, 28);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(145, 13);
+			this->label5->TabIndex = 19;
+			this->label5->Text = L"INGRESE EL  NOMBRE DE ";
 			// 
 			// MyForm
 			// 
@@ -331,6 +383,10 @@ namespace CoolFarm {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::MediumSlateBlue;
 			this->ClientSize = System::Drawing::Size(962, 498);
+			this->Controls->Add(this->textboxNomPartida);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->textBoxPartida);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -803,66 +859,63 @@ private:  static String^ toSystemString(string str) {
 }
 
 private: System::Void buttonNuevaPartida_Click(System::Object^ sender, System::EventArgs^ e) {
-	contNombrePar++;
-	nombrePartida = contNombrePar;
+	nombrePartida = toStandardString(this->textboxNomPartida->Text);
 	isRunning = true;
 	if (isRunning) {
-		MessageBox::Show("Comenzando Partida " + this->toSystemString(to_string(nombrePartida)));
+		MessageBox::Show("Comenzando Partida " + this->textboxNomPartida->Text);
 	}
 	
 }
 
-	   void MarshalString(String^ s, string& os) {
-		   using namespace Runtime::InteropServices;
-		   const char* chars =(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
-		   os = chars;
-		   Marshal::FreeHGlobal(IntPtr((void*)chars));
-	   }
+	void MarshalString(String^ s, string& os) {
+		using namespace Runtime::InteropServices;
+		const char* chars =(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+		os = chars;
+		Marshal::FreeHGlobal(IntPtr((void*)chars));
+	}
 
 private: System::Void buttonGuardarPartida_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (tmpnombrePartida != "") {
-		guardarDatosJuego(tmpnombrePartida);
-	}
-	else if (nombrePartida == 0) {
+	if (nombrePartida == "") {
 		MessageBox::Show("Debe iniciar una partida antes de guardar.");
 	}
 	else {
-		string tmp = "partida" + to_string(nombrePartida) + ".json";
-		guardarDatosJuego(tmp);
+		nombreJson = "partida" + nombrePartida + ".json";
+		guardarDatosJuego(nombreJson);
 	}
 }
-	Json::Value guardarMatriz() {
-		Json::Value matrizJson(Json::arrayValue);
 
-		for (int i = 0; i < 10; ++i) {
-			Json::Value filaJson(Json::arrayValue);
+Json::Value guardarMatriz() {
+	Json::Value matrizJson(Json::arrayValue);
 
-			for (int j = 0; j < 10; ++j) {
-				const arbol* arbolActual = arbolesBinarios[i][j];
-				if (arbolActual != nullptr) {
-					Json::Value arbolJson;
-					if (botones[i, j]->Text != "") {
-						string gg = msclr::interop::marshal_as<std::string>(botones[i, j]->Text);
-						arbolJson["letra"] = gg;
-					}
-					arbolJson["ejecutando"] = arbolActual->ejecutando;
+	for (int i = 0; i < 10; ++i) {
+		Json::Value filaJson(Json::arrayValue);
 
-					filaJson.append(arbolJson);
+		for (int j = 0; j < 10; ++j) {
+			const arbol* arbolActual = arbolesBinarios[i][j];
+			if (arbolActual != nullptr) {
+				Json::Value arbolJson;
+				if (botones[i, j]->Text != "") {
+					string gg = msclr::interop::marshal_as<std::string>(botones[i, j]->Text);
+					arbolJson["letra"] = gg;
 				}
-				else {
-					filaJson.append(Json::Value());
-				}
+				arbolJson["ejecutando"] = arbolActual->ejecutando;
+
+				filaJson.append(arbolJson);
 			}
-
-			matrizJson.append(filaJson);
+			else {
+				filaJson.append(Json::Value());
+			}
 		}
-		return matrizJson;
+
+		matrizJson.append(filaJson);
 	}
+	return matrizJson;
+}
 
 	void guardarDatosJuego(const std::string& nombreArchivo) {
 		Json::Value datosJuego;
 
-		datosJuego["tmpNombrePartida"] = "partida" + to_string(nombrePartida) + ".json";
+		datosJuego["NombrePartida"] = nombreJson;
 		datosJuego["Matriz"] = guardarMatriz();
 
 		datosJuego["ColaBinario"] = colaBinarioOrdenado.size();
@@ -943,26 +996,26 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 		JSONCPP_STRING errs;
 
 		if (Json::parseFromStream(builder, archivo, &root, &errs)) {
-			tmpnombrePartida = root["tmpNombrePartida"].asString();
-			MessageBox::Show(toSystemString(tmpnombrePartida));
+			nombreJson = root["NombrePartida"].asString();
+			MessageBox::Show(toSystemString(nombreJson));
 			/*for (int i = 0; i < 10; ++i) {
 				for (int j = 0; j < 10; ++j) {
-					if (root["Matriz"][i][j]["letra"] != NULL || root["Matriz"][i][j]["ejecutando"] != NULL) {
+					if (root["Matriz"][i][j]["letra"] != NULL) {
 						arbolesBinarios[i][j]->ejecutando = root["Matriz"][i][j]["ejecutando"].asBool();
-						arbolesBinarios[i][j]->letra = root["Matriz"][i][j]["letra"].asString();
-						if (arbolesBinarios[i][j]->letra == "E") {
+						arbolesBinarios[i][j]->tipo = root["Matriz"][i][j]["letra"].asString();
+						if (arbolesBinarios[i][j]->tipo == "E") {
 							botones[i, j]->Text = "E";
 						}
-						else if (arbolesBinarios[i][j]->letra == "O") {
+						else if (arbolesBinarios[i][j]->tipo == "O") {
 							botones[i, j]->Text = "O";
 						}
-						else if (arbolesBinarios[i][j]->letra == "H") {
+						else if (arbolesBinarios[i][j]->tipo == "H") {
 							botones[i, j]->Text = "H";
 						}
-						else if (arbolesBinarios[i][j]->letra == "S") {
+						else if (arbolesBinarios[i][j]->tipo == "S") {
 							botones[i, j]->Text = "S";
 						}
-						else if (arbolesBinarios[i][j]->letra == "A") {
+						else if (arbolesBinarios[i][j]->tipo == "A") {
 							botones[i, j]->Text = "A";
 						}
 					}
@@ -1036,7 +1089,12 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			}
 
 			MessageBox::Show("cargado");
+			isRunning = true;
 			this->DibujarMatriz();
+			//if (arbolesBinarios[0][0]->letra == "S") {
+			//if (arbolesBinarios[0][0]->letra == "S") {
+			//if (arbolesBinarios[0][0]->letra == "S") {
+			//if (arbolesBinarios[0][0]->letra == "S") {
 			//if (arbolesBinarios[0][0]->letra == "S") {
 			//	MessageBox::Show("no sirve");
 			//}
@@ -1049,9 +1107,124 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 		MessageBox::Show("No existe una partida guardada con ese número.");
 	}
 }
-	   
-	   
+bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugador2) {
+	return jugador1.dineroJugador > jugador2.dineroJugador;
+}
 	
+	private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		for (const auto& entry : std::filesystem::directory_iterator(directoryPath)) {
+			if (entry.path().extension() == ".json") {  // Verifica la extensión del archivo
+				std::string filePath = entry.path().string();
+
+				// Lee el archivo JSON
+				std::ifstream file(filePath);
+				Json::Value root;
+				file >> root;
+
+				// Accede a los datos dentro del archivo JSON
+				std::string nombre = root["NombrePartida"].asString();
+				float dinerito = root["Dinero"].asFloat();
+				Jugador* a = new Jugador(dinerito, nombre);
+				ranking->insertar(a);
+			}
+		}
+		ordenarLista();
+		NodoJugador* tmp = ranking->primerNodo;
+		if (tmp != NULL) {
+			Nombre1 = tmp->jugador->nombreJugador;
+			dinero1 = tmp->jugador->dineroJugador;
+			MessageBox::Show(toSystemString(Nombre1));
+			if (tmp->siguiente != NULL) {
+				tmp = tmp->siguiente;
+			}
+			if (Nombre1 != tmp->jugador->nombreJugador) {
+				if (tmp != NULL) {
+					Nombre2 = tmp->jugador->nombreJugador;
+					dinero2 = tmp->jugador->dineroJugador;
+					MessageBox::Show(toSystemString(Nombre2));
+					if (tmp->siguiente != NULL) {
+						tmp = tmp->siguiente;
+					}
+					if (Nombre2 != tmp->jugador->nombreJugador) {
+						if (tmp != NULL) {
+							Nombre3 = tmp->jugador->nombreJugador;
+							dinero3 = tmp->jugador->dineroJugador;
+							MessageBox::Show(toSystemString(Nombre3));
+							if (tmp->siguiente != NULL) {
+								tmp = tmp->siguiente;
+							}
+							if (Nombre3 != tmp->jugador->nombreJugador) {
+								if (tmp != NULL) {
+									Nombre4 = tmp->jugador->nombreJugador;
+									dinero4 = tmp->jugador->dineroJugador;
+									MessageBox::Show(toSystemString(Nombre4));
+									if (tmp->siguiente != NULL) {
+										tmp = tmp->siguiente;
+									}
+									if (Nombre4 != tmp->jugador->nombreJugador) {
+										if (tmp != NULL) {
+											Nombre5 = tmp->jugador->nombreJugador;
+											dinero5 = tmp->jugador->dineroJugador;
+											MessageBox::Show(toSystemString(Nombre5));
+											if (tmp->siguiente != NULL) {
+												tmp = tmp->siguiente;
+											}
+											if (Nombre5 != tmp->jugador->nombreJugador) {
+												if (tmp != NULL) {
+													Nombre6 = tmp->jugador->nombreJugador;
+													dinero6 = tmp->jugador->dineroJugador;
+													if (tmp->siguiente != NULL) {
+														tmp = tmp->siguiente;
+													}
+													if (Nombre6 != tmp->jugador->nombreJugador) {
+														if (tmp != NULL) {
+															Nombre7 = tmp->jugador->nombreJugador;
+															dinero7 = tmp->jugador->dineroJugador;
+															if (tmp->siguiente != NULL) {
+																tmp = tmp->siguiente;
+															}
+															if (Nombre7 != tmp->jugador->nombreJugador) {
+																if (tmp != NULL) {
+																	Nombre8 = tmp->jugador->nombreJugador;
+																	dinero8 = tmp->jugador->dineroJugador;
+																	if (tmp->siguiente != NULL) {
+																		tmp = tmp->siguiente;
+																	}
+																	if (Nombre8 != tmp->jugador->nombreJugador) {
+																		if (tmp != NULL) {
+																			Nombre9 = tmp->jugador->nombreJugador;
+																			dinero9 = tmp->jugador->dineroJugador;
+																			if (tmp->siguiente != NULL) {
+																				tmp = tmp->siguiente;
+																			}
+																			if (Nombre9 != tmp->jugador->nombreJugador) {
+																				if (tmp != NULL) {
+																					Nombre10 = tmp->jugador->nombreJugador;
+																					dinero10 = tmp->jugador->dineroJugador;
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		CoolFarm::Puntajes^ puntajes = gcnew CoolFarm::Puntajes();
+		puntajes->Show();
+	}
+		
 };
 }
 

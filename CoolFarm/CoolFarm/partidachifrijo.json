@@ -3,24 +3,30 @@
 	"ColaBinario" : 0,
 	"ColaEspanta" : 0,
 	"ColaHEAP" : 0,
-	"ColaSplay" : 1,
-	"Dinero" : 95534.84375,
+	"ColaSplay" : 0,
+	"Dinero" : 99599.0,
 	"EspantapajarosDispo" : 0,
 	"FrutosAVL" : 0,
 	"FrutosBinario" : 0,
 	"FrutosHeap" : 0,
-	"FrutosSplay" : 16,
+	"FrutosSplay" : 0,
 	"Matriz" : 
 	[
 		[
-			{
-				"ejecutando" : false,
-				"letra" : "S"
-			},
-			{
-				"ejecutando" : false,
-				"letra" : "g"
-			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
 			null,
 			null,
 			null,
@@ -45,10 +51,16 @@
 		[
 			null,
 			null,
-			{
-				"ejecutando" : false,
-				"letra" : "S"
-			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
 			null,
 			null,
 			{
@@ -58,49 +70,22 @@
 			null,
 			null,
 			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			{
-				"ejecutando" : false,
-				"letra" : "S"
-			},
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			{
-				"ejecutando" : false,
-				"letra" : "S"
-			},
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
 			null,
 			{
 				"ejecutando" : false,
 				"letra" : "E"
 			},
 			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
 			null,
 			null,
 			null
@@ -112,10 +97,7 @@
 			null,
 			null,
 			null,
-			{
-				"ejecutando" : false,
-				"letra" : "S"
-			},
+			null,
 			null,
 			null,
 			null
@@ -157,12 +139,12 @@
 			null
 		]
 	],
-	"NombrePartida" : "partida1.json",
-	"PrecioAVL" : -0.43999999761581421,
-	"PrecioBinario" : -0.43999999761581421,
-	"PrecioEspanta" : 199.58000183105469,
-	"PrecioHeap" : -0.43999999761581421,
-	"PrecioSplay" : 499.55999755859375,
+	"NombrePartida" : "partidachifrijo.json",
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 100.01999664306641,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
 	"SettingAparicionCuervos" : 0,
 	"SettingAparicionOveja" : 0,
 	"SettingAparicionPlagas" : 0,
@@ -177,6 +159,5 @@
 	"SettingfrutosCuervos" : 0,
 	"SettingfrutosOveja" : 0,
 	"SettingsMercadoAparicion" : 0,
-	"SettingsMercadoApertura" : 0,
-	"tmpNombrePartida" : "partida1.json"
+	"SettingsMercadoApertura" : 0
 }
