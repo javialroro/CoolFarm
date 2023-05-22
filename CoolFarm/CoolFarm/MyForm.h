@@ -453,8 +453,8 @@ namespace CoolFarm {
 			int columna = pos.Y;
 			if (arbolesBinarios[fila][columna]!=NULL) {
 				MessageBox::Show("Ubicacion: "+ arbolesBinarios[fila][columna]->fila+","+ arbolesBinarios[fila][columna]->columna+
-					" Cantidad de frutos: " + arbolesBinarios[fila][columna]->cantidadFrutosA+ " Monto total: "+ arbolesBinarios
-				[fila][columna]->montoTotal+ " Vendidos: "+ arbolesBinarios[fila][columna]->cantidadFrutosVendidos+ " Perdidos: "
+					"\nCantidad de frutos: " + arbolesBinarios[fila][columna]->cantidadFrutosA+ "\nMonto total: "+ arbolesBinarios
+				[fila][columna]->montoTotal+ "\nVendidos: "+ arbolesBinarios[fila][columna]->cantidadFrutosVendidos+ "\nPerdidos: "
 				+ arbolesBinarios[fila][columna]->cantidadFrutosPerdidos);
 			}
 			
@@ -809,7 +809,6 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 				   avl* nodo = new avl();
 				   arbol->insert(nodo, random);
 				   label1->Text = System::Convert::ToString(random);
-				   botones[arbol->columna, arbol->fila]->Text = "g";
 				   this->Refresh();
 			   }
 		   }
@@ -829,7 +828,6 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 				   s* nodo = new s();
 				   arbol->Insert(random, nodo);
 				   label1->Text = System::Convert::ToString(random);
-				   botones[arbol->columna, arbol->fila]->Text = "g";
 				   this->Refresh();
 			   }
 		   }
@@ -881,6 +879,107 @@ private: System::Void buttonGuardarPartida_Click(System::Object^ sender, System:
 		guardarDatosJuego(nombreJson);
 	}
 }
+	   
+Json::Value guardarArbolBin(Node* raiz) {
+
+	Json::Value j;
+
+	if (raiz == nullptr) {
+		j["data"] = Json::nullValue;
+	}
+	else {
+		j["data"] = raiz->value;
+		j["left"] = guardarArbolBin(raiz->left);
+		j["right"] = guardarArbolBin(raiz->right);
+	}
+
+	return j;
+}
+
+
+Json::Value guardarArbolHeap(Heap* heap) {
+	Json::Value j;
+	j["tamano"] = heap->tamano;
+	j["tamanoMaximo"] = heap->tamanoMaximo;
+
+	// Guardar los elementos del arreglo en un arreglo JSON
+	Json::Value arrJson(Json::arrayValue);
+	for (int i = 0; i < heap->tamano; i++) {
+		arrJson.append(heap->arr[i]);
+	}
+	j["arr"] = arrJson;
+
+	return j;
+}
+
+
+Json::Value guardarArbolAVL(avl* avlTree) {
+	Json::Value j;
+
+	// Guardar los elementos del árbol en un arreglo JSON
+	Json::Value arrJson(Json::arrayValue);
+	guardarArbolAVLRec(avlTree->r, arrJson);
+	j["arbol"] = arrJson;
+
+	return j;
+}
+
+void guardarArbolAVLRec(avl* node, Json::Value& arrJson) {
+	if (node == nullptr) {
+		return;
+	}
+
+	Json::Value nodoJson;
+	nodoJson["d"] = node->d;
+	nodoJson["l"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
+	nodoJson["r"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
+
+	if (node->l != nullptr) {
+		nodoJson["l"] = Json::Value(Json::objectValue);
+		guardarArbolAVLRec(node->l, nodoJson["l"]);
+	}
+
+	if (node->r != nullptr) {
+		nodoJson["r"] = Json::Value(Json::objectValue);
+		guardarArbolAVLRec(node->r, nodoJson["r"]);
+	}
+
+	arrJson.append(nodoJson);
+}
+
+Json::Value guardarArbolSplay(s* raiz) {
+	Json::Value j;
+
+	// Guardar los elementos del árbol en un arreglo JSON
+	Json::Value arrJson(Json::arrayValue);
+	guardarArbolSplayRec(raiz, arrJson);
+	j["arbol"] = arrJson;
+
+	return j;
+}
+
+void guardarArbolSplayRec(s* node, Json::Value& arrJson) {
+	if (node == nullptr) {
+		return;
+	}
+
+	Json::Value nodoJson;
+	nodoJson["k"] = node->k;
+	nodoJson["lch"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
+	nodoJson["rch"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
+
+	if (node->lch != nullptr) {
+		nodoJson["lch"] = Json::Value(Json::objectValue);
+		guardarArbolSplayRec(node->lch, nodoJson["lch"]);
+	}
+
+	if (node->rch != nullptr) {
+		nodoJson["rch"] = Json::Value(Json::objectValue);
+		guardarArbolSplayRec(node->rch, nodoJson["rch"]);
+	}
+
+	arrJson.append(nodoJson);
+}
 
 Json::Value guardarMatriz() {
 	Json::Value matrizJson(Json::arrayValue);
@@ -895,8 +994,21 @@ Json::Value guardarMatriz() {
 				if (botones[i, j]->Text != "") {
 					string gg = msclr::interop::marshal_as<std::string>(botones[i, j]->Text);
 					arbolJson["letra"] = gg;
+					if (arbolJson["letra"] = "O") {
+						arbolJson["datosArbol"] = guardarArbolBin(Nodoraiz);
+					}
+					else if (arbolJson["letra"] = "H") {
+						arbolJson["datosArbol"] = guardarArbolHeap(heapraiz);
+					}
+					else if (arbolJson["letra"] = "A") {
+						arbolJson["datosArbol"] = guardarArbolAVL(avlraiz);
+					}
+					else if (arbolJson["letra"] = "S") {
+						arbolJson["datosArbol"] = guardarArbolSplay(splayraiz);
+					}
 				}
-				arbolJson["ejecutando"] = arbolActual->ejecutando;
+				//arbolJson["ejecutando"] = arbolActual->ejecutando;
+
 
 				filaJson.append(arbolJson);
 			}
@@ -995,33 +1107,16 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 
 		if (Json::parseFromStream(builder, archivo, &root, &errs)) {
 			nombreJson = root["NombrePartida"].asString();
-			if (botones[0,0]->Text== "S") {
-				MessageBox::Show(toSystemString(nombreJson));
-			}
-			/*for (int i = 0; i < 10; ++i) {
+			MessageBox::Show(toSystemString(nombreJson));
+			
+			for (int i = 0; i < 10; ++i) {
 				for (int j = 0; j < 10; ++j) {
 					if (root["Matriz"][i][j]["letra"] != NULL) {
-						arbolesBinarios[i][j]->ejecutando = root["Matriz"][i][j]["ejecutando"].asBool();
-						arbolesBinarios[i][j]->tipo = root["Matriz"][i][j]["letra"].asString();
-						if (arbolesBinarios[i][j]->tipo == "E") {
-							botones[i, j]->Text = "E";
-						}
-						else if (arbolesBinarios[i][j]->tipo == "O") {
-							botones[i, j]->Text = "O";
-						}
-						else if (arbolesBinarios[i][j]->tipo == "H") {
-							botones[i, j]->Text = "H";
-						}
-						else if (arbolesBinarios[i][j]->tipo == "S") {
-							botones[i, j]->Text = "S";
-						}
-						else if (arbolesBinarios[i][j]->tipo == "A") {
-							botones[i, j]->Text = "A";
-						}
+						botones[i, j]->Text = toSystemString( root["Matriz"][i][j]["letra"].asString());
 					}
 					
 				}
-			}*/
+			}
 			porcentOvejas = root["SettingPorcentOveja"].asInt();
 			aparicionOvejas = root["SettingAparicionOveja"].asInt();
 			tiempoAparicionOvejas = root["SettingTiempoOveja"].asInt();
@@ -1091,20 +1186,14 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			MessageBox::Show("cargado");
 			isRunning = true;
 			this->DibujarMatriz();
-			//if (arbolesBinarios[0][0]->letra == "S") {
-			//if (arbolesBinarios[0][0]->letra == "S") {
-			//if (arbolesBinarios[0][0]->letra == "S") {
-			//if (arbolesBinarios[0][0]->letra == "S") {
-			//if (arbolesBinarios[0][0]->letra == "S") {
-			//	MessageBox::Show("no sirve");
-			//}
+			archivo.close();
 		}
 		else {
 			MessageBox::Show("Error al cargar el JSON.");
 		}
 	}
 	else {
-		MessageBox::Show("No existe una partida guardada con ese número.");
+		MessageBox::Show("No existe una partida guardada con ese nombre.");
 	}
 }
 bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugador2) {
