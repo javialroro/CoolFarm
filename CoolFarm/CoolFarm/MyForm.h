@@ -573,7 +573,7 @@ namespace CoolFarm {
 		}
 
 		void plantar(arbol * arbol, System::String^ letra) {
-
+			arbol->tipo = toStandardString(letra);
 			arbolesBinarios[granjero->columna][granjero->fila] = arbol;
 			botones[granjero->columna, granjero->fila]->Text = letra;
 			arbol->columna = granjero->columna;
@@ -806,8 +806,7 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
 			   for (int i = 0; i < cosechaA;i++) {
 				   double random = generateRandomNumber(0.001, 5.0);
-				   avl* nodo = new avl();
-				   arbol->insert(nodo, random);
+				   arbol->insert(arbol->r, random);
 				   label1->Text = System::Convert::ToString(random);
 				   this->Refresh();
 			   }
@@ -825,8 +824,7 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaS));
 			   for (int i = 0; i < cosechaS; i++) {
 				   double random = generateRandomNumber(0.001, 5.0);
-				   s* nodo = new s();
-				   arbol->Insert(random, nodo);
+				   arbol->Insert(random);
 				   label1->Text = System::Convert::ToString(random);
 				   this->Refresh();
 			   }
@@ -995,16 +993,20 @@ Json::Value guardarMatriz() {
 					string gg = msclr::interop::marshal_as<std::string>(botones[i, j]->Text);
 					arbolJson["letra"] = gg;
 					if (arbolJson["letra"] = "O") {
-						arbolJson["datosArbol"] = guardarArbolBin(Nodoraiz);
+						BinarioOrdenado* arbol = (BinarioOrdenado*)arbolActual;
+						arbolJson["datosArbol"] = guardarArbolBin(arbol->root);
 					}
 					else if (arbolJson["letra"] = "H") {
+						Heap * heapraiz = (Heap*)arbolActual;
 						arbolJson["datosArbol"] = guardarArbolHeap(heapraiz);
 					}
 					else if (arbolJson["letra"] = "A") {
-						arbolJson["datosArbol"] = guardarArbolAVL(avlraiz);
+						avl_tree* avlraiz = (avl_tree*)arbolActual;
+						arbolJson["datosArbol"] = guardarArbolAVL(avlraiz->r);
 					}
 					else if (arbolJson["letra"] = "S") {
-						arbolJson["datosArbol"] = guardarArbolSplay(splayraiz);
+						SplayTree* splayraiz = (SplayTree*)arbolActual;
+						arbolJson["datosArbol"] = guardarArbolSplay(splayraiz->root);
 					}
 				}
 				//arbolJson["ejecutando"] = arbolActual->ejecutando;

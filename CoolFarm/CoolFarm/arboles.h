@@ -37,9 +37,10 @@ struct avl {
     double d;
     struct avl* l;
     struct avl* r;
-}*r;
+};
 class avl_tree : public arbol {
 public:
+    avl * r;
     int height(avl*);
     int difference(avl*);
     avl* rr_rotat(avl*);
@@ -162,45 +163,48 @@ void avl_tree::inorder(avl* t) {
     inorder(t->r);
 }
 
-struct s//node declaration
-{
+struct s {
     double k;
     s* lch;
     s* rch;
 };
-class SplayTree : public arbol
-{
+
+class SplayTree : public arbol {
+private:
+    
+
 public:
-    s* RR_Rotate(s* k2)
-    {
+    s* root;
+    SplayTree() {
+        root = nullptr;
+    }
+
+    s* RR_Rotate(s* k2) {
         s* k1 = k2->lch;
         k2->lch = k1->rch;
         k1->rch = k2;
         return k1;
     }
-    s* LL_Rotate(s* k2)
-    {
+
+    s* LL_Rotate(s* k2) {
         s* k1 = k2->rch;
         k2->rch = k1->lch;
         k1->lch = k2;
         return k1;
     }
-    s* Splay(double key, s* root)
-    {
+
+    s* Splay(double key, s* root) {
         if (!root)
-            return NULL;
+            return nullptr;
         s header;
-        header.lch = header.rch = NULL;
+        header.lch = header.rch = nullptr;
         s* LeftTreeMax = &header;
         s* RightTreeMin = &header;
-        while (1)
-        {
-            if (key < root->k)
-            {
+        while (1) {
+            if (key < root->k) {
                 if (!root->lch)
                     break;
-                if (key < root->lch->k)
-                {
+                if (key < root->lch->k) {
                     root = RR_Rotate(root);
                     if (!root->lch)
                         break;
@@ -208,14 +212,12 @@ public:
                 RightTreeMin->lch = root;
                 RightTreeMin = RightTreeMin->lch;
                 root = root->lch;
-                RightTreeMin->lch = NULL;
+                RightTreeMin->lch = nullptr;
             }
-            else if (key > root->k)
-            {
+            else if (key > root->k) {
                 if (!root->rch)
                     break;
-                if (key > root->rch->k)
-                {
+                if (key > root->rch->k) {
                     root = LL_Rotate(root);
                     if (!root->rch)
                         break;
@@ -223,7 +225,7 @@ public:
                 LeftTreeMax->rch = root;
                 LeftTreeMax = LeftTreeMax->rch;
                 root = root->rch;
-                LeftTreeMax->rch = NULL;
+                LeftTreeMax->rch = nullptr;
             }
             else
                 break;
@@ -234,71 +236,64 @@ public:
         root->rch = header.lch;
         return root;
     }
-    s* New_Node(double key)
-    {
+
+    s* New_Node(double key) {
         s* p_node = new s;
-        if (!p_node)
-        {
+        if (!p_node) {
             fprintf(stderr, "Out of memory!\n");
             exit(1);
         }
         p_node->k = key;
-        p_node->lch = p_node->rch = NULL;
+        p_node->lch = p_node->rch = nullptr;
         return p_node;
     }
-    s* Insert(double key, s* root)
-    {
+
+    s* Insert(double key) {
         cantidadFrutosA++;
         frutosSplay++;
         montoTotal += key;
-        static s* p_node = NULL;
+        static s* p_node = nullptr;
         if (!p_node)
             p_node = New_Node(key);
         else
             p_node->k = key;
-        if (!root)
-        {
+        if (!root) {
             root = p_node;
-            p_node = NULL;
+            p_node = nullptr;
             return root;
         }
         root = Splay(key, root);
-        if (key < root->k)
-        {
+        if (key < root->k) {
             p_node->lch = root->lch;
             p_node->rch = root;
-            root->lch = NULL;
+            root->lch = nullptr;
             root = p_node;
         }
-        else if (key > root->k)
-        {
+        else if (key > root->k) {
             p_node->rch = root->rch;
             p_node->lch = root;
-            root->rch = NULL;
+            root->rch = nullptr;
             root = p_node;
         }
         else
             return root;
-        p_node = NULL;
+        p_node = nullptr;
         return root;
     }
-    s* Delete(double key, s* root)//delete node
-    {
+
+    s* Delete(double key) {
         s* temp;
-        if (!root)//if tree is empty
-            return NULL;
+        if (!root)
+            return nullptr;
         root = Splay(key, root);
-        if (key != root->k)//if tree has one item
+        if (key != root->k)
             return root;
-        else
-        {
-            if (!root->lch)
-            {
+        else {
+            if (!root->lch) {
                 temp = root;
                 root = root->rch;
             }
-            else
-            {
+            else {
                 temp = root;
                 root = Splay(key, root->lch);
                 root->rch = temp->rch;
@@ -307,14 +302,12 @@ public:
             return root;
         }
     }
-    s* Search(double key, s* root)//seraching
-    {
+
+    s* Search(double key) {
         return Splay(key, root);
     }
-    void InOrder(s* root)//inorder traversal
-    {
-        if (root)
-        {
+    void InOrder(s* root) {
+        if (root) {
             InOrder(root->lch);
             cout << "key: " << root->k;
             if (root->lch)
