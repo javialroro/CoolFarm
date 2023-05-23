@@ -1,0 +1,481 @@
+{
+	"ColaAVL" : 0,
+	"ColaBinario" : 0,
+	"ColaEspanta" : 0,
+	"ColaHEAP" : 0,
+	"ColaSplay" : 0,
+	"Dinero" : 99199.0,
+	"EspantapajarosDispo" : 0,
+	"FrutosAVL" : 0,
+	"FrutosBinario" : 37,
+	"FrutosHeap" : 0,
+	"FrutosSplay" : 0,
+	"Matriz" : 
+	[
+		[
+			{
+				"datosArbol" : 
+				{
+					"data" : 2.1610946251340599,
+					"left" : 
+					{
+						"data" : 0.042129919665131216,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : 1.1905989979614588,
+							"left" : 
+							{
+								"data" : 0.64781001904954594,
+								"left" : 
+								{
+									"data" : 0.22327415070243906,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 2.0827776516359107,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 4.6735765580673698,
+						"left" : 
+						{
+							"data" : 3.4365577244948198,
+							"left" : 
+							{
+								"data" : 2.9800065482293761,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 4.3548681103822311,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					}
+				},
+				"letra" : "O"
+			},
+			{
+				"datosArbol" : 
+				{
+					"data" : 4.3808259838427617,
+					"left" : 
+					{
+						"data" : 2.2116105152088608,
+						"left" : 
+						{
+							"data" : 1.3564126218886225,
+							"left" : 
+							{
+								"data" : 1.2599521359133086,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 1.7456843261853798,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 3.1166717791230871,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 3.8503872677900337,
+								"left" : 
+								{
+									"data" : 3.159087617794782,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 3.7216880460531017,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"letra" : "O"
+			},
+			{
+				"datosArbol" : 
+				{
+					"data" : 4.132299108435749,
+					"left" : 
+					{
+						"data" : 2.6943103465854632,
+						"left" : 
+						{
+							"data" : 0.23337445453092523,
+							"left" : 
+							{
+								"data" : 0.22289673553231215,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 0.75558728573990885,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 3.2022202772775947,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 3.7963832952233929,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 4.5635924577666227,
+						"left" : 
+						{
+							"data" : 4.4115280761551157,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					}
+				},
+				"letra" : "O"
+			},
+			{
+				"datosArbol" : 
+				{
+					"data" : 0.29432414333149742,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : 3.4984510688170731,
+						"left" : 
+						{
+							"data" : 0.59384169021769795,
+							"left" : 
+							{
+								"data" : 0.40744130485144564,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 2.4329958921322699,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 2.5587036559089387,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 2.6026500738363056,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 3.9840967781001901,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 4.4700806348030646,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					}
+				},
+				"letra" : "O"
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			{
+				"letra" : "E"
+			},
+			null,
+			null,
+			{
+				"letra" : "E"
+			},
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		]
+	],
+	"NombrePartida" : "partidabinario.json",
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 11.020000457763672,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
+	"SettingAparicionCuervos" : 0,
+	"SettingAparicionOveja" : 0,
+	"SettingAparicionPlagas" : 0,
+	"SettingPorcentCuervos" : 0,
+	"SettingPorcentOveja" : 0,
+	"SettingPorcentPlagas" : 0,
+	"SettingTiempoCuervos" : 0,
+	"SettingTiempoFrutosCuervos" : 0,
+	"SettingTiempoFrutosOveja" : 0,
+	"SettingTiempoOveja" : 0,
+	"SettingTiempoPlagas" : 0,
+	"SettingfrutosCuervos" : 0,
+	"SettingfrutosOveja" : 0,
+	"SettingsMercadoAparicion" : 0,
+	"SettingsMercadoApertura" : 0
+}

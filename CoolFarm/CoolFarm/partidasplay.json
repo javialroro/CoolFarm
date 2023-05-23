@@ -4,19 +4,47 @@
 	"ColaEspanta" : 0,
 	"ColaHEAP" : 0,
 	"ColaSplay" : 0,
-	"Dinero" : 98899.0,
+	"Dinero" : 97799.0,
 	"EspantapajarosDispo" : 0,
-	"FrutosAVL" : 11,
+	"FrutosAVL" : 0,
 	"FrutosBinario" : 0,
 	"FrutosHeap" : 0,
-	"FrutosSplay" : 0,
+	"FrutosSplay" : 2,
 	"Matriz" : 
 	[
 		[
+			{
+				"datosArbol" : 
+				{
+					"data" : 4.7431662934307059,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"letra" : "O"
+			},
 			null,
 			null,
-			null,
-			null,
+			{
+				"datosArbol" : 
+				{
+					"data" : 2.1571835955600536,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"letra" : "O"
+			},
 			null,
 			null,
 			null,
@@ -26,7 +54,13 @@
 		],
 		[
 			null,
-			null,
+			{
+				"datosArbol" : 
+				{
+					"data" : null
+				},
+				"letra" : "O"
+			},
 			null,
 			null,
 			null,
@@ -71,38 +105,8 @@
 			null,
 			null,
 			null,
-			{
-				"datosArbol" : 
-				{
-					"data" : null
-				},
-				"letra" : "O"
-			},
 			null,
 			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			{
-				"datosArbol" : 
-				{
-					"data" : null
-				},
-				"letra" : "O"
-			},
-			null,
-			null,
-			{
-				"datosArbol" : 
-				{
-					"data" : null
-				},
-				"letra" : "O"
-			},
 			null,
 			null,
 			null,
@@ -114,6 +118,24 @@
 			null,
 			null,
 			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			{
+				"datosArbol" : 
+				{
+					"data" : null
+				},
+				"letra" : "O"
+			},
 			null,
 			null,
 			null,
@@ -157,12 +179,12 @@
 			null
 		]
 	],
-	"NombrePartida" : "partida1.json",
-	"PrecioAVL" : 349.8699951171875,
-	"PrecioBinario" : 99.8699951171875,
-	"PrecioEspanta" : 199.87001037597656,
-	"PrecioHeap" : 129.87001037597656,
-	"PrecioSplay" : 599.8699951171875,
+	"NombrePartida" : "partidasplay.json",
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 100.01999664306641,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
 	"SettingAparicionCuervos" : 0,
 	"SettingAparicionOveja" : 0,
 	"SettingAparicionPlagas" : 0,

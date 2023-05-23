@@ -4,53 +4,116 @@
 	"ColaEspanta" : 0,
 	"ColaHEAP" : 0,
 	"ColaSplay" : 0,
-	"Dinero" : 98899.0,
+	"Dinero" : 99079.0,
 	"EspantapajarosDispo" : 0,
-	"FrutosAVL" : 11,
+	"FrutosAVL" : 0,
 	"FrutosBinario" : 0,
-	"FrutosHeap" : 0,
+	"FrutosHeap" : 25,
 	"FrutosSplay" : 0,
 	"Matriz" : 
 	[
 		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
 			{
 				"datosArbol" : 
 				{
-					"data" : null
+					"arr" : 
+					[
+						4.685327334454171,
+						3.5944378867504101,
+						4.4540248445783011,
+						3.1562462192251859,
+						3.2373367960972503,
+						0.17744049090226338,
+						3.3774752165637794
+					],
+					"tamano" : 7,
+					"tamanoMaximo" : 30
 				},
-				"letra" : "O"
+				"letra" : "H"
+			},
+			{
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						4.708543107409608,
+						3.0126714495415929,
+						3.7975206249707942,
+						0.12236837719645012,
+						1.115517886117094,
+						2.8378080458243877
+					],
+					"tamano" : 6,
+					"tamanoMaximo" : 30
+				},
+				"letra" : "H"
+			},
+			{
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						2.2072880245906381,
+						1.7807252953988555,
+						2.1349589174987913,
+						0.20104104146882659,
+						0.020319182775698812,
+						0.16114726465291218
+					],
+					"tamano" : 6,
+					"tamanoMaximo" : 30
+				},
+				"letra" : "H"
+			},
+			{
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						4.5098709228445131,
+						4.1969003619022276,
+						2.1166725166585749,
+						0.67738475018525601,
+						1.6891451424590533,
+						1.4008391026373062
+					],
+					"tamano" : 6,
+					"tamanoMaximo" : 30
+				},
+				"letra" : "H"
 			},
 			null,
 			null,
 			null,
 			null,
 			null,
+			null
+		],
+		[
+			null,
+			{
+				"letra" : "E"
+			},
+			null,
+			null,
+			{
+				"letra" : "E"
+			},
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
 			null,
 			null
 		],
@@ -71,13 +134,7 @@
 			null,
 			null,
 			null,
-			{
-				"datosArbol" : 
-				{
-					"data" : null
-				},
-				"letra" : "O"
-			},
+			null,
 			null,
 			null,
 			null,
@@ -87,22 +144,10 @@
 		[
 			null,
 			null,
-			{
-				"datosArbol" : 
-				{
-					"data" : null
-				},
-				"letra" : "O"
-			},
 			null,
 			null,
-			{
-				"datosArbol" : 
-				{
-					"data" : null
-				},
-				"letra" : "O"
-			},
+			null,
+			null,
 			null,
 			null,
 			null,
@@ -157,7 +202,7 @@
 			null
 		]
 	],
-	"NombrePartida" : "partida1.json",
+	"NombrePartida" : "partidaheap.json",
 	"PrecioAVL" : 349.8699951171875,
 	"PrecioBinario" : 99.8699951171875,
 	"PrecioEspanta" : 199.87001037597656,

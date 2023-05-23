@@ -988,19 +988,19 @@ Json::Value guardarMatriz() {
 				if (botones[i, j]->Text != "") {
 					string gg = msclr::interop::marshal_as<std::string>(botones[i, j]->Text);
 					arbolJson["letra"] = gg;
-					if (arbolJson["letra"] = "O") {
+					if (gg == "O") {
 						BinarioOrdenado* arbol = (BinarioOrdenado*)arbolActual;
 						arbolJson["datosArbol"] = guardarArbolBin(arbol->root);
 					}
-					else if (arbolJson["letra"] = "H") {
+					else if (gg == "H") {
 						Heap * heapraiz = (Heap*)arbolActual;
 						arbolJson["datosArbol"] = guardarArbolHeap(heapraiz);
 					}
-					else if (arbolJson["letra"] = "A") {
+					else if (gg == "A") {
 						avl_tree* avlraiz = (avl_tree*)arbolActual;
 						arbolJson["datosArbol"] = guardarArbolAVL(avlraiz->r);
 					}
-					else if (arbolJson["letra"] = "S") {
+					else if (gg == "S") {
 						SplayTree* splayraiz = (SplayTree*)arbolActual;
 						arbolJson["datosArbol"] = guardarArbolSplay(splayraiz->root);
 					}
@@ -1094,6 +1094,23 @@ private: static string toStandardString(System::String^ string) {
 	Marshal::FreeHGlobal(pointer);
 	return returnString;
 }
+	
+
+	int cargarBin(Node* fruto, BinarioOrdenado* a, int i, int j) {
+		Json::Value root; // Inicializar el objeto root
+		if (root["Matriz"][i][j]["arbolDatos"]["data"].asFloat() == NULL) {
+			MessageBox::Show("retornoDirecto");
+			return 0;
+		}
+		else {
+			MessageBox::Show("entre al else");
+			a->insertNode(fruto, root["Matriz"][i][j]["arbolDatos"]["data"].asFloat());
+			MessageBox::Show("AsigneNodo");
+			cargarBin(fruto->left, a, i, j);
+			cargarBin(fruto->right, a, i, j);
+		}
+		
+	}
 
 private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::EventArgs^ e) {
 	ifstream archivo(toStandardString(this->textBoxPartida->Text));
@@ -1111,10 +1128,23 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 				for (int j = 0; j < 10; ++j) {
 					if (root["Matriz"][i][j]["letra"] != NULL) {
 						botones[i, j]->Text = toSystemString( root["Matriz"][i][j]["letra"].asString());
+						if (root["Matriz"][i][j]["letra"].asString() == "O") {
+							MessageBox::Show("holamamamamamammama");
+							BinarioOrdenado* a = new BinarioOrdenado();
+							cargarBin(a->root, a, i, j);
+							MessageBox::Show("se logro");
+							BTemp = a;
+							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThread);
+							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
+							numHilos++;
+							hilos[numHilos - 1] = thread;
+							thread->Start();
+						}
 					}
 					
 				}
 			}
+			
 			porcentOvejas = root["SettingPorcentOveja"].asInt();
 			aparicionOvejas = root["SettingAparicionOveja"].asInt();
 			tiempoAparicionOvejas = root["SettingTiempoOveja"].asInt();
