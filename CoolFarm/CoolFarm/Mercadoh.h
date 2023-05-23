@@ -18,6 +18,7 @@ namespace CoolFarm {
 	public ref class Mercadoh : public System::Windows::Forms::Form
 	{
 	public:
+		
 		Mercadoh(void)
 		{
 			InitializeComponent();
@@ -670,18 +671,36 @@ namespace CoolFarm {
 		return gcnew String(str.c_str());
 	}
 	private: System::Void venderTodoButt_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (frutosBinario > 0)
-			dinero += mercado->obtenerPrecioFrutosBinario(frutosBinario);
-		if (frutosHeap > 0)
-			dinero += mercado->obtenerPrecioFrutosHeap(frutosHeap);
+		if (frutosBinario > 0) {
+
+			for (size_t i = 0; i < arregloBinario.size(); i++) {
+				dinero += arregloBinario[i]->montoTotal;
+				arregloBinario[i]->deleteAllFruits();
+				labelDinero->Text = toSystemString(to_string(dinero));
+			}
+			frutosBinario = 0;
+		}
+		if (frutosHeap > 0) {
+			for (size_t i = 0; i < arregloHeap.size(); i++) {
+				dinero += arregloHeap[i]->montoTotal;
+				arregloHeap[i]->deleteAllFruits(arregloHeap[i]);
+				labelDinero->Text = toSystemString(to_string(dinero));
+			}
+		}
 		if (frutosAVL > 0)
-			dinero += mercado->obtenerPrecioFrutosAVL(frutosAVL);
-		if (frutosSplay > 0)
-			dinero += mercado->obtenerPrecioFrutosSplay(frutosSplay);
-		frutosBinario = 0;
-		frutosHeap = 0;
-		frutosAVL = 0;
-		frutosSplay = 0;
+			for (size_t i = 0; i < arregloAVL.size(); i++) {
+				dinero += arregloAVL[i]->montoTotal;
+				arregloAVL[i]->deleteAllFruits(arregloAVL[i]);
+				labelDinero->Text = toSystemString(to_string(dinero));
+			}
+		if (frutosSplay > 0) {
+			for (size_t i = 0; i < arregloSplay.size(); i++) {
+				dinero += arregloSplay[i]->montoTotal;
+				arregloSplay[i]->deleteAllFruits(arregloSplay[i]);
+				labelDinero->Text = toSystemString(to_string(dinero));
+			}
+		}
+
 		this->cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
 		this->CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
 		this->cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
@@ -749,8 +768,18 @@ namespace CoolFarm {
 		int cajita = Int32::Parse(this->textBoxBi->Text);
 
 		if (frutosBinario >= cajita) {
-			dinero += mercado->obtenerPrecioFrutosBinario(cajita);
-			frutosBinario -= cajita;
+			//dinero += mercado->obtenerPrecioFrutosBinario(cajita);
+			//frutosBinario -= cajita;
+			for (size_t i = 0; i < arregloBinario.size(); i++) {
+				if (arregloBinario[i]->cantidadFrutosA >= cajita) {
+					isRunning = false;
+					dinero += arregloBinario[i]->montoTotal;
+					arregloBinario[i]->deleteFruits(cajita);
+					labelDinero->Text = toSystemString(to_string(dinero));
+					isRunning = true;
+					return;
+				}
+			}
 			this->labelDinero->Text = this->toSystemString(to_string(dinero));
 			this->cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
 		}

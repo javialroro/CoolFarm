@@ -12,6 +12,10 @@ int x = 0;
 
 using namespace std;
 arbol * arbolesBinarios[10][10];
+vector<BinarioOrdenado*> arregloBinario;
+vector<Heap*> arregloHeap;
+vector<avl_tree*> arregloAVL;
+vector<SplayTree*> arregloSplay;
 
 
 queue<Heap*> colaHeap;
@@ -76,7 +80,7 @@ float precioEspanta = 200;
 int espantapajarosDispo = 2;
 // Dinero Jugador
 //float dinero = 0;
-float dinero = 99999;
+
 
 // ranking
 string Nombre1;

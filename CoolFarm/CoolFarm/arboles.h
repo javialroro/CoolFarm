@@ -10,6 +10,7 @@
 using namespace std;
 using namespace System::Windows::Forms;
 
+float dinero = 99999;
 
 // Frutos por Arbol
 int frutosBinario = 0;
@@ -37,6 +38,7 @@ struct avl {
     double d;
     struct avl* l;
     struct avl* r;
+
 };
 class avl_tree : public arbol {
 public:
@@ -55,6 +57,45 @@ public:
     void postorder(avl*);
     avl_tree() {
         r = NULL;
+    }
+    void deleteAllFruits(avl_tree* avlTree) {
+        avlTree->r = nullptr;
+        cantidadFrutosA = 0;
+        frutosAVL = 0;
+        montoTotal = 0.0;
+    }
+
+    void deleteFruits(avl_tree* avlTree, int cantidad) {
+        if (cantidad >= cantidadFrutosA) {
+            deleteAllFruits(avlTree);
+            return;
+        }
+
+        avlTree->inorder(avlTree->r);
+        int count = 0;
+        avlTree->r = avlTree->deleteFruits(avlTree->r, cantidad, count);
+        cantidadFrutosA -= cantidad;
+        frutosAVL -= cantidad;
+        montoTotal -= count;
+    }
+    avl* deleteFruits(avl* node, int cantidad, int& count) {
+        if (node == nullptr)
+            return nullptr;
+
+        node->l = deleteFruits(node->l, cantidad, count);
+
+        if (count < cantidad) {
+            count++;
+            montoTotal -= node->d;
+            cantidadFrutosA--;
+            frutosAVL--;
+            delete node;
+            return nullptr;
+        }
+
+        node->r = deleteFruits(node->r, cantidad, count);
+
+        return node;
     }
 
 
@@ -318,6 +359,29 @@ public:
             InOrder(root->rch);
         }
     }
+    void deleteAllFruits(SplayTree* splayTree) {
+        splayTree->root = nullptr;
+        cantidadFrutosA = 0;
+        frutosSplay = 0;
+        montoTotal = 0.0;
+    }
+
+    void deleteFruits(SplayTree* splayTree, int cantidad) {
+        if (cantidad >= cantidadFrutosA) {
+            deleteAllFruits(splayTree);
+            return;
+        }
+
+        splayTree->InOrder(splayTree->root);
+        int count = 0;
+        splayTree->Delete(cantidad);
+        cantidadFrutosA -= cantidad;
+        frutosSplay -= cantidad;
+        for (int i = 0; i < cantidad; i++) {
+            montoTotal -= splayTree->root->k;
+            splayTree->Delete(splayTree->root->k);
+        }
+    }
 };
 struct Node {
     double value;
@@ -375,6 +439,57 @@ public:
             std::cout << node->value << " ";
             inorderTraversal(node->right);
         }
+    }
+    void deleteAllFruits() {
+        cantidadFrutosA = 0;
+        montoTotal = 0;
+        root = nullptr;
+    }
+
+    void deleteSubtree(Node* node) {
+        cantidadFrutosA--;
+        if (node != nullptr) {
+            deleteSubtree(node->left);
+            deleteSubtree(node->right);
+            delete node;
+            
+        }
+    }
+
+    void deleteFruits(int count) {
+        int deletedCount = deleteSubtree(root, count);
+        //std::cout << "Se eliminaron " << deletedCount << " frutos del árbol.\n";
+    }
+
+    int deleteSubtree(Node* node, int count) {
+        if (node == nullptr || count == 0) {
+            return 0;
+        }
+
+        int deletedCount = 0;
+
+        // Eliminar frutos en el subárbol izquierdo
+        int leftDeletedCount = deleteSubtree(node->left, count);
+        count -= leftDeletedCount;
+        deletedCount += leftDeletedCount;
+
+        // Eliminar frutos en el subárbol derecho
+        int rightDeletedCount = deleteSubtree(node->right, count);
+        count -= rightDeletedCount;
+        deletedCount += rightDeletedCount;
+
+        // Eliminar el nodo actual si aún queda capacidad
+        if (count > 0) {
+            dinero+=node->value;
+            cantidadFrutosA--;
+            montoTotal -= node->value;
+            frutosBinario--;
+            cantidadFrutosVendidos++;
+            delete node;
+            deletedCount++;
+        }
+
+        return deletedCount;
     }
 
 };
@@ -445,6 +560,30 @@ public:
             std::cout << arr[i] << " ";
         }
         std::cout << std::endl;
+    }
+    void deleteAllFruits(Heap* heap) {
+        heap->tamano = 0;
+        cantidadFrutosA = 0;
+        frutosHeap = 0;
+        montoTotal = 0.0;
+    }
+
+    void deleteFruits(Heap* heap, int cantidad) {
+        if (cantidad >= heap->tamano) {
+            deleteAllFruits(heap);
+            return;
+        }
+
+        for (int i = 0; i < cantidad; i++) {
+            heap->montoTotal -= heap->arr[i];
+            frutosHeap--;
+        }
+
+        heap->tamano -= cantidad;
+
+        for (int i = cantidad; i < heap->tamano; i++) {
+            heap->arr[i - cantidad] = heap->arr[i];
+        }
     }
 };
 

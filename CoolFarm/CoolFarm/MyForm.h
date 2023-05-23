@@ -539,14 +539,7 @@ namespace CoolFarm {
 				break;
 			}
 		}
-		void CambiarTextoLabel() {
-			this->label1->Text = "winchis";
-		}
 
-		/*void MyForm_KeyDown(Object^ sender, KeyEventArgs^ e) {
-			// Llamar al método para cambiar el texto del Label
-			CambiarTextoLabel();
-		}*/
 
 		private: System::Void abrirMercadoButt_Click(System::Object^ sender, System::EventArgs^ e) {
 			CoolFarm::Mercadoh^ mercado = gcnew CoolFarm::Mercadoh();
@@ -603,6 +596,7 @@ namespace CoolFarm {
 			hilos[numHilos - 1] = thread;
 			thread->Start();
 			plantar(a, "h");
+			arregloHeap.push_back(a);
 			colaHeap.pop();
 		}
 	}
@@ -626,6 +620,7 @@ private: System::Void botonPlantarAVL_Click(System::Object^ sender, System::Even
 		hilos[numHilos - 1] = thread;
 		thread->Start();
 		plantar(a, "a");
+		arregloAVL.push_back(a);
 		colaAVL.pop();
 	}
 }
@@ -647,6 +642,7 @@ private: System::Void botonPlantarSplay_Click(System::Object^ sender, System::Ev
 		hilos[numHilos - 1] = thread;
 		thread->Start();
 		plantar(a, "s");
+		arregloSplay.push_back(a);
 		colaSplay.pop();
 	}
 }	
@@ -670,6 +666,7 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 		hilos[numHilos-1] = thread;
 		thread->Start();
 		plantar(a, "o");
+		arregloBinario.push_back(a);
 		colaBinarioOrdenado.pop();
 	}
 	
