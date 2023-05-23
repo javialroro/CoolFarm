@@ -771,10 +771,8 @@ namespace CoolFarm {
 
 			for (size_t i = 0; i < arregloBinario.size(); i++) {
 				while (arregloBinario[i]->cantidadFrutosA !=0 && contador!= cajita) {
-					
 					arregloBinario[i]->deleteFruits(1);
 					contador++;
-					//return;
 				}
 				labelDinero->Text = toSystemString(to_string(dinero));
 				cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
