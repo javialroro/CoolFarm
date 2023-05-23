@@ -802,7 +802,7 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
 			   for (int i = 0; i < cosechaA;i++) {
 				   double random = generateRandomNumber(0.001, 5.0);
-				   arbol->insert(arbol->r, random);
+				   arbol->r=arbol->insert(arbol->r, random);
 				   label1->Text = System::Convert::ToString(random);
 				   this->Refresh();
 			   }

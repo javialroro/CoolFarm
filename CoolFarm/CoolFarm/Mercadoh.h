@@ -690,7 +690,7 @@ namespace CoolFarm {
 		if (frutosAVL > 0)
 			for (size_t i = 0; i < arregloAVL.size(); i++) {
 				dinero += arregloAVL[i]->montoTotal;
-				arregloAVL[i]->deleteAllFruits(arregloAVL[i]);
+				arregloAVL[i]->deleteAllFruits();
 				labelDinero->Text = toSystemString(to_string(dinero));
 			}
 		if (frutosSplay > 0) {
@@ -786,12 +786,16 @@ namespace CoolFarm {
 	}
 	private: System::Void venderHe_Click(System::Object^ sender, System::EventArgs^ e) {
 		int cajita = Int32::Parse(this->textBoxHe->Text);
-
+		int contador = 0;
 		if (frutosHeap >= cajita) {
-			dinero += mercado->obtenerPrecioFrutosHeap(cajita);
-			frutosHeap -= cajita;
-			this->labelDinero->Text = this->toSystemString(to_string(dinero));
-			this->CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
+			for (size_t i = 0; i < arregloHeap.size(); i++) {
+				while (arregloHeap[i]->cantidadFrutosA != 0 && contador != cajita) {
+					arregloHeap[i]->eliminar();
+					contador++;
+				}
+				labelDinero->Text = toSystemString(to_string(dinero));
+				CantidadHe->Text = this->toSystemString(to_string(frutosHeap));
+			}
 		}
 		else {
 			noFrutas();
@@ -799,12 +803,16 @@ namespace CoolFarm {
 	}
 	private: System::Void venderAVL_Click(System::Object^ sender, System::EventArgs^ e) {
 		int cajita = Int32::Parse(this->textBoxAVL->Text);
-
+		int contador = 0;
 		if (frutosAVL >= cajita) {
-			dinero += mercado->obtenerPrecioFrutosAVL(cajita);
-			frutosAVL -= cajita;
-			this->labelDinero->Text = this->toSystemString(to_string(dinero));
-			this->cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
+			for (size_t i = 0; i < arregloAVL.size(); i++) {
+				while (arregloAVL[i]->cantidadFrutosA != 0 && contador != cajita) {
+					arregloAVL[i]->sumNodes(1);
+					contador++;
+				}
+				labelDinero->Text = toSystemString(to_string(dinero));
+				cantidadAvl->Text = this->toSystemString(to_string(frutosAVL));
+			}
 		}
 		else {
 			noFrutas();
