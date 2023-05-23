@@ -766,22 +766,21 @@ namespace CoolFarm {
 
 	private: System::Void venderBi_Click(System::Object^ sender, System::EventArgs^ e) {
 		int cajita = Int32::Parse(this->textBoxBi->Text);
-
+		int contador = 0;
 		if (frutosBinario >= cajita) {
-			//dinero += mercado->obtenerPrecioFrutosBinario(cajita);
-			//frutosBinario -= cajita;
+
 			for (size_t i = 0; i < arregloBinario.size(); i++) {
-				if (arregloBinario[i]->cantidadFrutosA >= cajita) {
-					isRunning = false;
-					dinero += arregloBinario[i]->montoTotal;
-					arregloBinario[i]->deleteFruits(cajita);
-					labelDinero->Text = toSystemString(to_string(dinero));
-					isRunning = true;
-					return;
+				while (arregloBinario[i]->cantidadFrutosA !=0 && contador!= cajita) {
+					
+					arregloBinario[i]->deleteFruits(1);
+					contador++;
+					//return;
 				}
+				labelDinero->Text = toSystemString(to_string(dinero));
+				cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
 			}
-			this->labelDinero->Text = this->toSystemString(to_string(dinero));
-			this->cantidadBi->Text = this->toSystemString(to_string(frutosBinario));
+			
+			
 		}
 		else {
 			noFrutas();

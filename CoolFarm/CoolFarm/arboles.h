@@ -5,6 +5,7 @@
 #include<algorithm>
 #include <thread>
 #include <Windows.h>
+#include <stack>
 
 #define pow2(n) (1 << (n))
 using namespace std;
@@ -393,21 +394,21 @@ struct Node {
 
 class BinarioOrdenado : public arbol {
 public:
-
     BinarioOrdenado() {
         root = nullptr;
     }
 
-
-
     Node* root;
 
     Node* insertNode(Node* node, double value) {
-        cantidadFrutosA++;
-        frutosBinario++;
-        montoTotal += value;
         if (node == nullptr) {
             node = new Node(value);
+            if (root == nullptr) {
+                root = node; // Actualizar el puntero root al insertar el primer nodo
+            }
+            cantidadFrutosA++;
+            frutosBinario++;
+            montoTotal += value;
         }
         else if (value < node->value) {
             node->left = insertNode(node->left, value);
@@ -415,6 +416,7 @@ public:
         else if (value > node->value) {
             node->right = insertNode(node->right, value);
         }
+
         return node;
     }
 
@@ -440,56 +442,92 @@ public:
             inorderTraversal(node->right);
         }
     }
+
     void deleteAllFruits() {
         cantidadFrutosA = 0;
         montoTotal = 0;
         root = nullptr;
     }
 
-    void deleteSubtree(Node* node) {
-        cantidadFrutosA--;
-        if (node != nullptr) {
-            deleteSubtree(node->left);
-            deleteSubtree(node->right);
-            delete node;
-            
-        }
-    }
-
     void deleteFruits(int count) {
-        int deletedCount = deleteSubtree(root, count);
-        //std::cout << "Se eliminaron " << deletedCount << " frutos del árbol.\n";
+        if (count >= cantidadFrutosA) {
+            // Eliminar todos los nodos del árbol
+            deleteSubtree(root);
+            cantidadFrutosA = 0;
+            montoTotal = 0;
+            //frutosBinario = 0;
+            cantidadFrutosVendidos += count;
+            dinero += montoTotal;
+        }
+        else {
+            // Eliminar 'count' nodos del árbol
+            for (int i = 0; i < count; i++) {
+                deleteNode();
+            }
+            cantidadFrutosA -= count;
+            cantidadFrutosVendidos += count;
+            dinero += montoTotal;
+        }
     }
 
-    int deleteSubtree(Node* node, int count) {
-        if (node == nullptr || count == 0) {
-            return 0;
+    void deleteNode() {
+        if (root == nullptr) {
+            return;
         }
 
-        int deletedCount = 0;
-
-        // Eliminar frutos en el subárbol izquierdo
-        int leftDeletedCount = deleteSubtree(node->left, count);
-        count -= leftDeletedCount;
-        deletedCount += leftDeletedCount;
-
-        // Eliminar frutos en el subárbol derecho
-        int rightDeletedCount = deleteSubtree(node->right, count);
-        count -= rightDeletedCount;
-        deletedCount += rightDeletedCount;
-
-        // Eliminar el nodo actual si aún queda capacidad
-        if (count > 0) {
-            dinero+=node->value;
-            cantidadFrutosA--;
-            montoTotal -= node->value;
-            frutosBinario--;
-            cantidadFrutosVendidos++;
-            delete node;
-            deletedCount++;
+        Node* parent = nullptr;
+        Node* current = root;
+        while (current->left != nullptr) {
+            parent = current;
+            current = current->left;
         }
 
-        return deletedCount;
+        if (parent == nullptr) {
+            root = current->right;
+        }
+        else {
+            parent->left = current->right;
+        }
+
+        frutosBinario--;
+        montoTotal -= current->value;
+
+        delete current;
+    }
+
+    void deleteSubtree(Node* node) {
+        if (node == nullptr) {
+            return;
+        }
+
+        std::stack<Node*> stack;
+        Node* current = node;
+        Node* lastVisited = nullptr;
+
+        while (!stack.empty() || current != nullptr) {
+            if (current != nullptr) {
+                stack.push(current);
+                current = current->left;
+            }
+            else {
+                Node* top = stack.top();
+
+                if (top->right != nullptr && lastVisited != top->right) {
+                    current = top->right;
+                }
+                else {
+                    // Visitar el nodo actual
+                    frutosBinario--;
+                    montoTotal -= top->value;
+                    delete top;
+
+                    stack.pop();
+                    lastVisited = top;
+                }
+            }
+        }
+
+        root = nullptr;
     }
 
 };
