@@ -1005,7 +1005,12 @@ Json::Value guardarMatriz() {
 						arbolJson["datosArbol"] = guardarArbolSplay(splayraiz->root);
 					}
 				}
-				//arbolJson["ejecutando"] = arbolActual->ejecutando;
+				arbolJson["fila"] = arbolActual->fila;
+				arbolJson["columna"] = arbolActual->columna;
+				arbolJson["cantidadFrutos"] = arbolActual->cantidadFrutosA;
+				arbolJson["montoTotal"] = arbolActual->montoTotal;
+				arbolJson["frutosVendidos"] = arbolActual->cantidadFrutosVendidos;
+				arbolJson["frutosPerdidos"] = arbolActual->cantidadFrutosPerdidos;
 
 
 				filaJson.append(arbolJson);
@@ -1057,14 +1062,31 @@ Json::Value guardarMatriz() {
 		datosJuego["FrutosSplay"] = frutosSplay;
 
 		datosJuego["PrecioBinario"] = precioBinario;
+		datosJuego["creceBinario"] = creceBinario;
+		datosJuego["cosechaB"] = cosechaB;
+		datosJuego["tiempoCosechaB"] = tiempoCosechaB;
+
 		datosJuego["PrecioHeap"] = precioHeap;
+		datosJuego["creceH"] = creceH;
+		datosJuego["cosechaH"] = cosechaH;
+		datosJuego["tiempoCosechaH"] = tiempoCosechaH;
+
 		datosJuego["PrecioAVL"] = precioAVL;
+		datosJuego["creceA"] = creceA;
+		datosJuego["cosechaA"] = cosechaA;
+		datosJuego["tiempoCosechaA"] = tiempoCosechaA;
+
 		datosJuego["PrecioSplay"] = precioSplay;
+		datosJuego["creceS"] = creceS;
+		datosJuego["cosechaS"] = cosechaS;
+		datosJuego["tiempoCosechaS"] = tiempoCosechaS;
+
 		datosJuego["PrecioEspanta"] = precioEspanta;
 
 		datosJuego["EspantapajarosDispo"] = espantapajarosDispo;
 
 		datosJuego["Dinero"] = dinero;
+
 
 		std::ofstream archivo(nombreArchivo);
 
@@ -1094,23 +1116,7 @@ private: static string toStandardString(System::String^ string) {
 	Marshal::FreeHGlobal(pointer);
 	return returnString;
 }
-	
 
-	int cargarBin(Node* fruto, BinarioOrdenado* a, int i, int j) {
-		Json::Value root; // Inicializar el objeto root
-		if (root["Matriz"][i][j]["arbolDatos"]["data"].asFloat() == NULL) {
-			MessageBox::Show("retornoDirecto");
-			return 0;
-		}
-		else {
-			MessageBox::Show("entre al else");
-			a->insertNode(fruto, root["Matriz"][i][j]["arbolDatos"]["data"].asFloat());
-			MessageBox::Show("AsigneNodo");
-			cargarBin(fruto->left, a, i, j);
-			cargarBin(fruto->right, a, i, j);
-		}
-		
-	}
 
 private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::EventArgs^ e) {
 	ifstream archivo(toStandardString(this->textBoxPartida->Text));
@@ -1129,16 +1135,40 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 					if (root["Matriz"][i][j]["letra"] != NULL) {
 						botones[i, j]->Text = toSystemString( root["Matriz"][i][j]["letra"].asString());
 						if (root["Matriz"][i][j]["letra"].asString() == "O") {
-							MessageBox::Show("holamamamamamammama");
 							BinarioOrdenado* a = new BinarioOrdenado();
-							cargarBin(a->root, a, i, j);
-							MessageBox::Show("se logro");
+							a->fila = root["Matriz"][i][j]["columna"].asInt();
+							a->columna = root["Matriz"][i][j]["fila"].asInt();
+							a->cantidadFrutosA = root["Matriz"][i][j]["cantidadFrutos"].asInt();
+							a->montoTotal = root["Matriz"][i][j]["montoTotal"].asDouble();
+							a->cantidadFrutosVendidos = root["Matriz"][i][j]["frutosVendidos"].asInt();
+							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
+							arbolesBinarios[i][j] = a;
 							BTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThread);
 							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
 							numHilos++;
 							hilos[numHilos - 1] = thread;
 							thread->Start();
+							arregloBinario.push_back(a);
+
+							
+						}
+						if (root["Matriz"][i][j]["letra"].asString() == "H") {
+							Heap* a = new Heap(30);
+							a->fila = root["Matriz"][i][j]["columna"].asInt();
+							a->columna = root["Matriz"][i][j]["fila"].asInt();
+							a->cantidadFrutosA = root["Matriz"][i][j]["cantidadFrutos"].asInt();
+							a->montoTotal = root["Matriz"][i][j]["montoTotal"].asDouble();
+							a->cantidadFrutosVendidos = root["Matriz"][i][j]["frutosVendidos"].asInt();
+							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
+							arbolesBinarios[i][j] = a;
+							HTemp = a;
+							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadHeap);
+							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
+							numHilos++;
+							hilos[numHilos - 1] = thread;
+							thread->Start();
+							arregloHeap.push_back(a);
 						}
 					}
 					
@@ -1170,9 +1200,25 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			frutosSplay = root["FrutosSplay"].asInt();
 
 			precioBinario = root["PrecioBinario"].asFloat();
+			creceBinario = root["creceBinario"].asInt();
+			cosechaB = root["cosechaB"].asInt();
+			tiempoCosechaB = root["tiempoCosechaB"].asInt();
+
 			precioHeap = root["PrecioHeap"].asFloat();
+			creceH = root["creceH"].asInt();
+			cosechaH = root["cosechaH"].asInt();
+			tiempoCosechaH = root["tiempoCosechaH"].asInt();
+
 			precioAVL = root["PrecioAVL"].asFloat();
+			creceA = root["creceA"].asInt();
+			cosechaA = root["cosechaA"].asInt();
+			tiempoCosechaA = root["tiempoCosechaA"].asInt();
+
 			precioSplay = root["PrecioSplay"].asFloat();
+			creceS = root["creceS"].asInt();
+			cosechaS = root["cosechaH"].asInt();
+			tiempoCosechaS = root["tiempoCosechaS"].asInt();
+
 			precioEspanta = root["PrecioEspanta"].asFloat();
 
 			espantapajarosDispo = root["EspantapajarosDispo"].asInt();
