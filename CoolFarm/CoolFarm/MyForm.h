@@ -801,7 +801,7 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 			   botones[arbol->columna, arbol->fila]->Text = "A";
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
 			   for (int i = 0; i < cosechaA;i++) {
-				   double random = generateRandomNumber(0.001, 5.0);
+				   double random = generateRandomNumber(2.0, 20.0);
 				   arbol->r=arbol->insert(arbol->r, random);
 				   label1->Text = System::Convert::ToString(random);
 				   this->Refresh();
@@ -819,8 +819,8 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 			   botones[arbol->columna, arbol->fila]->Text = "S";
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaS));
 			   for (int i = 0; i < cosechaS; i++) {
-				   double random = generateRandomNumber(0.001, 5.0);
-				   arbol->Insert(random);
+				   double random = generateRandomNumber(5.0, 50.0);
+				   arbol->root=arbol->Insert(random);
 				   label1->Text = System::Convert::ToString(random);
 				   this->Refresh();
 			   }

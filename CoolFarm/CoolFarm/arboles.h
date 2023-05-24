@@ -378,10 +378,6 @@ public:
     }
 
     void deleteFruits(SplayTree* splayTree, int cantidad) {
-        if (cantidad >= cantidadFrutosA) {
-            deleteAllFruits(splayTree);
-            return;
-        }
 
         splayTree->InOrder(splayTree->root);
         int count = 0;
@@ -390,6 +386,10 @@ public:
         frutosSplay -= cantidad;
         for (int i = 0; i < cantidad; i++) {
             montoTotal -= splayTree->root->k;
+            if (montoTotal < 0) {
+				montoTotal = 0;
+			}
+            dinero += splayTree->root->k;
             splayTree->Delete(splayTree->root->k);
         }
     }

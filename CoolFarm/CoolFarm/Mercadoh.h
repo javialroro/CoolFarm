@@ -820,12 +820,16 @@ namespace CoolFarm {
 	}
 	private: System::Void venderSp_Click(System::Object^ sender, System::EventArgs^ e) {
 		int cajita = Int32::Parse(this->textBoxSp->Text);
-
+		int contador = 0;
 		if (frutosSplay >= cajita) {
-			dinero += mercado->obtenerPrecioFrutosSplay(cajita);
-			frutosSplay -= cajita;
-			this->labelDinero->Text = this->toSystemString(to_string(dinero));
-			this->cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
+			for (size_t i = 0; i < arregloSplay.size(); i++) {
+				while (arregloSplay[i]->cantidadFrutosA != 0 && contador != cajita) {
+					arregloSplay[i]->deleteFruits(arregloSplay[i],1);
+					contador++;
+				}
+				labelDinero->Text = toSystemString(to_string(dinero));
+				cantidadSp->Text = this->toSystemString(to_string(frutosSplay));
+			}
 		}
 		else {
 			noFrutas();
