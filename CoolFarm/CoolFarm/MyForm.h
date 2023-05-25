@@ -516,7 +516,15 @@ namespace CoolFarm {
 						}
 					}
 					if (botones[i, j]->BackColor != Color::Gold ) {
-						botones[i, j]->BackColor = Color::YellowGreen;
+						if (botones[i, j]->BackColor == Color::Blue && botones[i, j]->Text == "") {
+							botones[i, j]->BackColor = Color::YellowGreen;
+						}
+						else if (botones[i, j]->BackColor == Color::Blue && botones[i, j]->Text != "") {
+							botones[i, j]->BackColor = Color::Blue;
+						}
+						if (botones[i, j]->BackColor != Color::Blue){
+							botones[i, j]->BackColor = Color::YellowGreen;
+						}
 					}
 					if (i == granjero->columna && j == granjero->fila) {
 						botones[i, j]->BackColor = Color::Red;
@@ -928,72 +936,34 @@ Json::Value guardarArbolHeap(Heap* heap) {
 }
 
 
-Json::Value guardarArbolAVL(avl* avlTree) {
-	Json::Value j;
+Json::Value guardarArbolAVL(avl* raiz) {
+	Json::Value json;
 
-	// Guardar los elementos del árbol en un arreglo JSON
-	Json::Value arrJson(Json::arrayValue);
-	guardarArbolAVLRec(avlTree->r, arrJson);
-	j["arbol"] = arrJson;
-
-	return j;
-}
-
-void guardarArbolAVLRec(avl* node, Json::Value& arrJson) {
-	if (node == nullptr) {
-		return;
+	if (raiz == nullptr) {
+		json["data"] = Json::nullValue;
+	}
+	else {
+		json["data"] = raiz->d;
+		json["left"] = guardarArbolAVL(raiz->l);
+		json["right"] = guardarArbolAVL(raiz->r);
 	}
 
-	Json::Value nodoJson;
-	nodoJson["d"] = node->d;
-	nodoJson["l"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
-	nodoJson["r"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
-
-	if (node->l != nullptr) {
-		nodoJson["l"] = Json::Value(Json::objectValue);
-		guardarArbolAVLRec(node->l, nodoJson["l"]);
-	}
-
-	if (node->r != nullptr) {
-		nodoJson["r"] = Json::Value(Json::objectValue);
-		guardarArbolAVLRec(node->r, nodoJson["r"]);
-	}
-
-	arrJson.append(nodoJson);
+	return json;
 }
 
 Json::Value guardarArbolSplay(s* raiz) {
-	Json::Value j;
+	Json::Value json;
 
-	// Guardar los elementos del árbol en un arreglo JSON
-	Json::Value arrJson(Json::arrayValue);
-	guardarArbolSplayRec(raiz, arrJson);
-	j["arbol"] = arrJson;
-
-	return j;
-}
-
-void guardarArbolSplayRec(s* node, Json::Value& arrJson) {
-	if (node == nullptr) {
-		return;
+	if (raiz == nullptr) {
+		json["data"] = Json::nullValue;
+	}
+	else {
+		json["data"] = raiz->k;
+		json["left"] = guardarArbolSplay(raiz->lch);
+		json["right"] = guardarArbolSplay(raiz->rch);
 	}
 
-	Json::Value nodoJson;
-	nodoJson["k"] = node->k;
-	nodoJson["lch"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
-	nodoJson["rch"] = Json::nullValue; // Opcional: Puedes manejar nodos nulos de esta manera
-
-	if (node->lch != nullptr) {
-		nodoJson["lch"] = Json::Value(Json::objectValue);
-		guardarArbolSplayRec(node->lch, nodoJson["lch"]);
-	}
-
-	if (node->rch != nullptr) {
-		nodoJson["rch"] = Json::Value(Json::objectValue);
-		guardarArbolSplayRec(node->rch, nodoJson["rch"]);
-	}
-
-	arrJson.append(nodoJson);
+	return json;
 }
 
 Json::Value guardarMatriz() {
@@ -1032,6 +1002,7 @@ Json::Value guardarMatriz() {
 				arbolJson["montoTotal"] = arbolActual->montoTotal;
 				arbolJson["frutosVendidos"] = arbolActual->cantidadFrutosVendidos;
 				arbolJson["frutosPerdidos"] = arbolActual->cantidadFrutosPerdidos;
+				arbolJson["plaga"] = arbolActual->plaga;
 
 
 				filaJson.append(arbolJson);
@@ -1163,6 +1134,7 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->montoTotal = root["Matriz"][i][j]["montoTotal"].asDouble();
 							a->cantidadFrutosVendidos = root["Matriz"][i][j]["frutosVendidos"].asInt();
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
+							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
 							BTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThread);
@@ -1182,6 +1154,7 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->montoTotal = root["Matriz"][i][j]["montoTotal"].asDouble();
 							a->cantidadFrutosVendidos = root["Matriz"][i][j]["frutosVendidos"].asInt();
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
+							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
 							HTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadHeap);
@@ -1190,6 +1163,42 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							hilos[numHilos - 1] = thread;
 							thread->Start();
 							arregloHeap.push_back(a);
+						}
+						if (root["Matriz"][i][j]["letra"].asString() == "A") {
+							avl_tree* a = new avl_tree();
+							a->fila = root["Matriz"][i][j]["columna"].asInt();
+							a->columna = root["Matriz"][i][j]["fila"].asInt();
+							a->cantidadFrutosA = root["Matriz"][i][j]["cantidadFrutos"].asInt();
+							a->montoTotal = root["Matriz"][i][j]["montoTotal"].asDouble();
+							a->cantidadFrutosVendidos = root["Matriz"][i][j]["frutosVendidos"].asInt();
+							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
+							a->plaga = root["Matriz"][i][j]["plaga"].asString();
+							arbolesBinarios[i][j] = a;
+							AVTemp = a;
+							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadAVL);
+							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
+							numHilos++;
+							hilos[numHilos - 1] = thread;
+							thread->Start();
+							arregloAVL.push_back(a);
+						}
+						if (root["Matriz"][i][j]["letra"].asString() == "S") {
+							SplayTree* a = new SplayTree();
+							a->fila = root["Matriz"][i][j]["columna"].asInt();
+							a->columna = root["Matriz"][i][j]["fila"].asInt();
+							a->cantidadFrutosA = root["Matriz"][i][j]["cantidadFrutos"].asInt();
+							a->montoTotal = root["Matriz"][i][j]["montoTotal"].asDouble();
+							a->cantidadFrutosVendidos = root["Matriz"][i][j]["frutosVendidos"].asInt();
+							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
+							a->plaga = root["Matriz"][i][j]["plaga"].asString();
+							arbolesBinarios[i][j] = a;
+							STemp = a;
+							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadSplay);
+							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
+							numHilos++;
+							hilos[numHilos - 1] = thread;
+							thread->Start();
+							arregloSplay.push_back(a);
 						}
 					}
 					
@@ -1437,7 +1446,7 @@ bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugado
 		// Iterar sobre la matriz para encontrar la posición más cercana con un objeto
 		for (int i = 0; i < FILAS; i++) {
 			for (int j = 0; j < COLUMNAS; j++) {
-				if (arbolesBinarios[i][j] != NULL && botones[i,j]->BackColor!=Color::Blue) {  // Se encontró un objeto en la posición (j, i)
+				if (arbolesBinarios[i][j] != NULL && botones[i,j]->BackColor!=Color::Blue && botones[i, j]->BackColor != Color::Gold) {  // Se encontró un objeto en la posición (j, i)
 					int distancia = std::abs(j - x) + std::abs(i - y);  // Calcular la distancia Manhattan
 					if (distancia < distanciaMinima) {
 						distanciaMinima = distancia;
@@ -1515,7 +1524,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			
 				
 				
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionOvejas));
+			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionOvejas * 60000));
 
 
 			
@@ -1535,7 +1544,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 
 
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionCuervos));
+			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionCuervos * 60000));
 
 
 
@@ -1555,7 +1564,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 
 
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionPlagas));
+			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionPlagas * 60000));
 
 
 
@@ -1568,7 +1577,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		const int y = yTemp;
 		while (isRunning) {
 			arbolesBinarios[y][x]->deleteFruits(1,"c");
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas));
+			std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas * 1000));
 		}
 	}
 

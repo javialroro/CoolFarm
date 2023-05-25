@@ -33,21 +33,21 @@ bool isRunning = true;
 
 
 // Settings Ovejas
-int porcentOvejas;
-int aparicionOvejas;
-int tiempoAparicionOvejas;
-int frutosOvejas;
-int tiempoFrutosOvejas;
+int porcentOvejas = 70;
+int aparicionOvejas = 1;
+int tiempoAparicionOvejas = 1;
+int frutosOvejas = 1;
+int tiempoFrutosOvejas = 90;
 // Settings Cuervos
-int porcentCuervos;
-int aparicionCuervos;
-int tiempoAparicionCuervos;
-int frutosCuervos;
-int tiempoFrutosCuervos;
+int porcentCuervos = 40;
+int aparicionCuervos = 2;
+int tiempoAparicionCuervos = 3;
+int frutosCuervos = 1;
+int tiempoFrutosCuervos = 90;
 // Settings Plagas
-int porcentPlagas;
-int aparicionPlagas;
-int tiempoAparicionPlagas;
+int porcentPlagas = 30;
+int aparicionPlagas = 1;
+int tiempoAparicionPlagas = 90;
 // Settings Mercado
 int mercadoAparicion;
 int mercadoApertura;
