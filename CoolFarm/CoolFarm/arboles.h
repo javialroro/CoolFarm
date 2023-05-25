@@ -11,13 +11,26 @@
 using namespace std;
 using namespace System::Windows::Forms;
 
-float dinero = 99999;
+double dinero = 99999;
 
 // Frutos por Arbol
 int frutosBinario = 0;
 int frutosHeap = 0;
 int frutosAVL = 0;
 int frutosSplay = 0;
+
+ref class Hilo {
+public:
+    System::Threading::Thread^ hilo;
+    int x, y;
+    Hilo() {
+		hilo = nullptr;
+		x = 0;
+		y = 0;
+	}
+};
+
+
 
 class arbol {
 public:
@@ -29,6 +42,11 @@ public:
     double montoTotal = 0.0;
     int cantidadFrutosPerdidos = 0;
     bool ejecutando;
+    string plaga;
+
+    virtual void deleteFruits(int cantidad, string a) {
+
+    };
 
 };
 
@@ -55,10 +73,52 @@ public:
     void show(avl*, double);
     void inorder(avl*);
     void deleteAllFruits();
-    void sumNodes(int cantidad);
-    void deleteFruits(int cantidad);
+    //void deleteFruits(int cantidad);
+    //void sumNodes(int cantidad);
+    //void deleteFruits(int cantidad);
     avl_tree() {
         r = NULL;
+    }
+
+    void deleteFruits(int cantidad, string a) override {
+
+        int sum = 0;
+        int count = 0;
+
+        stack<avl*> nodesStack;
+        avl* current = r;
+
+        while (current != nullptr || !nodesStack.empty()) {
+            while (current != nullptr) {
+                nodesStack.push(current);
+                current = current->l;
+            }
+
+            current = nodesStack.top();
+            nodesStack.pop();
+
+            sum += current->d;
+            count++;
+
+            if (count >= cantidad) {
+                break;
+            }
+
+            current = current->r;
+        }
+        if (a == "v") {
+            montoTotal -= sum;
+            dinero += sum;
+            cantidadFrutosA -= count;
+            cantidadFrutosVendidos += count;
+            frutosAVL -= count;
+        }
+        else {
+            montoTotal -= sum;
+            cantidadFrutosPerdidos += count;
+            cantidadFrutosA -= count;
+            frutosAVL -= count;
+        }
     }
 };
 
@@ -182,38 +242,7 @@ void avl_tree::deleteAllFruits() {
     montoTotal = 0.0;
 }
 
-void avl_tree::sumNodes(int cantidad) {
 
-    int sum = 0;
-    int count = 0;
-
-    stack<avl*> nodesStack;
-    avl* current = r;
-
-    while (current != nullptr || !nodesStack.empty()) {
-        while (current != nullptr) {
-            nodesStack.push(current);
-            current = current->l;
-        }
-
-        current = nodesStack.top();
-        nodesStack.pop();
-
-        sum += current->d;
-        count++;
-
-        if (count >= cantidad) {
-            break;
-        }
-
-        current = current->r;
-    }
-
-    montoTotal -= sum;
-    dinero+=sum;
-    cantidadFrutosA -= count;
-    frutosAVL -= count;
-}
 
 struct s {
     double k;
@@ -377,20 +406,28 @@ public:
         montoTotal = 0.0;
     }
 
-    void deleteFruits(SplayTree* splayTree, int cantidad) {
+    void deleteFruits(int cantidad, string a) override{
 
-        splayTree->InOrder(splayTree->root);
+        this->InOrder(this->root);
         int count = 0;
-        splayTree->Delete(cantidad);
+        this->Delete(cantidad);
+        if (a != "v") {
+            cantidadFrutosVendidos += cantidad;
+        }
+        else {
+            cantidadFrutosPerdidos += cantidad;
+        }
         cantidadFrutosA -= cantidad;
         frutosSplay -= cantidad;
         for (int i = 0; i < cantidad; i++) {
-            montoTotal -= splayTree->root->k;
+            montoTotal -= this->root->k;
             if (montoTotal < 0) {
 				montoTotal = 0;
 			}
-            dinero += splayTree->root->k;
-            splayTree->Delete(splayTree->root->k);
+            if(a=="v"){
+            dinero += this->root->k;
+			}
+            this->Delete(this->root->k);
         }
     }
 };
@@ -459,15 +496,22 @@ public:
         root = nullptr;
     }
 
-    void deleteFruits(int count) {
-        if (count >= cantidadFrutosA) {
+    void deleteFruits(int count, string a) override{
+        if (count >= cantidadFrutosA ) {
             // Eliminar todos los nodos del árbol
-            deleteSubtree(root);
-            cantidadFrutosA = 0;
-            montoTotal = 0;
-            //frutosBinario = 0;
-            cantidadFrutosVendidos += count;
-            dinero += montoTotal;
+            if (a == "v") {
+                deleteSubtree(root);
+                cantidadFrutosA = 0;
+                montoTotal = 0;
+                cantidadFrutosVendidos += count;
+                dinero += montoTotal;
+            }
+            else {
+                deleteSubtree(root);
+                cantidadFrutosA = 0;
+                montoTotal = 0;
+                cantidadFrutosPerdidos += count;
+            }
         }
         else {
             // Eliminar 'count' nodos del árbol
@@ -475,8 +519,13 @@ public:
                 deleteNode();
             }
             cantidadFrutosA -= count;
-            cantidadFrutosVendidos += count;
-            dinero += montoTotal;
+            if (a == "v") {
+                cantidadFrutosVendidos += count;
+                dinero += montoTotal;
+            }
+            else {
+                cantidadFrutosPerdidos += count;
+            }
         }
     }
 
@@ -593,17 +642,25 @@ public:
         }
     }
 
-    void eliminar() {
+    void deleteFruits(int cantidad, string a) override{
         if (tamano == 0) {
             return;
         }
         cantidadFrutosA--;
         frutosHeap--;
         montoTotal -= arr[0];
+        if (a == "v") {
+            cantidadFrutosVendidos++;
+        }
+        else {
+            cantidadFrutosPerdidos++;
+        }
         if (montoTotal < 0) {
 			montoTotal = 0;
 		}
-        dinero+= arr[0];
+        if (a == "v") {
+            dinero += arr[0];
+        }
         arr[0] = arr[tamano - 1];
         tamano--;
         heapify(0);

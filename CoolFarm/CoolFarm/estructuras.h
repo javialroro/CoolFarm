@@ -11,7 +11,7 @@ int x = 0;
 #include <vector>
 
 using namespace std;
-arbol * arbolesBinarios[10][10];
+arbol* arbolesBinarios[10][10] = { nullptr };
 vector<BinarioOrdenado*> arregloBinario;
 vector<Heap*> arregloHeap;
 vector<avl_tree*> arregloAVL;
@@ -128,6 +128,13 @@ struct Oveja {
         frutos_por_segundo = tiempoFrutosOvejas;
     }
 
+};
+struct Posicion {
+    int x;
+    int y;
+
+    Posicion(int x, int y) : x(x), y(y) {}
+    Posicion() : x(0), y(0) {}
 };
 
 struct NodoOveja {

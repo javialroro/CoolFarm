@@ -771,7 +771,7 @@ namespace CoolFarm {
 
 			for (size_t i = 0; i < arregloBinario.size(); i++) {
 				while (arregloBinario[i]->cantidadFrutosA !=0 && contador!= cajita) {
-					arregloBinario[i]->deleteFruits(1);
+					arregloBinario[i]->deleteFruits(1,"v");
 					contador++;
 				}
 				labelDinero->Text = toSystemString(to_string(dinero));
@@ -790,7 +790,7 @@ namespace CoolFarm {
 		if (frutosHeap >= cajita) {
 			for (size_t i = 0; i < arregloHeap.size(); i++) {
 				while (arregloHeap[i]->cantidadFrutosA != 0 && contador != cajita) {
-					arregloHeap[i]->eliminar();
+					arregloHeap[i]->deleteFruits(1,"v");
 					contador++;
 				}
 				labelDinero->Text = toSystemString(to_string(dinero));
@@ -807,7 +807,7 @@ namespace CoolFarm {
 		if (frutosAVL >= cajita) {
 			for (size_t i = 0; i < arregloAVL.size(); i++) {
 				while (arregloAVL[i]->cantidadFrutosA != 0 && contador != cajita) {
-					arregloAVL[i]->sumNodes(1);
+					arregloAVL[i]->deleteFruits(1,"v");
 					contador++;
 				}
 				labelDinero->Text = toSystemString(to_string(dinero));
@@ -824,7 +824,7 @@ namespace CoolFarm {
 		if (frutosSplay >= cajita) {
 			for (size_t i = 0; i < arregloSplay.size(); i++) {
 				while (arregloSplay[i]->cantidadFrutosA != 0 && contador != cajita) {
-					arregloSplay[i]->deleteFruits(arregloSplay[i],1);
+					arregloSplay[i]->deleteFruits(1,"v");
 					contador++;
 				}
 				labelDinero->Text = toSystemString(to_string(dinero));
