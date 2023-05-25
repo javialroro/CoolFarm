@@ -42,6 +42,7 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Button^ button3;
 	public:
 		Granjero* granjero = new Granjero();
+		bool hayArboles = false;
 		MyForm(void)
 		{
 			
@@ -61,6 +62,11 @@ namespace CoolFarm {
 			if (components)
 			{
 				delete components;
+				isRunning = false;
+				for (int i = 0; i < numHilos; i++) {
+					hilos[i]->Abort();
+					delete hilos[i];
+				}
 			}
 		}
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
@@ -432,11 +438,29 @@ namespace CoolFarm {
 	private: 
 		
 		System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-			OvejasH = gcnew Thread(gcnew ThreadStart(this, &MyForm::Ovejas));
-			OvejasH->Start();
+
+			
 
 			botones = gcnew cli::array<System::Windows::Forms::Button^, 2>(FILAS, COLUMNAS);
 			hilos = gcnew cli::array<System::Threading::Thread^>(1000);
+
+
+			OvejasH = gcnew Thread(gcnew ThreadStart(this, &MyForm::Ovejas));
+			numHilos++;
+			hilos[numHilos - 1] = OvejasH;
+			OvejasH->Start();
+
+
+			CuervosH = gcnew Thread(gcnew ThreadStart(this, &MyForm::Cuervos));
+			numHilos++;
+			hilos[numHilos - 1] = CuervosH;
+			CuervosH->Start();
+
+			GusanosH = gcnew Thread(gcnew ThreadStart(this, &MyForm::Gusanos));
+			numHilos++;
+			hilos[numHilos - 1] = GusanosH;
+			GusanosH->Start();
+
 			for (int fila = 0; fila < FILAS; fila++)
 			{
 				for (int columna = 0; columna < COLUMNAS; columna++)
@@ -590,6 +614,7 @@ namespace CoolFarm {
 		}
 
 		void plantar(arbol * arbol, System::String^ letra) {
+			hayArboles = true;
 			arbol->tipo = toStandardString(letra);
 			arbolesBinarios[granjero->columna][granjero->fila] = arbol;
 			botones[granjero->columna, granjero->fila]->Text = letra;
@@ -697,43 +722,42 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 }
 	   void GenerateFruitsThread()
 	   {
-		   if (isRunning) {
-			   while (true) {
 				   // Llamada al método generateFruits con los parámetros requeridos
-				   while (isRunning) {
-					   generateFruits(BTemp);
-				   }
+			   while (isRunning) {
+				   if (!isRunning) { break; }
+				   generateFruits(BTemp);
+				   if (!isRunning) { break; }
 			   }
-		   }
 	   }
 
 	   void GenerateFruitsThreadHeap() {
-		   if (isRunning) {
-			   while (true) {
 				   // Llamada al método generateFruits con los parámetros requeridos
-				   while (isRunning) {
-					   generateFruitsHeap(HTemp);
-				   }
-			   }
-		   }
+			while (isRunning) {
+				if (!isRunning) { break; }
+				generateFruitsHeap(HTemp);
+				if (!isRunning) { break; }
+			}
+
 	   }
 
 	   void GenerateFruitsThreadAVL() {
-		   while (true) {
 			   // Llamada al método generateFruits con los parámetros requeridos
 			   while (isRunning) {
+				   if (!isRunning) { break; }
 				   generateFruitsAVL(AVTemp);
+				   if (!isRunning) { break; }
 			   }
-		   }
+		   
 	   }
 
 	   void GenerateFruitsThreadSplay() {
-		   while (true) {
 			   // Llamada al método generateFruits con los parámetros requeridos
 			   while (isRunning) {
+				   if (!isRunning) { break; }
 				   generateFruitsSplay(STemp);
+				   if (!isRunning) { break; }
 			   }
-		   }
+		   
 	   }
 
 private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -770,12 +794,15 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 			   //label1->Text = columna + " " + fila;
 
 			   // Esperar 5 segundos
+
 			   std::this_thread::sleep_for(std::chrono::seconds(creceBinario));
 			   botones[arbol->columna, arbol->fila]->Text = "O";
 			   while (isRunning) {
 				// Esperar 5 segundos
 				   botones[arbol->columna, arbol->fila]->Text = "O";
+				   if (!isRunning) { break; }
 				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaB));
+				   if (!isRunning) { break; }
 				   for (int i = 0; i < cosechaB; i++) {
 					   double random = generateRandomNumber(0.001, 5.0);
 					   arbol->insertNode(arbol->root, random);
@@ -801,7 +828,9 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 				   counter++;
 				   // Esperar 5 segundos
 				   botones[arbol->columna, arbol->fila]->Text = "H";
+				   if (!isRunning) { break; }
 				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaH));
+				   if (!isRunning) { break; }
 				   for (int i = 0; i < cosechaH;i++) {
 					   double random = generateRandomNumber(0.001, 5.0);
 					   arbol->insertar(random);
@@ -827,7 +856,9 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   while (isRunning) {
 			   // Esperar 5 segundos
 			   botones[arbol->columna, arbol->fila]->Text = "A";
+			   if (!isRunning) { break; }
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
+			   if (!isRunning) { break; }
 			   for (int i = 0; i < cosechaA;i++) {
 				   double random = generateRandomNumber(2.0, 20.0);
 				   arbol->r=arbol->insert(arbol->r, random);
@@ -839,13 +870,15 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 	   }
 
 	   void generateFruitsSplay(SplayTree* arbol) {
-
 		   std::this_thread::sleep_for(std::chrono::seconds(creceS));
+		   
 		   botones[arbol->columna, arbol->fila]->Text = "S";
 		   while (isRunning) {
 			   // Esperar 5 segundos
 			   botones[arbol->columna, arbol->fila]->Text = "S";
+			   if (!isRunning) { break; }
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaS));
+			   if (!isRunning) { break; }
 			   for (int i = 0; i < cosechaS; i++) {
 				   double random = generateRandomNumber(5.0, 50.0);
 				   arbol->root=arbol->Insert(random);
@@ -868,10 +901,12 @@ private: System::Void buttonPausarPartida_Click(System::Object^ sender, System::
 	}
 }
 private: System::Void MyForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	isRunning = false;
 	for (int i = 0; i < numHilos; i++) {
 		hilos[i]->Abort();
+		delete hilos[i];
 	}
-	isRunning=false;
+	
 }
 private:  static String^ toSystemString(string str) {
 	return gcnew String(str.c_str());
@@ -1463,6 +1498,13 @@ bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugado
 	}
 	int xTemp;
 	int yTemp;
+
+	int xTempC;
+	int yTempC;
+
+	int xTempG;
+	int yTempG;
+
 	void marcarRuta(Posicion inicio, string p) {
 		Posicion fin = encontrarPosicionCercana(inicio.x, inicio.y);
 		if (fin.x != -1 && fin.y != -1) {
@@ -1474,14 +1516,18 @@ bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugado
 			for (int x = inicio.x; x != fin.x; x += dx) {
 				botones[inicio.y, x]->BackColor = Color::Blue;
 				this->Refresh();
-				botones[inicio.y, x]->BackColor = Color::YellowGreen;
+				if (botones[inicio.y, x]->BackColor == Color::Blue && botones[inicio.y, x]->Text=="") {
+					botones[inicio.y, x]->BackColor = Color::YellowGreen;
+				}
 			}
 
 			// Recorrer las posiciones en el eje y
 			for (int y = inicio.y; y != fin.y; y += dy) {
 				botones[y, fin.x]->BackColor = Color::Blue;
 				this->Refresh();
-				botones[y, fin.x]->BackColor = Color::YellowGreen;
+				if (botones[y, fin.x]->BackColor == Color::Blue && botones[y, fin.x]->Text == "") {
+					botones[y, fin.x]->BackColor = Color::YellowGreen;
+				}
 			}
 
 			// Marcar la posición final
@@ -1493,39 +1539,60 @@ bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugado
 				yTemp = fin.y;
 				Hilo^ h = gcnew Hilo();
 				h->hilo = gcnew Thread(gcnew ThreadStart(this, &MyForm::OvejasComer));
+				numHilos++;
+				hilos[numHilos - 1] = h->hilo;
 				h->hilo->Start();
 				h->x = fin.x;
 				h->y = fin.y;
 			}
 			else if (arbolesBinarios[fin.y][fin.x]->plaga == "Cuervo") {
 				label1->Text = "Cuervo";
+				xTempC = fin.x;
+				yTempC = fin.y;
+				Hilo^ h = gcnew Hilo();
+				h->hilo = gcnew Thread(gcnew ThreadStart(this, &MyForm::CuervosComer));
+				numHilos++;
+				hilos[numHilos - 1] = h->hilo;
+				h->hilo->Start();
+				h->x = fin.x;
+				h->y = fin.y;
 			}
 			else if (arbolesBinarios[fin.y][fin.x]->plaga == "Gusano") {
 				label1->Text = "Gusano";
+				xTempG = fin.x;
+				yTempG = fin.y;
+				Hilo^ h = gcnew Hilo();
+				h->hilo = gcnew Thread(gcnew ThreadStart(this, &MyForm::PlagasComer));
+				numHilos++;
+				hilos[numHilos - 1] = h->hilo;
+				h->hilo->Start();
+				h->x = fin.x;
+				h->y = fin.y;
 			}
 		}
 	}
 	
 		
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	marcarRuta(Posicion(4, 5),"Oveja");
+	marcarRuta(Posicion(4, 5),"Gusano");
 }
 
 	void Ovejas() {
 		while (isRunning) {
-			
-			int x = rand() % 10;
-			int y = rand() % 10;
-			int valorAleatorio = rand() % 100; // Generar un valor aleatorio entre 0 y 99
+			if (hayArboles) {
+				int x = rand() % 10;
+				int y = rand() % 10;
+				int valorAleatorio = rand() % 100; // Generar un valor aleatorio entre 0 y 99
 
-			if (valorAleatorio <= porcentOvejas) {
-				marcarRuta(Posicion(x, y), "Oveja"); // Ejecutar la otra función si el valor aleatorio es menor o igual al porcentaje
+				if (valorAleatorio <= porcentOvejas) {
+					marcarRuta(Posicion(x, y), "Oveja"); // Ejecutar la otra función si el valor aleatorio es menor o igual al porcentaje
+				}
+
+
+				if (!isRunning) { break; }
+				std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionOvejas));
+				if (!isRunning) { break; }
 			}
-			
-				
-				
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionOvejas * 60000));
-
 
 			
 		}
@@ -1533,39 +1600,42 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	void Cuervos() {
 		while (isRunning) {
+			if (hayArboles) {
+				int x = rand() % 10;
+				int y = rand() % 10;
+				int valorAleatorio = rand() % 100; // Generar un valor aleatorio entre 0 y 99
 
-			int x = rand() % 10;
-			int y = rand() % 10;
-			int valorAleatorio = rand() % 100; // Generar un valor aleatorio entre 0 y 99
+				if (valorAleatorio <= porcentCuervos) {
+					marcarRuta(Posicion(x, y), "Cuervo"); // Ejecutar la otra función si el valor aleatorio es menor o igual al porcentaje
+				}
 
-			if (valorAleatorio <= porcentCuervos) {
-				marcarRuta(Posicion(x, y), "Cuervo"); // Ejecutar la otra función si el valor aleatorio es menor o igual al porcentaje
+
+				if (!isRunning) { break; }
+				std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionCuervos));
+				if (!isRunning) { break; }
 			}
-
-
-
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionCuervos * 60000));
-
 
 
 		}
 	}
 
 	void Gusanos() {
+		if (!isRunning) { return; }
 		while (isRunning) {
+			if (hayArboles) {
+				int x = rand() % 10;
+				int y = rand() % 10;
+				int valorAleatorio = rand() % 100; // Generar un valor aleatorio entre 0 y 99
 
-			int x = rand() % 10;
-			int y = rand() % 10;
-			int valorAleatorio = rand() % 100; // Generar un valor aleatorio entre 0 y 99
+				if (valorAleatorio <= porcentPlagas) {
+					marcarRuta(Posicion(x, y), "Gusano"); // Ejecutar la otra función si el valor aleatorio es menor o igual al porcentaje
+				}
 
-			if (valorAleatorio <= porcentPlagas) {
-				marcarRuta(Posicion(x, y), "Gusano"); // Ejecutar la otra función si el valor aleatorio es menor o igual al porcentaje
+
+				if (!isRunning) { break; }
+				std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionPlagas));
+				if (!isRunning) { break; }
 			}
-
-
-
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoAparicionPlagas * 60000));
-
 
 
 		}
@@ -1576,8 +1646,46 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		const int x = xTemp;
 		const int y = yTemp;
 		while (isRunning) {
-			arbolesBinarios[y][x]->deleteFruits(1,"c");
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas * 1000));
+			if (!isRunning) { break; }
+			arbolesBinarios[y][x]->deleteFruits(frutosOvejas,"c");
+			std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas));
+		}
+	}
+
+	void CuervosComer() {
+		const int x = xTempC;
+		const int y = yTempC;
+		while (isRunning) {
+			if (!isRunning) { break; }
+
+			arbolesBinarios[y][x]->deleteFruits(frutosCuervos, "c");
+			std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosCuervos));
+		}
+	}
+
+	void PlagasComer(){
+		int tiempo_total = 60; // Tiempo total en segundos
+		int intervalo = 5;     // Intervalo de tiempo para eliminar frutos (ejemplo: cada 5 segundos)
+
+		const int x = xTempG;
+		const int y = yTempG;
+		label1->Text = "x : "+x+ " y: "+ y;
+
+		if (arbolesBinarios[y][x]->cantidadFrutosA > 4) {
+			int cantidad_frutos_a_eliminar = arbolesBinarios[y][x]->cantidadFrutosA / (tiempo_total / intervalo);
+			while (tiempo_total > 0) {
+				
+				if (arbolesBinarios[y][x]->cantidadFrutosA >= cantidad_frutos_a_eliminar) {
+					arbolesBinarios[y][x]->deleteFruits(cantidad_frutos_a_eliminar, "c");
+				}
+				else {
+					arbolesBinarios[y][x]->deleteFruits(arbolesBinarios[y][x]->cantidadFrutosA, "c");
+				}
+
+
+				std::this_thread::sleep_for(std::chrono::seconds(intervalo));
+				tiempo_total -= intervalo;
+			}
 		}
 	}
 

@@ -30,24 +30,25 @@ string directoryPath = "C:\\Users\\lmaag\\OneDrive\\Escritorio\\C++\\Proyectos\\
 string nombrePartida;
 string nombreJson;
 bool isRunning = true;
+bool parar = false;
 
 
 // Settings Ovejas
 int porcentOvejas = 70;
 int aparicionOvejas = 1;
-int tiempoAparicionOvejas = 1;
+int tiempoAparicionOvejas = 60;
 int frutosOvejas = 1;
 int tiempoFrutosOvejas = 90;
 // Settings Cuervos
 int porcentCuervos = 40;
 int aparicionCuervos = 2;
-int tiempoAparicionCuervos = 3;
+int tiempoAparicionCuervos = 180;
 int frutosCuervos = 1;
 int tiempoFrutosCuervos = 90;
 // Settings Plagas
 int porcentPlagas = 30;
 int aparicionPlagas = 1;
-int tiempoAparicionPlagas = 90;
+int tiempoAparicionPlagas = 60;
 // Settings Mercado
 int mercadoAparicion;
 int mercadoApertura;
