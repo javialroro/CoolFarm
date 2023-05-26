@@ -683,7 +683,7 @@ namespace CoolFarm {
 		if (frutosHeap > 0) {
 			for (size_t i = 0; i < arregloHeap.size(); i++) {
 				dinero += arregloHeap[i]->montoTotal;
-				arregloHeap[i]->deleteAllFruits(arregloHeap[i]);
+				arregloHeap[i]->deleteAllFruits();
 				labelDinero->Text = toSystemString(to_string(dinero));
 			}
 		}
@@ -696,7 +696,7 @@ namespace CoolFarm {
 		if (frutosSplay > 0) {
 			for (size_t i = 0; i < arregloSplay.size(); i++) {
 				dinero += arregloSplay[i]->montoTotal;
-				arregloSplay[i]->deleteAllFruits(arregloSplay[i]);
+				arregloSplay[i]->deleteAllFruits();
 				labelDinero->Text = toSystemString(to_string(dinero));
 			}
 		}

@@ -48,6 +48,10 @@ public:
 
     };
 
+    virtual void deleteAllFruits() {
+
+    };
+
 };
 
 
@@ -72,7 +76,7 @@ public:
     avl* insert(avl*, double);
     void show(avl*, double);
     void inorder(avl*);
-    void deleteAllFruits();
+    //void deleteAllFruits();
     //void deleteFruits(int cantidad);
     //void sumNodes(int cantidad);
     //void deleteFruits(int cantidad);
@@ -81,44 +85,51 @@ public:
     }
 
     void deleteFruits(int cantidad, string a) override {
+        if (cantidadFrutosA > 0) {
+            int sum = 0;
+            int count = 0;
 
-        int sum = 0;
-        int count = 0;
+            stack<avl*> nodesStack;
+            avl* current = r;
 
-        stack<avl*> nodesStack;
-        avl* current = r;
+            while (current != nullptr || !nodesStack.empty()) {
+                while (current != nullptr) {
+                    nodesStack.push(current);
+                    current = current->l;
+                }
 
-        while (current != nullptr || !nodesStack.empty()) {
-            while (current != nullptr) {
-                nodesStack.push(current);
-                current = current->l;
+                current = nodesStack.top();
+                nodesStack.pop();
+
+                sum += current->d;
+                count++;
+
+                if (count >= cantidad) {
+                    break;
+                }
+
+                current = current->r;
             }
-
-            current = nodesStack.top();
-            nodesStack.pop();
-
-            sum += current->d;
-            count++;
-
-            if (count >= cantidad) {
-                break;
+            if (a == "v") {
+                montoTotal -= sum;
+                dinero += sum;
+                cantidadFrutosA -= count;
+                cantidadFrutosVendidos += count;
+                frutosAVL -= count;
             }
-
-            current = current->r;
+            else {
+                montoTotal -= sum;
+                cantidadFrutosPerdidos += count;
+                cantidadFrutosA -= count;
+                frutosAVL -= count;
+            }
         }
-        if (a == "v") {
-            montoTotal -= sum;
-            dinero += sum;
-            cantidadFrutosA -= count;
-            cantidadFrutosVendidos += count;
-            frutosAVL -= count;
-        }
-        else {
-            montoTotal -= sum;
-            cantidadFrutosPerdidos += count;
-            cantidadFrutosA -= count;
-            frutosAVL -= count;
-        }
+    }
+    void deleteAllFruits() override {
+        r = nullptr;
+        cantidadFrutosA = 0;
+        frutosAVL = 0;
+        montoTotal = 0.0;
     }
 };
 
@@ -235,12 +246,7 @@ void avl_tree::inorder(avl* t) {
     inorder(t->r);
 }
 
-void avl_tree::deleteAllFruits() {
-    r = nullptr;
-    cantidadFrutosA = 0;
-    frutosAVL = 0;
-    montoTotal = 0.0;
-}
+
 
 
 
@@ -399,35 +405,36 @@ public:
             InOrder(root->rch);
         }
     }
-    void deleteAllFruits(SplayTree* splayTree) {
-        splayTree->root = nullptr;
+    void deleteAllFruits() override{
+        this->root = nullptr;
         cantidadFrutosA = 0;
         frutosSplay = 0;
         montoTotal = 0.0;
     }
 
     void deleteFruits(int cantidad, string a) override{
-
-        this->InOrder(this->root);
-        int count = 0;
-        this->Delete(cantidad);
-        if (a != "v") {
-            cantidadFrutosVendidos += cantidad;
-        }
-        else {
-            cantidadFrutosPerdidos += cantidad;
-        }
-        cantidadFrutosA -= cantidad;
-        frutosSplay -= cantidad;
-        for (int i = 0; i < cantidad; i++) {
-            montoTotal -= this->root->k;
-            if (montoTotal < 0) {
-				montoTotal = 0;
-			}
-            if(a=="v"){
-            dinero += this->root->k;
-			}
-            this->Delete(this->root->k);
+        if (cantidadFrutosA > 0) {
+            this->InOrder(this->root);
+            int count = 0;
+            this->Delete(cantidad);
+            if (a != "v") {
+                cantidadFrutosVendidos += cantidad;
+            }
+            else {
+                cantidadFrutosPerdidos += cantidad;
+            }
+            cantidadFrutosA -= cantidad;
+            frutosSplay -= cantidad;
+            for (int i = 0; i < cantidad; i++) {
+                montoTotal -= this->root->k;
+                if (montoTotal < 0) {
+                    montoTotal = 0;
+                }
+                if (a == "v") {
+                    dinero += this->root->k;
+                }
+                this->Delete(this->root->k);
+            }
         }
     }
 };
@@ -490,14 +497,14 @@ public:
         }
     }
 
-    void deleteAllFruits() {
+    void deleteAllFruits() override{
         cantidadFrutosA = 0;
         montoTotal = 0;
         root = nullptr;
     }
 
     void deleteFruits(int count, string a) override{
-        if (count >= cantidadFrutosA ) {
+        if (count >= cantidadFrutosA && cantidadFrutosA > 0) {
             // Eliminar todos los nodos del árbol
             if (a == "v") {
                 deleteSubtree(root);
@@ -515,16 +522,18 @@ public:
         }
         else {
             // Eliminar 'count' nodos del árbol
-            for (int i = 0; i < count; i++) {
-                deleteNode();
-            }
-            cantidadFrutosA -= count;
-            if (a == "v") {
-                cantidadFrutosVendidos += count;
-                dinero += montoTotal;
-            }
-            else {
-                cantidadFrutosPerdidos += count;
+            if (cantidadFrutosA > 0) {
+                for (int i = 0; i < count; i++) {
+                    deleteNode();
+                }
+                cantidadFrutosA -= count;
+                if (a == "v") {
+                    cantidadFrutosVendidos += count;
+                    dinero += montoTotal;
+                }
+                else {
+                    cantidadFrutosPerdidos += count;
+                }
             }
         }
     }
@@ -643,27 +652,29 @@ public:
     }
 
     void deleteFruits(int cantidad, string a) override{
-        if (tamano == 0) {
-            return;
+        if (cantidadFrutosA > 0) {
+            if (tamano == 0) {
+                return;
+            }
+            cantidadFrutosA--;
+            frutosHeap--;
+            montoTotal -= arr[0];
+            if (a == "v") {
+                cantidadFrutosVendidos++;
+            }
+            else {
+                cantidadFrutosPerdidos++;
+            }
+            if (montoTotal < 0) {
+                montoTotal = 0;
+            }
+            if (a == "v") {
+                dinero += arr[0];
+            }
+            arr[0] = arr[tamano - 1];
+            tamano--;
+            heapify(0);
         }
-        cantidadFrutosA--;
-        frutosHeap--;
-        montoTotal -= arr[0];
-        if (a == "v") {
-            cantidadFrutosVendidos++;
-        }
-        else {
-            cantidadFrutosPerdidos++;
-        }
-        if (montoTotal < 0) {
-			montoTotal = 0;
-		}
-        if (a == "v") {
-            dinero += arr[0];
-        }
-        arr[0] = arr[tamano - 1];
-        tamano--;
-        heapify(0);
     }
 
     void imprimir() {
@@ -679,8 +690,8 @@ public:
         }
         std::cout << std::endl;
     }
-    void deleteAllFruits(Heap* heap) {
-        heap->tamano = 0;
+    void deleteAllFruits() override{
+        this->tamano = 0;
         cantidadFrutosA = 0;
         frutosHeap = 0;
         montoTotal = 0.0;
@@ -688,7 +699,7 @@ public:
 
     void deleteFruits(Heap* heap, int cantidad) {
         if (cantidad >= heap->tamano) {
-            deleteAllFruits(heap);
+            deleteAllFruits();
             return;
         }
 

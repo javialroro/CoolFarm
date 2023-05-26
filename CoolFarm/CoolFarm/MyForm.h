@@ -551,6 +551,9 @@ namespace CoolFarm {
 						}
 					}
 					if (i == granjero->columna && j == granjero->fila) {
+						if (botones[i, j]->BackColor == Color::Blue) {
+							arbolesBinarios[i][j]->plaga = "";
+						}
 						botones[i, j]->BackColor = Color::Red;
 					}
 					
@@ -1647,8 +1650,13 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		const int y = yTemp;
 		while (isRunning) {
 			if (!isRunning) { break; }
-			arbolesBinarios[y][x]->deleteFruits(frutosOvejas,"c");
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas));
+			if (arbolesBinarios[y][x]->plaga == "Oveja") {
+				arbolesBinarios[y][x]->deleteFruits(frutosOvejas, "c");
+				std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas));
+			}
+			else {
+				break;
+			}
 		}
 	}
 
@@ -1657,9 +1665,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		const int y = yTempC;
 		while (isRunning) {
 			if (!isRunning) { break; }
-
-			arbolesBinarios[y][x]->deleteFruits(frutosCuervos, "c");
-			std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosCuervos));
+			if (arbolesBinarios[y][x]->plaga == "Cuervo") {
+				arbolesBinarios[y][x]->deleteFruits(frutosCuervos, "c");
+				std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosCuervos));
+			}
 		}
 	}
 
@@ -1669,25 +1678,20 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 		const int x = xTempG;
 		const int y = yTempG;
-		label1->Text = "x : "+x+ " y: "+ y;
+		//label1->Text = "x : "+x+ " y: "+ y;
+		while (isRunning) {
+			if (arbolesBinarios[y][x]->plaga == "Gusano") {
+				if (!isRunning) { break; }
+				std::this_thread::sleep_for(std::chrono::seconds(60));
+				if (!isRunning) { break; }
+				arbolesBinarios[y][x]->cantidadFrutosPerdidos = arbolesBinarios[y][x]->cantidadFrutosA;
+				arbolesBinarios[y][x]->deleteAllFruits();
 
-		if (arbolesBinarios[y][x]->cantidadFrutosA > 4) {
-			int cantidad_frutos_a_eliminar = arbolesBinarios[y][x]->cantidadFrutosA / (tiempo_total / intervalo);
-			while (tiempo_total > 0) {
-				
-				if (arbolesBinarios[y][x]->cantidadFrutosA >= cantidad_frutos_a_eliminar) {
-					arbolesBinarios[y][x]->deleteFruits(cantidad_frutos_a_eliminar, "c");
-				}
-				else {
-					arbolesBinarios[y][x]->deleteFruits(arbolesBinarios[y][x]->cantidadFrutosA, "c");
-				}
-
-
-				std::this_thread::sleep_for(std::chrono::seconds(intervalo));
-				tiempo_total -= intervalo;
 			}
+
 		}
 	}
+
 
 };
 }
