@@ -40,8 +40,14 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Timer^ timer1;
+	private: System::Windows::Forms::Timer^ timer2;
+	private: CoolFarm::Mercadoh^ mercado = gcnew CoolFarm::Mercadoh();
 	public:
 		Granjero* granjero = new Granjero();
+	
+	public:
+	public:
 		bool hayArboles = false;
 		MyForm(void)
 		{
@@ -97,6 +103,7 @@ namespace CoolFarm {
 	private: System::Windows::Forms::Button^ buttonCargarPartida;
 	private: System::Windows::Forms::Button^ buttonPausarPartida;
 	private: System::Windows::Forms::Button^ buttonGuardarPartida;
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -106,7 +113,7 @@ namespace CoolFarm {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -115,6 +122,7 @@ namespace CoolFarm {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -136,6 +144,8 @@ namespace CoolFarm {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -145,58 +155,59 @@ namespace CoolFarm {
 			this->tableLayoutPanel1->BackColor = System::Drawing::Color::YellowGreen;
 			this->tableLayoutPanel1->ColumnCount = 10;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
+				38)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				51)));
-			this->tableLayoutPanel1->Location = System::Drawing::Point(389, 39);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+				38)));
+			this->tableLayoutPanel1->Location = System::Drawing::Point(292, 32);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 10;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(501, 500);
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(376, 406);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(256, 39);
+			this->label1->Location = System::Drawing::Point(192, 32);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(55, 16);
+			this->label1->Size = System::Drawing::Size(45, 13);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"DEBUG";
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->button1->Location = System::Drawing::Point(13, 20);
-			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Location = System::Drawing::Point(10, 16);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(99, 34);
+			this->button1->Size = System::Drawing::Size(74, 28);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"SETTINGS";
 			this->button1->UseVisualStyleBackColor = false;
@@ -205,10 +216,11 @@ namespace CoolFarm {
 			// abrirMercadoButt
 			// 
 			this->abrirMercadoButt->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->abrirMercadoButt->Location = System::Drawing::Point(13, 64);
-			this->abrirMercadoButt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->abrirMercadoButt->Enabled = false;
+			this->abrirMercadoButt->Location = System::Drawing::Point(10, 52);
+			this->abrirMercadoButt->Margin = System::Windows::Forms::Padding(2);
 			this->abrirMercadoButt->Name = L"abrirMercadoButt";
-			this->abrirMercadoButt->Size = System::Drawing::Size(99, 32);
+			this->abrirMercadoButt->Size = System::Drawing::Size(74, 26);
 			this->abrirMercadoButt->TabIndex = 5;
 			this->abrirMercadoButt->Text = L"MERCADO";
 			this->abrirMercadoButt->UseVisualStyleBackColor = false;
@@ -217,10 +229,10 @@ namespace CoolFarm {
 			// botonPlantarHeap
 			// 
 			this->botonPlantarHeap->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->botonPlantarHeap->Location = System::Drawing::Point(13, 290);
-			this->botonPlantarHeap->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->botonPlantarHeap->Location = System::Drawing::Point(10, 236);
+			this->botonPlantarHeap->Margin = System::Windows::Forms::Padding(2);
 			this->botonPlantarHeap->Name = L"botonPlantarHeap";
-			this->botonPlantarHeap->Size = System::Drawing::Size(148, 32);
+			this->botonPlantarHeap->Size = System::Drawing::Size(111, 26);
 			this->botonPlantarHeap->TabIndex = 6;
 			this->botonPlantarHeap->Text = L"PLANTAR HEAP";
 			this->botonPlantarHeap->UseVisualStyleBackColor = false;
@@ -229,10 +241,10 @@ namespace CoolFarm {
 			// botonPlantarAVL
 			// 
 			this->botonPlantarAVL->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->botonPlantarAVL->Location = System::Drawing::Point(13, 341);
-			this->botonPlantarAVL->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->botonPlantarAVL->Location = System::Drawing::Point(10, 277);
+			this->botonPlantarAVL->Margin = System::Windows::Forms::Padding(2);
 			this->botonPlantarAVL->Name = L"botonPlantarAVL";
-			this->botonPlantarAVL->Size = System::Drawing::Size(148, 32);
+			this->botonPlantarAVL->Size = System::Drawing::Size(111, 26);
 			this->botonPlantarAVL->TabIndex = 7;
 			this->botonPlantarAVL->Text = L"PLANTAR AVL";
 			this->botonPlantarAVL->UseVisualStyleBackColor = false;
@@ -241,10 +253,10 @@ namespace CoolFarm {
 			// botonPlantarSplay
 			// 
 			this->botonPlantarSplay->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->botonPlantarSplay->Location = System::Drawing::Point(13, 389);
-			this->botonPlantarSplay->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->botonPlantarSplay->Location = System::Drawing::Point(10, 316);
+			this->botonPlantarSplay->Margin = System::Windows::Forms::Padding(2);
 			this->botonPlantarSplay->Name = L"botonPlantarSplay";
-			this->botonPlantarSplay->Size = System::Drawing::Size(148, 32);
+			this->botonPlantarSplay->Size = System::Drawing::Size(111, 26);
 			this->botonPlantarSplay->TabIndex = 8;
 			this->botonPlantarSplay->Text = L"PLANTAR SPLAY";
 			this->botonPlantarSplay->UseVisualStyleBackColor = false;
@@ -253,10 +265,10 @@ namespace CoolFarm {
 			// botonPlantarOrdenado
 			// 
 			this->botonPlantarOrdenado->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->botonPlantarOrdenado->Location = System::Drawing::Point(13, 434);
-			this->botonPlantarOrdenado->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->botonPlantarOrdenado->Location = System::Drawing::Point(10, 353);
+			this->botonPlantarOrdenado->Margin = System::Windows::Forms::Padding(2);
 			this->botonPlantarOrdenado->Name = L"botonPlantarOrdenado";
-			this->botonPlantarOrdenado->Size = System::Drawing::Size(148, 43);
+			this->botonPlantarOrdenado->Size = System::Drawing::Size(111, 35);
 			this->botonPlantarOrdenado->TabIndex = 9;
 			this->botonPlantarOrdenado->Text = L"PLANTAR B ORDENADO";
 			this->botonPlantarOrdenado->UseVisualStyleBackColor = false;
@@ -265,10 +277,10 @@ namespace CoolFarm {
 			// buttonPonerEspanta
 			// 
 			this->buttonPonerEspanta->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonPonerEspanta->Location = System::Drawing::Point(13, 494);
-			this->buttonPonerEspanta->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonPonerEspanta->Location = System::Drawing::Point(10, 401);
+			this->buttonPonerEspanta->Margin = System::Windows::Forms::Padding(2);
 			this->buttonPonerEspanta->Name = L"buttonPonerEspanta";
-			this->buttonPonerEspanta->Size = System::Drawing::Size(148, 46);
+			this->buttonPonerEspanta->Size = System::Drawing::Size(111, 37);
 			this->buttonPonerEspanta->TabIndex = 10;
 			this->buttonPonerEspanta->Text = L"COLOCAR ESPANTAPAJAROS";
 			this->buttonPonerEspanta->UseVisualStyleBackColor = false;
@@ -277,10 +289,10 @@ namespace CoolFarm {
 			// buttonNuevaPartida
 			// 
 			this->buttonNuevaPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonNuevaPartida->Location = System::Drawing::Point(976, 100);
-			this->buttonNuevaPartida->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonNuevaPartida->Location = System::Drawing::Point(732, 81);
+			this->buttonNuevaPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonNuevaPartida->Name = L"buttonNuevaPartida";
-			this->buttonNuevaPartida->Size = System::Drawing::Size(243, 60);
+			this->buttonNuevaPartida->Size = System::Drawing::Size(182, 49);
 			this->buttonNuevaPartida->TabIndex = 11;
 			this->buttonNuevaPartida->Text = L"NUEVA PARTIDA";
 			this->buttonNuevaPartida->UseVisualStyleBackColor = false;
@@ -289,10 +301,10 @@ namespace CoolFarm {
 			// buttonCargarPartida
 			// 
 			this->buttonCargarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonCargarPartida->Location = System::Drawing::Point(976, 498);
-			this->buttonCargarPartida->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonCargarPartida->Location = System::Drawing::Point(732, 405);
+			this->buttonCargarPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonCargarPartida->Name = L"buttonCargarPartida";
-			this->buttonCargarPartida->Size = System::Drawing::Size(243, 60);
+			this->buttonCargarPartida->Size = System::Drawing::Size(182, 49);
 			this->buttonCargarPartida->TabIndex = 12;
 			this->buttonCargarPartida->Text = L"CARGAR PARTIDA";
 			this->buttonCargarPartida->UseVisualStyleBackColor = false;
@@ -301,10 +313,10 @@ namespace CoolFarm {
 			// buttonPausarPartida
 			// 
 			this->buttonPausarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonPausarPartida->Location = System::Drawing::Point(976, 262);
-			this->buttonPausarPartida->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonPausarPartida->Location = System::Drawing::Point(732, 213);
+			this->buttonPausarPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonPausarPartida->Name = L"buttonPausarPartida";
-			this->buttonPausarPartida->Size = System::Drawing::Size(243, 60);
+			this->buttonPausarPartida->Size = System::Drawing::Size(182, 49);
 			this->buttonPausarPartida->TabIndex = 13;
 			this->buttonPausarPartida->Text = L"PAUSAR PARTIDA";
 			this->buttonPausarPartida->UseVisualStyleBackColor = false;
@@ -313,10 +325,10 @@ namespace CoolFarm {
 			// buttonGuardarPartida
 			// 
 			this->buttonGuardarPartida->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->buttonGuardarPartida->Location = System::Drawing::Point(976, 180);
-			this->buttonGuardarPartida->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->buttonGuardarPartida->Location = System::Drawing::Point(732, 146);
+			this->buttonGuardarPartida->Margin = System::Windows::Forms::Padding(2);
 			this->buttonGuardarPartida->Name = L"buttonGuardarPartida";
-			this->buttonGuardarPartida->Size = System::Drawing::Size(243, 60);
+			this->buttonGuardarPartida->Size = System::Drawing::Size(182, 49);
 			this->buttonGuardarPartida->TabIndex = 14;
 			this->buttonGuardarPartida->Text = L"GUARDAR PARTIDA";
 			this->buttonGuardarPartida->UseVisualStyleBackColor = false;
@@ -325,36 +337,37 @@ namespace CoolFarm {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(1000, 432);
+			this->label2->Location = System::Drawing::Point(750, 351);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(174, 16);
+			this->label2->Size = System::Drawing::Size(143, 13);
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"INGRESE EL NÚMERO DE ";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(984, 448);
+			this->label3->Location = System::Drawing::Point(738, 364);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(207, 16);
+			this->label3->Size = System::Drawing::Size(167, 13);
 			this->label3->TabIndex = 16;
 			this->label3->Text = L"PARTIDA QUE DESEA CARGAR";
 			// 
 			// textBoxPartida
 			// 
-			this->textBoxPartida->Location = System::Drawing::Point(1029, 468);
-			this->textBoxPartida->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxPartida->Location = System::Drawing::Point(772, 380);
 			this->textBoxPartida->Name = L"textBoxPartida";
-			this->textBoxPartida->Size = System::Drawing::Size(132, 22);
+			this->textBoxPartida->Size = System::Drawing::Size(100, 20);
 			this->textBoxPartida->TabIndex = 17;
 			// 
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->button2->Location = System::Drawing::Point(976, 341);
-			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button2->Location = System::Drawing::Point(732, 277);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(243, 60);
+			this->button2->Size = System::Drawing::Size(182, 49);
 			this->button2->TabIndex = 18;
 			this->button2->Text = L"LISTA DE PUNTAJES";
 			this->button2->UseVisualStyleBackColor = false;
@@ -362,46 +375,61 @@ namespace CoolFarm {
 			// 
 			// textboxNomPartida
 			// 
-			this->textboxNomPartida->Location = System::Drawing::Point(1029, 70);
-			this->textboxNomPartida->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textboxNomPartida->Location = System::Drawing::Point(772, 57);
 			this->textboxNomPartida->Name = L"textboxNomPartida";
-			this->textboxNomPartida->Size = System::Drawing::Size(132, 22);
+			this->textboxNomPartida->Size = System::Drawing::Size(100, 20);
 			this->textboxNomPartida->TabIndex = 21;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(1016, 50);
+			this->label4->Location = System::Drawing::Point(762, 41);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(135, 16);
+			this->label4->Size = System::Drawing::Size(110, 13);
 			this->label4->TabIndex = 20;
 			this->label4->Text = L"LA NUEVA PARTIDA";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(1000, 34);
+			this->label5->Location = System::Drawing::Point(750, 28);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(176, 16);
+			this->label5->Size = System::Drawing::Size(145, 13);
 			this->label5->TabIndex = 19;
 			this->label5->Text = L"INGRESE EL  NOMBRE DE ";
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(249, 285);
+			this->button3->Location = System::Drawing::Point(187, 232);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(56, 19);
 			this->button3->TabIndex = 22;
 			this->button3->Text = L"button3";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
+			// timer1
+			// 
+			this->timer1->Interval = (mercadoAparicion * 1000);
+			this->abrirMercadoButt->Enabled = false;
+			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::HabilitarBoton);
+			// 
+			// timer2
+			// 
+			this->timer2->Interval = mercadoApertura * 1000; // Intervalo en milisegundos
+			this->timer2->Enabled = true;
+			this->timer2->Tick += gcnew System::EventHandler(this, &MyForm::CerrarMercadoYMostrarMensaje);
+			this->timer2->Stop();
+			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::MediumSlateBlue;
-			this->ClientSize = System::Drawing::Size(1283, 613);
+			this->ClientSize = System::Drawing::Size(962, 498);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->textboxNomPartida);
 			this->Controls->Add(this->label4);
@@ -424,7 +452,7 @@ namespace CoolFarm {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->KeyPreview = true;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm::MyForm_FormClosing);
@@ -590,17 +618,33 @@ namespace CoolFarm {
 				break;
 			}
 		}
+		System::Void HabilitarBoton(System::Object^ sender, System::EventArgs^ e) {
+			timer1->Stop(); // Detener el temporizador
+			abrirMercadoButt->Enabled = true; // Habilitar el botón
+			MessageBox::Show("El mercado esta disponible.");
 
+			timer2->Start();
+		}
 
-		private: System::Void abrirMercadoButt_Click(System::Object^ sender, System::EventArgs^ e) {
-			CoolFarm::Mercadoh^ mercado = gcnew CoolFarm::Mercadoh();
-			float precios = this->calcularPrecio();
-			precioBinario += precios;
-			precioHeap += precios;
-			precioAVL += precios;
-			precioSplay += precios;
-			precioEspanta += precios;
-			mercado->Show();
+		private: System::Void abrirMercadoButt_Click(System::Object^ sender, System::EventArgs^ e) {		
+			if (isRunning == true){
+				mercado = gcnew CoolFarm::Mercadoh();
+				float precios = this->calcularPrecio();
+				precioBinario += precios;
+				precioHeap += precios;
+				precioAVL += precios;
+				precioSplay += precios;
+				precioEspanta += precios;
+				mercado->Show();
+			}
+		}
+		System::Void CerrarMercadoYMostrarMensaje(System::Object^ sender, System::EventArgs^ e) {
+			timer2->Stop(); 
+			mercado->Close();
+			MessageBox::Show("Le avisaremos cuando el mercado vuelva a estar disponible.");
+
+			timer1->Start();
+			abrirMercadoButt->Enabled = false;
 		}
 
 		float calcularPrecio() {
@@ -920,6 +964,7 @@ private: System::Void buttonNuevaPartida_Click(System::Object^ sender, System::E
 	isRunning = true;
 	if (isRunning) {
 		MessageBox::Show("Comenzando Partida " + this->textboxNomPartida->Text);
+		timer1->Start();
 	}
 	
 }
@@ -1324,11 +1369,12 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 				colaSplay.push(a);
 				e--;
 			}
-
+			archivo.close();
 			MessageBox::Show("cargado");
 			isRunning = true;
 			this->DibujarMatriz();
-			archivo.close();
+			timer1->Start();
+			
 		}
 		else {
 			MessageBox::Show("Error al cargar el JSON.");
@@ -1693,6 +1739,11 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 
 
+private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
 

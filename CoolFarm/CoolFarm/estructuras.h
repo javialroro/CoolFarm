@@ -50,8 +50,8 @@ int porcentPlagas = 30;
 int aparicionPlagas = 1;
 int tiempoAparicionPlagas = 60;
 // Settings Mercado
-int mercadoAparicion;
-int mercadoApertura;
+int mercadoAparicion = 10;
+int mercadoApertura = 5;
 
 // Precios Mercado
 float precioBinario = 100;
