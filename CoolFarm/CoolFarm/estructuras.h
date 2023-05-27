@@ -25,8 +25,8 @@ queue<BinarioOrdenado*> colaBinarioOrdenado;
 queue<Espantapajaros*> colaEspantapajaro;
 
 // Datos Partida
-string directoryPath = "C:\\Users\\lmaag\\OneDrive\\Escritorio\\C++\\Proyectos\\CoolFarm\\CoolFarm\\CoolFarm";
-//string directoryPath = "C:\\Users\\javia\\OneDrive - Estudiantes ITCR\\TEC\\TEC 3 Semestre\\Estructuras de Datos\\CoolFarm\\CoolFarm\\CoolFarm";
+//string directoryPath = "C:\\Users\\lmaag\\OneDrive\\Escritorio\\C++\\Proyectos\\CoolFarm\\CoolFarm\\CoolFarm";
+string directoryPath = "C:\\Users\\javia\\OneDrive - Estudiantes ITCR\\TEC\\TEC 3 Semestre\\Estructuras de Datos\\CoolFarm\\CoolFarm\\CoolFarm";
 string nombrePartida;
 string nombreJson;
 bool isRunning = true;

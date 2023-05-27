@@ -413,13 +413,13 @@ namespace CoolFarm {
 			// 
 			// timer1
 			// 
-			this->timer1->Interval = (mercadoAparicion * 1000);
+			
 			this->abrirMercadoButt->Enabled = false;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::HabilitarBoton);
 			// 
 			// timer2
 			// 
-			this->timer2->Interval = mercadoApertura * 1000; // Intervalo en milisegundos
+			; // Intervalo en milisegundos
 			this->timer2->Enabled = true;
 			this->timer2->Tick += gcnew System::EventHandler(this, &MyForm::CerrarMercadoYMostrarMensaje);
 			this->timer2->Stop();
@@ -619,6 +619,7 @@ namespace CoolFarm {
 			}
 		}
 		System::Void HabilitarBoton(System::Object^ sender, System::EventArgs^ e) {
+			
 			timer1->Stop(); // Detener el temporizador
 			abrirMercadoButt->Enabled = true; // Habilitar el botón
 			MessageBox::Show("El mercado esta disponible.");
@@ -639,6 +640,7 @@ namespace CoolFarm {
 			}
 		}
 		System::Void CerrarMercadoYMostrarMensaje(System::Object^ sender, System::EventArgs^ e) {
+			
 			timer2->Stop(); 
 			mercado->Close();
 			MessageBox::Show("Le avisaremos cuando el mercado vuelva a estar disponible.");
@@ -961,6 +963,8 @@ private:  static String^ toSystemString(string str) {
 
 private: System::Void buttonNuevaPartida_Click(System::Object^ sender, System::EventArgs^ e) {
 	nombrePartida = toStandardString(this->textboxNomPartida->Text);
+	this->timer1->Interval = (mercadoAparicion * 1000);
+	this->timer2->Interval = (mercadoApertura * 1000);
 	isRunning = true;
 	if (isRunning) {
 		MessageBox::Show("Comenzando Partida " + this->textboxNomPartida->Text);
@@ -1218,7 +1222,22 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->cantidadFrutosVendidos = root["Matriz"][i][j]["frutosVendidos"].asInt();
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
+
 							arbolesBinarios[i][j] = a;
+							if (a->plaga != "") {
+								botones[i, j]->BackColor = Color::Blue;
+								MessageBox::Show("me cai");
+								if (a->plaga == "Cuervo") {
+									/*
+									xTemp = i;
+									yTemp = j;
+									Hilo^ h = gcnew Hilo();
+									h->hilo = gcnew Thread(gcnew ThreadStart(this, &MyForm::CuervosComer));
+									numHilos++;
+									hilos[numHilos - 1] = h->hilo;
+									h->hilo->Start();*/
+								}
+							}
 							BTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThread);
 							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
@@ -1373,6 +1392,8 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			MessageBox::Show("cargado");
 			isRunning = true;
 			this->DibujarMatriz();
+			this->timer1->Interval = (mercadoAparicion * 1000);
+			this->timer2->Interval = (mercadoApertura * 1000);
 			timer1->Start();
 			
 		}

@@ -507,7 +507,7 @@ namespace CoolFarm {
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(31, 16);
 			this->label14->TabIndex = 24;
-			this->label14->Text = L"min.";
+			this->label14->Text = L"seg.";
 			// 
 			// label15
 			// 
@@ -518,7 +518,7 @@ namespace CoolFarm {
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(31, 16);
 			this->label15->TabIndex = 25;
-			this->label15->Text = L"min.";
+			this->label15->Text = L"seg.";
 			// 
 			// label16
 			// 
@@ -551,7 +551,7 @@ namespace CoolFarm {
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(31, 16);
 			this->label18->TabIndex = 36;
-			this->label18->Text = L"min.";
+			this->label18->Text = L"seg.";
 			// 
 			// label19
 			// 
@@ -1417,6 +1417,12 @@ namespace CoolFarm {
 		}
 		if (this->textBoxCosSegS->Text != "") {
 			tiempoCosechaS = Int32::Parse(this->textBoxCosSegS->Text);
+		}
+		if (this->mercAbierto->Text != "") {
+			mercadoApertura = Int32::Parse(this->mercAbierto->Text);
+		}
+		if (this->mercAparicion->Text != "") {
+			mercadoAparicion = Int32::Parse(this->mercAparicion->Text);
 		}
 		MessageBox::Show("Datos guardados correctamente.");
 	}

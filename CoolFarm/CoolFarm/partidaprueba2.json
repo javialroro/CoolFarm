@@ -1,0 +1,309 @@
+{
+	"ColaAVL" : 0,
+	"ColaBinario" : 2,
+	"ColaEspanta" : 0,
+	"ColaHEAP" : 0,
+	"ColaSplay" : 0,
+	"Dinero" : 99399.0,
+	"EspantapajarosDispo" : 2,
+	"FrutosAVL" : 0,
+	"FrutosBinario" : 11,
+	"FrutosHeap" : 0,
+	"FrutosSplay" : 0,
+	"Matriz" : 
+	[
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 2,
+				"columna" : 2,
+				"datosArbol" : 
+				{
+					"data" : 1.3242978796620273,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : 1.7817447216719859,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					}
+				},
+				"fila" : 4,
+				"frutosPerdidos" : 2,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 3.1060426013340132,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 3,
+				"columna" : 4,
+				"datosArbol" : 
+				{
+					"data" : 4.7035680215484907,
+					"left" : 
+					{
+						"data" : 2.52272998873097,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : 2.6303851229551016,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"fila" : 3,
+				"frutosPerdidos" : 3,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 9.8566831332345615,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			{
+				"cantidadFrutos" : 3,
+				"columna" : 4,
+				"datosArbol" : 
+				{
+					"data" : 3.4805433147649749,
+					"left" : 
+					{
+						"data" : 1.2951066839790564,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					},
+					"right" : 
+					{
+						"data" : 4.6183725675301641,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					}
+				},
+				"fila" : 6,
+				"frutosPerdidos" : 3,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 9.3940225662741952,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 3,
+				"columna" : 6,
+				"datosArbol" : 
+				{
+					"data" : 4.3170233879072315,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : 4.3747603866043558,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : 4.6078845843172322,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					}
+				},
+				"fila" : 6,
+				"frutosPerdidos" : 3,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 13.299668358828818,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		]
+	],
+	"NombrePartida" : "partidaprueba2.json",
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 100.01999664306641,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
+	"SettingAparicionCuervos" : 1,
+	"SettingAparicionOveja" : 1,
+	"SettingAparicionPlagas" : 1,
+	"SettingPorcentCuervos" : 100,
+	"SettingPorcentOveja" : 0,
+	"SettingPorcentPlagas" : 0,
+	"SettingTiempoCuervos" : 5,
+	"SettingTiempoFrutosCuervos" : 5,
+	"SettingTiempoFrutosOveja" : 90,
+	"SettingTiempoOveja" : 60,
+	"SettingTiempoPlagas" : 60,
+	"SettingfrutosCuervos" : 1,
+	"SettingfrutosOveja" : 1,
+	"SettingsMercadoAparicion" : 10,
+	"SettingsMercadoApertura" : 5,
+	"cosechaA" : 1,
+	"cosechaB" : 2,
+	"cosechaH" : 2,
+	"cosechaS" : 2,
+	"creceA" : 500,
+	"creceBinario" : 2,
+	"creceH" : 150,
+	"creceS" : 500,
+	"tiempoCosechaA" : 60,
+	"tiempoCosechaB" : 5,
+	"tiempoCosechaH" : 35,
+	"tiempoCosechaS" : 60
+}
