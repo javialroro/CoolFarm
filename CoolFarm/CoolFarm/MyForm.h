@@ -1095,8 +1095,8 @@ Json::Value guardarMatriz() {
 						arbolJson["datosArbol"] = guardarArbolSplay(splayraiz->root);
 					}
 				}
-				arbolJson["fila"] = arbolActual->columna;
-				arbolJson["columna"] = arbolActual->fila;
+				arbolJson["fila"] = arbolActual->fila;
+				arbolJson["columna"] = arbolActual->columna;
 				arbolJson["cantidadFrutos"] = arbolActual->cantidadFrutosA;
 				arbolJson["montoTotal"] = arbolActual->montoTotal;
 				arbolJson["frutosVendidos"] = arbolActual->cantidadFrutosVendidos;
@@ -1211,7 +1211,7 @@ private: static string toStandardString(System::String^ string) {
 
 private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::EventArgs^ e) {
 	ifstream archivo(toStandardString(this->textBoxPartida->Text));
-	isRunning = true;
+	
 	if (archivo.is_open()) {
 		Json::CharReaderBuilder builder;
 		Json::Value root; // Inicializar el objeto root
@@ -1431,6 +1431,7 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			this->DibujarMatriz();
 			this->timer1->Interval = (mercadoAparicion * 1000);
 			this->timer2->Interval = (mercadoApertura * 1000);
+			isRunning = true;
 			hayArboles = true;
 			timer1->Start();
 			OvejasH->Start();
@@ -1592,7 +1593,7 @@ bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugado
 		// Iterar sobre la matriz para encontrar la posición más cercana con un objeto
 		for (int i = 0; i < FILAS; i++) {
 			for (int j = 0; j < COLUMNAS; j++) {
-				if (arbolesBinarios[i][j] != NULL && botones[i,j]->BackColor!=Color::Blue && botones[i, j]->BackColor != Color::Gold) {  // Se encontró un objeto en la posición (j, i)
+				if (arbolesBinarios[i][j] != NULL && botones[i,j]->BackColor!=Color::Blue && botones[i, j]->BackColor != Color::Gold && botones[i,j]->Text != "E") {  // Se encontró un objeto en la posición (j, i)
 					int distancia = std::abs(j - x) + std::abs(i - y);  // Calcular la distancia Manhattan
 					if (distancia < distanciaMinima) {
 						distanciaMinima = distancia;
@@ -1625,25 +1626,31 @@ bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugado
 
 			// Recorrer las posiciones en el eje x
 			for (int x = inicio.x; x != fin.x; x += dx) {
-				botones[inicio.y, x]->BackColor = Color::Blue;
-				this->Refresh();
-				if (botones[inicio.y, x]->BackColor == Color::Blue && botones[inicio.y, x]->Text=="") {
-					botones[inicio.y, x]->BackColor = Color::YellowGreen;
+				if(botones[inicio.y, x]->BackColor != Color::Gold){
+					botones[inicio.y, x]->BackColor = Color::Blue;
+					this->Refresh();
+					if (botones[inicio.y, x]->BackColor == Color::Blue && botones[inicio.y, x]->Text == "") {
+						botones[inicio.y, x]->BackColor = Color::YellowGreen;
+					}
 				}
 			}
 
 			// Recorrer las posiciones en el eje y
 			for (int y = inicio.y; y != fin.y; y += dy) {
-				botones[y, fin.x]->BackColor = Color::Blue;
-				this->Refresh();
-				if (botones[y, fin.x]->BackColor == Color::Blue && botones[y, fin.x]->Text == "") {
-					botones[y, fin.x]->BackColor = Color::YellowGreen;
+				if (botones[inicio.y, x]->BackColor != Color::Gold) {
+					botones[y, fin.x]->BackColor = Color::Blue;
+					this->Refresh();
+					if (botones[y, fin.x]->BackColor == Color::Blue && botones[y, fin.x]->Text == "") {
+						botones[y, fin.x]->BackColor = Color::YellowGreen;
+					}
 				}
 			}
 
 			// Marcar la posición final
-			botones[fin.y, fin.x]->BackColor = Color::Blue;
-			arbolesBinarios[fin.y][fin.x]->plaga = p;
+			if (botones[inicio.y, x]->BackColor != Color::Gold) {
+				botones[fin.y, fin.x]->BackColor = Color::Blue;
+				arbolesBinarios[fin.y][fin.x]->plaga = p;
+			}
 			if (arbolesBinarios[fin.y][fin.x]->plaga == "Oveja") {
 				label1->Text = "Oveja";
 				xTemp = fin.x;

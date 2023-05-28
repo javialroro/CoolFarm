@@ -1,0 +1,599 @@
+{
+	"ColaAVL" : 0,
+	"ColaBinario" : 2,
+	"ColaEspanta" : 0,
+	"ColaHEAP" : 0,
+	"ColaSplay" : 0,
+	"Dinero" : 99209.0,
+	"EspantapajarosDispo" : 2,
+	"FrutosAVL" : 0,
+	"FrutosBinario" : 38,
+	"FrutosHeap" : 36,
+	"FrutosSplay" : 0,
+	"Matriz" : 
+	[
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 12,
+				"columna" : 1,
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						4.9856874229434975,
+						3.4795316525535074,
+						4.2507229609748087,
+						2.6396492918026442,
+						2.9419044179016223,
+						3.8259374919012528,
+						3.5712478676353814,
+						0.10007765240260653,
+						0.89584924213003359,
+						1.6329170050668624,
+						1.8098053390822206,
+						2.7763432981465934
+					],
+					"tamano" : 12,
+					"tamanoMaximo" : 30
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 2,
+				"frutosVendidos" : 0,
+				"letra" : "H",
+				"montoTotal" : 32.90967364254103,
+				"plaga" : "Oveja"
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 12,
+				"columna" : 2,
+				"datosArbol" : 
+				{
+					"data" : 1.9448040638225184,
+					"left" : 
+					{
+						"data" : 0.49026172346488828,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : 1.8415458402395888,
+							"left" : 
+							{
+								"data" : 1.0936687011112305,
+								"left" : 
+								{
+									"data" : 0.94260402261704956,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : 1.1925468270865207,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 1.5174994053497737,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 4.303739776478773,
+						"left" : 
+						{
+							"data" : 4.0137769608942593,
+							"left" : 
+							{
+								"data" : 2.6468529050733993,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 3.6899763864489143,
+									"left" : 
+									{
+										"data" : 2.7577563215675696,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					}
+				},
+				"fila" : 3,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 26.435032934154485,
+				"plaga" : "Gusano"
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 13,
+				"columna" : 3,
+				"datosArbol" : 
+				{
+					"data" : 1.8052960902550796,
+					"left" : 
+					{
+						"data" : 1.2305874770197398,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					},
+					"right" : 
+					{
+						"data" : 3.8228444758596933,
+						"left" : 
+						{
+							"data" : 1.9004570314742946,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 1.9590105977882823,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 3.5738223346078382,
+									"left" : 
+									{
+										"data" : 2.2787420440000097,
+										"left" : 
+										{
+											"data" : 2.0603988180897326,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : 2.9251850315774974,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 3.0496119956883088,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 3.6899289247118938,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 4.7104155494846029,
+							"left" : 
+							{
+								"data" : 3.8677502342074468,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					}
+				},
+				"fila" : 6,
+				"frutosPerdidos" : 3,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 36.874050604764413,
+				"plaga" : "Cuervo"
+			},
+			{
+				"cantidadFrutos" : 9,
+				"columna" : 3,
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						3.4196331829490365,
+						2.7184705436109531,
+						3.3667970951675801,
+						2.6431278777393579,
+						0.03721982215548169,
+						2.9796816722882116,
+						2.4770257788829162,
+						2.240494870489278,
+						2.4214291699817134
+					],
+					"tamano" : 9,
+					"tamanoMaximo" : 30
+				},
+				"fila" : 7,
+				"frutosPerdidos" : 1,
+				"frutosVendidos" : 0,
+				"letra" : "H",
+				"montoTotal" : 22.303880013264525,
+				"plaga" : "Oveja"
+			},
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 15,
+				"columna" : 5,
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						4.597214061798411,
+						4.5154064597332821,
+						3.9858016172557789,
+						1.8418475934963225,
+						3.374475797867635,
+						2.9959838244275496,
+						3.1326642874638941,
+						0.44324101217002204,
+						1.1258819957399562,
+						1.3567475264108841,
+						2.4947806136179289,
+						0.52166054572538534,
+						1.2937222768595438,
+						0.76216075579526998,
+						2.2359184743431473
+					],
+					"tamano" : 15,
+					"tamanoMaximo" : 30
+				},
+				"fila" : 3,
+				"frutosPerdidos" : 3,
+				"frutosVendidos" : 0,
+				"letra" : "H",
+				"montoTotal" : 34.677506842705014,
+				"plaga" : "Oveja"
+			},
+			null,
+			{
+				"cantidadFrutos" : 13,
+				"columna" : 5,
+				"datosArbol" : 
+				{
+					"data" : 3.3701937359266934,
+					"left" : 
+					{
+						"data" : 2.244701282747732,
+						"left" : 
+						{
+							"data" : 1.0503486692075767,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 1.8766876466654212,
+								"left" : 
+								{
+									"data" : 1.2479996643616296,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 2.2760819617217383,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 3.9883319732599594,
+						"left" : 
+						{
+							"data" : 3.8972286549481412,
+							"left" : 
+							{
+								"data" : 3.4937016624003991,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						},
+						"right" : 
+						{
+							"data" : 4.2234346430271916,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 4.8963844773651779,
+								"left" : 
+								{
+									"data" : 4.6244699079974341,
+									"left" : 
+									{
+										"data" : 4.2442614610800105,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					}
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 3,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 41.433825740709104,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		]
+	],
+	"NombrePartida" : "partidafinal3.json",
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 100.01999664306641,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
+	"SettingAparicionCuervos" : 1,
+	"SettingAparicionOveja" : 1,
+	"SettingAparicionPlagas" : 1,
+	"SettingPorcentCuervos" : 100,
+	"SettingPorcentOveja" : 100,
+	"SettingPorcentPlagas" : 100,
+	"SettingTiempoCuervos" : 4,
+	"SettingTiempoFrutosCuervos" : 5,
+	"SettingTiempoFrutosOveja" : 5,
+	"SettingTiempoOveja" : 4,
+	"SettingTiempoPlagas" : 10,
+	"SettingfrutosCuervos" : 1,
+	"SettingfrutosOveja" : 1,
+	"SettingsMercadoAparicion" : 10,
+	"SettingsMercadoApertura" : 30,
+	"cosechaA" : 2,
+	"cosechaB" : 2,
+	"cosechaH" : 2,
+	"cosechaS" : 2,
+	"creceA" : 2,
+	"creceBinario" : 2,
+	"creceH" : 2,
+	"creceS" : 2,
+	"tiempoCosechaA" : 2,
+	"tiempoCosechaB" : 2,
+	"tiempoCosechaH" : 2,
+	"tiempoCosechaS" : 2
+}
