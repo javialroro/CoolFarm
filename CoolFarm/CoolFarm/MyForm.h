@@ -1218,16 +1218,21 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 
 							arbolesBinarios[i][j] = a;
-							if (a->plaga != "") {
-								botones[i, j]->BackColor = Color::Blue;
-								
+							if (a->plaga == "Oveja") {
+								marcarRuta(Posicion(i, j), "Oveja");
+							}
+							if (a->plaga == "Cuervo") {
+								marcarRuta(Posicion(i, j), "Cuervo");
+							}
+							if (a->plaga == "Gusano") {
+								marcarRuta(Posicion(i, j), "Gusano");
 							}
 							BTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThread);
 							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
 							numHilos++;
 							hilos[numHilos - 1] = thread;
-							thread->Start();
+							thread->Start(); 
 							arregloBinario.push_back(a);
 
 							
@@ -1242,9 +1247,14 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
-							if (a->plaga != "") {
-								botones[i, j]->BackColor = Color::Blue;
-
+							if (a->plaga == "Oveja") {
+								marcarRuta(Posicion(i, j), "Oveja");
+							}
+							if (a->plaga == "Cuervo") {
+								marcarRuta(Posicion(i, j), "Cuervo");
+							}
+							if (a->plaga == "Gusano") {
+								marcarRuta(Posicion(i, j), "Gusano");
 							}
 							HTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadHeap);
@@ -1264,9 +1274,14 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
-							if (a->plaga != "") {
-								botones[i, j]->BackColor = Color::Blue;
-
+							if (a->plaga == "Oveja") {
+								marcarRuta(Posicion(i, j), "Oveja");
+							}
+							if (a->plaga == "Cuervo") {
+								marcarRuta(Posicion(i, j), "Cuervo");
+							}
+							if (a->plaga == "Gusano") {
+								marcarRuta(Posicion(i, j), "Gusano");
 							}
 							AVTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadAVL);
@@ -1286,9 +1301,14 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
-							if (a->plaga != "") {
-								botones[i, j]->BackColor = Color::Blue;
-
+							if (a->plaga == "Oveja") {
+								marcarRuta(Posicion(i, j), "Oveja");
+							}
+							if (a->plaga == "Cuervo") {
+								marcarRuta(Posicion(i, j), "Cuervo");
+							}
+							if (a->plaga == "Gusano") {
+								marcarRuta(Posicion(i, j), "Gusano");
 							}
 							STemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadSplay);
