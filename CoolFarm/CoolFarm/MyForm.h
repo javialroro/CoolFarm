@@ -1410,6 +1410,7 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			this->DibujarMatriz();
 			this->timer1->Interval = (mercadoAparicion * 1000);
 			this->timer2->Interval = (mercadoApertura * 1000);
+			hayArboles = true;
 			timer1->Start();
 			OvejasH->Start();
 			CuervosH->Start();
