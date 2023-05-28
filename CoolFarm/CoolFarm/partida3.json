@@ -1,0 +1,294 @@
+{
+	"ColaAVL" : 0,
+	"ColaBinario" : 0,
+	"ColaEspanta" : 0,
+	"ColaHEAP" : 0,
+	"ColaSplay" : 0,
+	"Dinero" : 99999.0,
+	"EspantapajarosDispo" : 2,
+	"FrutosAVL" : 0,
+	"FrutosBinario" : 14,
+	"FrutosHeap" : 0,
+	"FrutosSplay" : 0,
+	"Matriz" : 
+	[
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 14,
+				"columna" : 5,
+				"datosArbol" : 
+				{
+					"data" : 1.5653290873102967,
+					"left" : 
+					{
+						"data" : 0.33714940155528372,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : 1.5173326213793923,
+							"left" : 
+							{
+								"data" : 1.1436298789834092,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 1.9032135811730979,
+						"left" : 
+						{
+							"data" : 1.5685095005605898,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 1.6146900367483459,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 3.4471690133009369,
+							"left" : 
+							{
+								"data" : 2.6211802559053976,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 3.0731956786628443,
+									"left" : 
+									{
+										"data" : 3.0269112271413596,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : 4.3702494311815316,
+								"left" : 
+								{
+									"data" : 3.7152776362578943,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : 4.8683621282773446,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							}
+						}
+					}
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 34.772199478437727,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		]
+	],
+	"NombrePartida" : "partida3.json",
+	"PrecioAVL" : 350.0,
+	"PrecioBinario" : 100.0,
+	"PrecioEspanta" : 200.0,
+	"PrecioHeap" : 130.0,
+	"PrecioSplay" : 600.0,
+	"SettingAparicionCuervos" : 2,
+	"SettingAparicionOveja" : 1,
+	"SettingAparicionPlagas" : 1,
+	"SettingPorcentCuervos" : 40,
+	"SettingPorcentOveja" : 70,
+	"SettingPorcentPlagas" : 30,
+	"SettingTiempoCuervos" : 180,
+	"SettingTiempoFrutosCuervos" : 90,
+	"SettingTiempoFrutosOveja" : 90,
+	"SettingTiempoOveja" : 60,
+	"SettingTiempoPlagas" : 60,
+	"SettingfrutosCuervos" : 1,
+	"SettingfrutosOveja" : 1,
+	"SettingsMercadoAparicion" : 10,
+	"SettingsMercadoApertura" : 5,
+	"cosechaA" : 1,
+	"cosechaB" : 2,
+	"cosechaH" : 2,
+	"cosechaS" : 2,
+	"creceA" : 500,
+	"creceBinario" : 2,
+	"creceH" : 150,
+	"creceS" : 500,
+	"tiempoCosechaA" : 60,
+	"tiempoCosechaB" : 2,
+	"tiempoCosechaH" : 35,
+	"tiempoCosechaS" : 60
+}
