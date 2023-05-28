@@ -1,0 +1,517 @@
+{
+	"ColaAVL" : 3,
+	"ColaBinario" : 0,
+	"ColaEspanta" : 0,
+	"ColaHEAP" : 0,
+	"ColaSplay" : 3,
+	"Dinero" : 96459.0,
+	"EspantapajarosDispo" : 2,
+	"FrutosAVL" : 0,
+	"FrutosBinario" : 28,
+	"FrutosHeap" : 34,
+	"FrutosSplay" : 0,
+	"Matriz" : 
+	[
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 26,
+				"columna" : 1,
+				"datosArbol" : 
+				{
+					"data" : 1.1290913738480761,
+					"left" : 
+					{
+						"data" : 0.10159084577196535,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : 1.0667996374124482,
+							"left" : 
+							{
+								"data" : 0.7383644179339488,
+								"left" : 
+								{
+									"data" : 0.58167326729567526,
+									"left" : 
+									{
+										"data" : 0.11965400443062518,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 0.55311384718758394,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 0.66871135990290853,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 4.7942748342099746,
+						"left" : 
+						{
+							"data" : 1.1305548061958854,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : 3.0899537357373785,
+								"left" : 
+								{
+									"data" : 2.5874980632632782,
+									"left" : 
+									{
+										"data" : 1.3944743789212248,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 2.5377722928721864,
+											"left" : 
+											{
+												"data" : 1.7844155297052819,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 3.0885391363856933,
+										"left" : 
+										{
+											"data" : 2.9964967082930154,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 3.0158514399847802,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : 3.3784779005461982,
+									"left" : 
+									{
+										"data" : 3.1078618680725087,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 3.2691987120873622,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 3.6339247836001576,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 3.9718318344627472,
+											"left" : 
+											{
+												"data" : 3.935456469318003,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : 4.789896189978669,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 4.9958004798347879,
+							"left" : 
+							{
+								"data" : null
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					}
+				},
+				"fila" : 3,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 62.461277917252346,
+				"plaga" : "Oveja"
+			},
+			null,
+			{
+				"cantidadFrutos" : 1,
+				"columna" : 1,
+				"datosArbol" : 
+				{
+					"data" : 4.8909021930246679,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 1,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 4.890902193024667,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 1,
+				"columna" : 3,
+				"datosArbol" : 
+				{
+					"data" : 3.4084785720132755,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"fila" : 7,
+				"frutosPerdidos" : 1,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 3.4084785720132755,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 2,
+				"columna" : 4,
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						1.6974737902004702,
+						0.08314278276831473
+					],
+					"tamano" : 2,
+					"tamanoMaximo" : 30
+				},
+				"fila" : 4,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "H",
+				"montoTotal" : 1.7806165729687848,
+				"plaga" : "Gusano"
+			},
+			null,
+			{
+				"cantidadFrutos" : 2,
+				"columna" : 4,
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						2.4117599131705849,
+						1.9640755300347894
+					],
+					"tamano" : 2,
+					"tamanoMaximo" : 30
+				},
+				"fila" : 6,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "H",
+				"montoTotal" : 4.3758354432053741,
+				"plaga" : "Gusano"
+			},
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 30,
+				"columna" : 6,
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						4.8300213166124815,
+						4.7203387573851954,
+						4.8148976867882327,
+						4.3447532894624903,
+						3.9425433883406917,
+						4.6710073550284958,
+						4.7494339133934496,
+						3.4928944708315015,
+						3.5472185310673647,
+						2.5018879763454467,
+						2.0604974514528593,
+						4.0976824647570842,
+						3.4941960256115037,
+						4.5046684821905094,
+						2.5514638705426829,
+						0.85098644499948095,
+						3.102935823898076,
+						1.6102362956496656,
+						1.8119009533257275,
+						1.1521090040316695,
+						1.7135637575089055,
+						1.5827903681820392,
+						2.0288841956581143,
+						1.1444616336826596,
+						0.69927942204390026,
+						0.82858989809025829,
+						2.295157086534092,
+						0.93138412737038334,
+						1.800409673476896,
+						1.5725638278591121
+					],
+					"tamano" : 30,
+					"tamanoMaximo" : 30
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "H",
+				"montoTotal" : 81.448757492120961,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		]
+	],
+	"NombrePartida" : "partidaceviche.json",
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 100.01999664306641,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
+	"SettingAparicionCuervos" : 1,
+	"SettingAparicionOveja" : 1,
+	"SettingAparicionPlagas" : 1,
+	"SettingPorcentCuervos" : 100,
+	"SettingPorcentOveja" : 100,
+	"SettingPorcentPlagas" : 100,
+	"SettingTiempoCuervos" : 5,
+	"SettingTiempoFrutosCuervos" : 90,
+	"SettingTiempoFrutosOveja" : 90,
+	"SettingTiempoOveja" : 10,
+	"SettingTiempoPlagas" : 15,
+	"SettingfrutosCuervos" : 1,
+	"SettingfrutosOveja" : 1,
+	"SettingsMercadoAparicion" : 10,
+	"SettingsMercadoApertura" : 30,
+	"cosechaA" : 2,
+	"cosechaB" : 2,
+	"cosechaH" : 2,
+	"cosechaS" : 2,
+	"creceA" : 2,
+	"creceBinario" : 2,
+	"creceH" : 2,
+	"creceS" : 2,
+	"tiempoCosechaA" : 2,
+	"tiempoCosechaB" : 2,
+	"tiempoCosechaH" : 2,
+	"tiempoCosechaS" : 2
+}

@@ -29,7 +29,7 @@ queue<Espantapajaros*> colaEspantapajaro;
 string directoryPath = "C:\\Users\\javia\\OneDrive - Estudiantes ITCR\\TEC\\TEC 3 Semestre\\Estructuras de Datos\\CoolFarm\\CoolFarm\\CoolFarm";
 string nombrePartida;
 string nombreJson;
-bool isRunning = true;
+bool isRunning = false;
 bool parar = false;
 
 

@@ -771,39 +771,35 @@ private: System::Void botonPlantarOrdenado_Click(System::Object^ sender, System:
 	   void GenerateFruitsThread()
 	   {
 				   // Llamada al método generateFruits con los parámetros requeridos
-			   while (isRunning) {
-				   if (!isRunning) { break; }
+			   while (true) {
 				   generateFruits(BTemp);
-				   if (!isRunning) { break; }
 			   }
 	   }
 
 	   void GenerateFruitsThreadHeap() {
 				   // Llamada al método generateFruits con los parámetros requeridos
-			while (isRunning) {
-				if (!isRunning) { break; }
+			while (true) {
+
 				generateFruitsHeap(HTemp);
-				if (!isRunning) { break; }
+
 			}
 
 	   }
 
 	   void GenerateFruitsThreadAVL() {
 			   // Llamada al método generateFruits con los parámetros requeridos
-			   while (isRunning) {
-				   if (!isRunning) { break; }
+			   while (true) {
 				   generateFruitsAVL(AVTemp);
-				   if (!isRunning) { break; }
+
 			   }
 		   
 	   }
 
 	   void GenerateFruitsThreadSplay() {
 			   // Llamada al método generateFruits con los parámetros requeridos
-			   while (isRunning) {
-				   if (!isRunning) { break; }
+			   while (true) {
 				   generateFruitsSplay(STemp);
-				   if (!isRunning) { break; }
+				   
 			   }
 		   
 	   }
@@ -845,12 +841,10 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 
 			   std::this_thread::sleep_for(std::chrono::seconds(creceBinario));
 			   botones[arbol->columna, arbol->fila]->Text = "O";
-			   while (isRunning) {
+			   if (isRunning) {
 				// Esperar 5 segundos
 				   botones[arbol->columna, arbol->fila]->Text = "O";
-				   if (!isRunning) { break; }
 				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaB));
-				   if (!isRunning) { break; }
 				   for (int i = 0; i < cosechaB; i++) {
 					   double random = generateRandomNumber(0.001, 5.0);
 					   arbol->insertNode(arbol->root, random);
@@ -871,14 +865,12 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   std::this_thread::sleep_for(std::chrono::seconds(creceH));
 		   botones[arbol->columna, arbol->fila]->Text = "H";
 		   int counter=0;
-		   while (isRunning) {
+		   if (isRunning) {
 			   if (counter < arbol->tamanoMaximo) {
 				   counter++;
 				   // Esperar 5 segundos
 				   botones[arbol->columna, arbol->fila]->Text = "H";
-				   if (!isRunning) { break; }
 				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaH));
-				   if (!isRunning) { break; }
 				   for (int i = 0; i < cosechaH;i++) {
 					   double random = generateRandomNumber(0.001, 5.0);
 					   arbol->insertar(random);
@@ -901,12 +893,10 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   // Esperar 5 segundos
 		   std::this_thread::sleep_for(std::chrono::seconds(creceA));
 		   botones[arbol->columna, arbol->fila]->Text = "A";
-		   while (isRunning) {
+		   if (isRunning) {
 			   // Esperar 5 segundos
 			   botones[arbol->columna, arbol->fila]->Text = "A";
-			   if (!isRunning) { break; }
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
-			   if (!isRunning) { break; }
 			   for (int i = 0; i < cosechaA;i++) {
 				   double random = generateRandomNumber(2.0, 20.0);
 				   arbol->r=arbol->insert(arbol->r, random);
@@ -921,12 +911,12 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   std::this_thread::sleep_for(std::chrono::seconds(creceS));
 		   
 		   botones[arbol->columna, arbol->fila]->Text = "S";
-		   while (isRunning) {
+		   
+			if (isRunning) {
 			   // Esperar 5 segundos
 			   botones[arbol->columna, arbol->fila]->Text = "S";
-			   if (!isRunning) { break; }
 			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaS));
-			   if (!isRunning) { break; }
+
 			   for (int i = 0; i < cosechaS; i++) {
 				   double random = generateRandomNumber(5.0, 50.0);
 				   arbol->root=arbol->Insert(random);
@@ -1201,6 +1191,7 @@ private: static string toStandardString(System::String^ string) {
 
 private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::EventArgs^ e) {
 	ifstream archivo(toStandardString(this->textBoxPartida->Text));
+	isRunning = true;
 	if (archivo.is_open()) {
 		Json::CharReaderBuilder builder;
 		Json::Value root; // Inicializar el objeto root
@@ -1229,17 +1220,7 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							arbolesBinarios[i][j] = a;
 							if (a->plaga != "") {
 								botones[i, j]->BackColor = Color::Blue;
-								MessageBox::Show("me cai");
-								if (a->plaga == "Cuervo") {
-									/*
-									xTemp = i;
-									yTemp = j;
-									Hilo^ h = gcnew Hilo();
-									h->hilo = gcnew Thread(gcnew ThreadStart(this, &MyForm::CuervosComer));
-									numHilos++;
-									hilos[numHilos - 1] = h->hilo;
-									h->hilo->Start();*/
-								}
+								
 							}
 							BTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThread);
@@ -1261,6 +1242,10 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
+							if (a->plaga != "") {
+								botones[i, j]->BackColor = Color::Blue;
+
+							}
 							HTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadHeap);
 							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
@@ -1279,6 +1264,10 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
+							if (a->plaga != "") {
+								botones[i, j]->BackColor = Color::Blue;
+
+							}
 							AVTemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadAVL);
 							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
@@ -1297,6 +1286,10 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 							a->cantidadFrutosPerdidos = root["Matriz"][i][j]["frutosPerdidos"].asInt();
 							a->plaga = root["Matriz"][i][j]["plaga"].asString();
 							arbolesBinarios[i][j] = a;
+							if (a->plaga != "") {
+								botones[i, j]->BackColor = Color::Blue;
+
+							}
 							STemp = a;
 							System::Threading::ThreadStart^ threadStart = gcnew System::Threading::ThreadStart(this, &MyForm::GenerateFruitsThreadSplay);
 							System::Threading::Thread^ thread = gcnew System::Threading::Thread(threadStart);
@@ -1393,7 +1386,7 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			}
 			archivo.close();
 			MessageBox::Show("cargado");
-			isRunning = true;
+			
 			this->DibujarMatriz();
 			this->timer1->Interval = (mercadoAparicion * 1000);
 			this->timer2->Interval = (mercadoApertura * 1000);
