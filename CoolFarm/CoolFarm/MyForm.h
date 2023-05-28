@@ -527,8 +527,9 @@ namespace CoolFarm {
 			Point pos = (Point)boton->Tag;
 			int fila = pos.X;
 			int columna = pos.Y;
-			System::String^ plaga = msclr::interop::marshal_as<System::String^>(arbolesBinarios[fila][columna]->plaga);
+			
 			if (arbolesBinarios[fila][columna]!=nullptr) {
+				System::String^ plaga = msclr::interop::marshal_as<System::String^>(arbolesBinarios[fila][columna]->plaga);
 				MessageBox::Show("Ubicacion: "+ arbolesBinarios[fila][columna]->fila+","+ arbolesBinarios[fila][columna]->columna+
 					"\nCantidad de frutos: " + arbolesBinarios[fila][columna]->cantidadFrutosA+ "\nMonto total: "+ arbolesBinarios
 				[fila][columna]->montoTotal+ "\nVendidos: "+ arbolesBinarios[fila][columna]->cantidadFrutosVendidos+ "\nPerdidos: "
@@ -1625,25 +1626,31 @@ bool CompararPorDineroDescendente(const Jugador& jugador1, const Jugador& jugado
 
 			// Recorrer las posiciones en el eje x
 			for (int x = inicio.x; x != fin.x; x += dx) {
-				botones[inicio.y, x]->BackColor = Color::Blue;
-				this->Refresh();
-				if (botones[inicio.y, x]->BackColor == Color::Blue && botones[inicio.y, x]->Text=="") {
-					botones[inicio.y, x]->BackColor = Color::YellowGreen;
+				if (botones[inicio.y, x]->BackColor != Color::Gold) {
+					botones[inicio.y, x]->BackColor = Color::Blue;
+					this->Refresh();
+					if (botones[inicio.y, x]->BackColor == Color::Blue && botones[inicio.y, x]->Text == "") {
+						botones[inicio.y, x]->BackColor = Color::YellowGreen;
+					}
 				}
 			}
 
 			// Recorrer las posiciones en el eje y
 			for (int y = inicio.y; y != fin.y; y += dy) {
-				botones[y, fin.x]->BackColor = Color::Blue;
-				this->Refresh();
-				if (botones[y, fin.x]->BackColor == Color::Blue && botones[y, fin.x]->Text == "") {
-					botones[y, fin.x]->BackColor = Color::YellowGreen;
+				if (botones[y, fin.x]->BackColor != Color::Gold && botones[y, fin.x]->Text == "") {
+					botones[y, fin.x]->BackColor = Color::Blue;
+					this->Refresh();
+					if (botones[y, fin.x]->BackColor == Color::Blue && botones[y, fin.x]->Text == "") {
+						botones[y, fin.x]->BackColor = Color::YellowGreen;
+					}
 				}
 			}
 
 			// Marcar la posición final
-			botones[fin.y, fin.x]->BackColor = Color::Blue;
-			arbolesBinarios[fin.y][fin.x]->plaga = p;
+			if (botones[fin.y, fin.x]->BackColor != Color::Gold && botones[fin.y, fin.x]->Text !="E") {
+				botones[fin.y, fin.x]->BackColor = Color::Blue;
+				arbolesBinarios[fin.y][fin.x]->plaga = p;
+			}
 			if (arbolesBinarios[fin.y][fin.x]->plaga == "Oveja") {
 				label1->Text = "Oveja";
 				xTemp = fin.x;
