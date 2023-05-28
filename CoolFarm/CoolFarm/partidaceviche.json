@@ -1,14 +1,14 @@
 {
-	"ColaAVL" : 0,
+	"ColaAVL" : 3,
 	"ColaBinario" : 0,
 	"ColaEspanta" : 0,
 	"ColaHEAP" : 0,
-	"ColaSplay" : 2,
-	"Dinero" : 97539.0,
+	"ColaSplay" : 3,
+	"Dinero" : 96459.0,
 	"EspantapajarosDispo" : 2,
-	"FrutosAVL" : 49,
-	"FrutosBinario" : 97,
-	"FrutosHeap" : 12,
+	"FrutosAVL" : 0,
+	"FrutosBinario" : 28,
+	"FrutosHeap" : 34,
 	"FrutosSplay" : 0,
 	"Matriz" : 
 	[
@@ -28,246 +28,38 @@
 			null,
 			null,
 			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
 			{
-				"cantidadFrutos" : 49,
-				"columna" : 3,
+				"cantidadFrutos" : 26,
+				"columna" : 1,
 				"datosArbol" : 
 				{
-					"data" : 12.86133636972755,
+					"data" : 1.1290913738480761,
 					"left" : 
 					{
-						"data" : 8.0331242440076949,
+						"data" : 0.10159084577196535,
 						"left" : 
 						{
-							"data" : 3.9805878930499228,
-							"left" : 
-							{
-								"data" : 2.8040916869660424,
-								"left" : 
-								{
-									"data" : 2.5042965816970257,
-									"left" : 
-									{
-										"data" : 2.1587450227706948,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : 2.3537590393789012,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									},
-									"right" : 
-									{
-										"data" : 2.5943308018230908,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 2.9995650316710201,
-									"left" : 
-									{
-										"data" : 2.9641763299049986,
-										"left" : 
-										{
-											"data" : 2.9133741790924512,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : 3.8769682859053769,
-										"left" : 
-										{
-											"data" : 3.1954775740545664,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								}
-							},
-							"right" : 
-							{
-								"data" : 5.5194338851266043,
-								"left" : 
-								{
-									"data" : 4.7763622957270035,
-									"left" : 
-									{
-										"data" : 4.2092214982476381,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : null
-									}
-								},
-								"right" : 
-								{
-									"data" : 7.6608973813743679,
-									"left" : 
-									{
-										"data" : 6.419959204486533,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : 7.3220252671708197,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									},
-									"right" : 
-									{
-										"data" : 7.720838681476649,
-										"left" : 
-										{
-											"data" : 7.695638553283187,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										},
-										"right" : 
-										{
-											"data" : 7.8273755107702385,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									}
-								}
-							}
+							"data" : null
 						},
 						"right" : 
 						{
-							"data" : 9.2335939889655148,
+							"data" : 1.0667996374124482,
 							"left" : 
 							{
-								"data" : 9.1776291869241078,
+								"data" : 0.7383644179339488,
 								"left" : 
 								{
-									"data" : 8.2307802105072625,
+									"data" : 0.58167326729567526,
 									"left" : 
 									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : 8.7344637128439366,
+										"data" : 0.11965400443062518,
 										"left" : 
 										{
 											"data" : null
 										},
 										"right" : 
 										{
-											"data" : null
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 9.1839987045197127,
-									"left" : 
-									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : null
-									}
-								}
-							},
-							"right" : 
-							{
-								"data" : 11.55742597899526,
-								"left" : 
-								{
-									"data" : 10.637229030741386,
-									"left" : 
-									{
-										"data" : 9.3481105864501473,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : 10.18077942720201,
+											"data" : 0.55311384718758394,
 											"left" : 
 											{
 												"data" : null
@@ -280,818 +72,7 @@
 									},
 									"right" : 
 									{
-										"data" : 10.989180162170051,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : 11.513795533882183,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 11.886122818828339,
-									"left" : 
-									{
-										"data" : 11.693041858539821,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : null
-									}
-								}
-							}
-						}
-					},
-					"right" : 
-					{
-						"data" : 15.258880218661959,
-						"left" : 
-						{
-							"data" : 14.427763676949652,
-							"left" : 
-							{
-								"data" : 13.963164674719218,
-								"left" : 
-								{
-									"data" : 13.180092869578067,
-									"left" : 
-									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : null
-									}
-								},
-								"right" : 
-								{
-									"data" : 14.182917289344552,
-									"left" : 
-									{
-										"data" : 14.066887207342484,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : 14.207231230185036,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								}
-							},
-							"right" : 
-							{
-								"data" : 14.919799741689349,
-								"left" : 
-								{
-									"data" : 14.496062529879456,
-									"left" : 
-									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : 14.860498074861715,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 15.075408340600518,
-									"left" : 
-									{
-										"data" : 15.017422817777573,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : 15.137918336012291,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								}
-							}
-						},
-						"right" : 
-						{
-							"data" : 17.163425762760401,
-							"left" : 
-							{
-								"data" : 16.110547979305625,
-								"left" : 
-								{
-									"data" : 15.909165715402878,
-									"left" : 
-									{
-										"data" : 15.781086517427912,
-										"left" : 
-										{
-											"data" : 15.396732609372608,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : 15.932029224278795,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 16.64996650834129,
-									"left" : 
-									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : 16.764038157388583,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								}
-							},
-							"right" : 
-							{
-								"data" : 18.377431084138923,
-								"left" : 
-								{
-									"data" : 18.010738676283253,
-									"left" : 
-									{
-										"data" : 17.748657544034568,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : 18.253109294457524,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 19.863000324390299,
-									"left" : 
-									{
-										"data" : 18.848796462262921,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : null
-									}
-								}
-							}
-						}
-					}
-				},
-				"fila" : 2,
-				"frutosPerdidos" : 13,
-				"frutosVendidos" : 0,
-				"letra" : "A",
-				"montoTotal" : 648.36050938572976,
-				"plaga" : "Cuervo"
-			},
-			null,
-			{
-				"cantidadFrutos" : 95,
-				"columna" : 5,
-				"datosArbol" : 
-				{
-					"data" : 4.458986001959464,
-					"left" : 
-					{
-						"data" : 4.127767592486661,
-						"left" : 
-						{
-							"data" : 3.8720680002794943,
-							"left" : 
-							{
-								"data" : 2.0340666114872263,
-								"left" : 
-								{
-									"data" : 1.4928550709001072,
-									"left" : 
-									{
-										"data" : 1.0143779454829551,
-										"left" : 
-										{
-											"data" : 0.79982063605618336,
-											"left" : 
-											{
-												"data" : 0.73896137030376596,
-												"left" : 
-												{
-													"data" : 0.62236070593089821,
-													"left" : 
-													{
-														"data" : 0.62074071041796242,
-														"left" : 
-														{
-															"data" : 0.07305232004731578,
-															"left" : 
-															{
-																"data" : null
-															},
-															"right" : 
-															{
-																"data" : 0.21053138779540451,
-																"left" : 
-																{
-																	"data" : null
-																},
-																"right" : 
-																{
-																	"data" : null
-																}
-															}
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												},
-												"right" : 
-												{
-													"data" : 0.79617396381907302,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												}
-											},
-											"right" : 
-											{
-												"data" : 0.81911285266249612,
-												"left" : 
-												{
-													"data" : null
-												},
-												"right" : 
-												{
-													"data" : 0.92174716860411665,
-													"left" : 
-													{
-														"data" : 0.9110152260879586,
-														"left" : 
-														{
-															"data" : 0.84953951847235332,
-															"left" : 
-															{
-																"data" : null
-															},
-															"right" : 
-															{
-																"data" : 0.85343480185183984,
-																"left" : 
-																{
-																	"data" : null
-																},
-																"right" : 
-																{
-																	"data" : 0.85571130647392823,
-																	"left" : 
-																	{
-																		"data" : null
-																	},
-																	"right" : 
-																	{
-																		"data" : null
-																	}
-																}
-															}
-														},
-														"right" : 
-														{
-															"data" : 0.92039051243163184,
-															"left" : 
-															{
-																"data" : null
-															},
-															"right" : 
-															{
-																"data" : null
-															}
-														}
-													},
-													"right" : 
-													{
-														"data" : 0.94394195988851148,
-														"left" : 
-														{
-															"data" : null
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													}
-												}
-											}
-										},
-										"right" : 
-										{
-											"data" : 1.0905657101480855,
-											"left" : 
-											{
-												"data" : 1.0155730772540232,
-												"left" : 
-												{
-													"data" : null
-												},
-												"right" : 
-												{
-													"data" : 1.0857862989009706,
-													"left" : 
-													{
-														"data" : 1.0186937840862689,
-														"left" : 
-														{
-															"data" : null
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												}
-											},
-											"right" : 
-											{
-												"data" : 1.4292170693036119,
-												"left" : 
-												{
-													"data" : 1.3914643269027609,
-													"left" : 
-													{
-														"data" : 1.240518005636053,
-														"left" : 
-														{
-															"data" : null
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												},
-												"right" : 
-												{
-													"data" : null
-												}
-											}
-										}
-									},
-									"right" : 
-									{
-										"data" : 1.5564684635522903,
-										"left" : 
-										{
-											"data" : 1.5396042572983002,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										},
-										"right" : 
-										{
-											"data" : 2.0178849113141841,
-											"left" : 
-											{
-												"data" : 2.0152702467967751,
-												"left" : 
-												{
-													"data" : 1.7523896100146918,
-													"left" : 
-													{
-														"data" : 1.5979551606558877,
-														"left" : 
-														{
-															"data" : null
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													},
-													"right" : 
-													{
-														"data" : 1.9983397176678848,
-														"left" : 
-														{
-															"data" : null
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													}
-												},
-												"right" : 
-												{
-													"data" : null
-												}
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 3.0553163941936092,
-									"left" : 
-									{
-										"data" : 2.7113762304821436,
-										"left" : 
-										{
-											"data" : 2.6049883304848542,
-											"left" : 
-											{
-												"data" : 2.5105770343030591,
-												"left" : 
-												{
-													"data" : 2.5019189837329407,
-													"left" : 
-													{
-														"data" : 2.0987263896806203,
-														"left" : 
-														{
-															"data" : 2.05729385733243,
-															"left" : 
-															{
-																"data" : null
-															},
-															"right" : 
-															{
-																"data" : 2.0677691775468632,
-																"left" : 
-																{
-																	"data" : null
-																},
-																"right" : 
-																{
-																	"data" : null
-																}
-															}
-														},
-														"right" : 
-														{
-															"data" : 2.3990790476117958,
-															"left" : 
-															{
-																"data" : 2.1340490961051239,
-																"left" : 
-																{
-																	"data" : null
-																},
-																"right" : 
-																{
-																	"data" : null
-																}
-															},
-															"right" : 
-															{
-																"data" : null
-															}
-														}
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												},
-												"right" : 
-												{
-													"data" : 2.5140696057840359,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												}
-											},
-											"right" : 
-											{
-												"data" : 2.6877962005841614,
-												"left" : 
-												{
-													"data" : null
-												},
-												"right" : 
-												{
-													"data" : null
-												}
-											}
-										},
-										"right" : 
-										{
-											"data" : 2.9962808954568603,
-											"left" : 
-											{
-												"data" : 2.9212521759092036,
-												"left" : 
-												{
-													"data" : 2.7216394600852594,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												},
-												"right" : 
-												{
-													"data" : 2.9897356814416089,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												}
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									},
-									"right" : 
-									{
-										"data" : 3.3625029173218666,
-										"left" : 
-										{
-											"data" : 3.088361720831339,
-											"left" : 
-											{
-												"data" : 3.0655959992183499,
-												"left" : 
-												{
-													"data" : null
-												},
-												"right" : 
-												{
-													"data" : null
-												}
-											},
-											"right" : 
-											{
-												"data" : 3.3247467998602578,
-												"left" : 
-												{
-													"data" : 3.1331223071657943,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : 3.1732666883355858,
-														"left" : 
-														{
-															"data" : 3.1688770545930769,
-															"left" : 
-															{
-																"data" : null
-															},
-															"right" : 
-															{
-																"data" : null
-															}
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													}
-												},
-												"right" : 
-												{
-													"data" : null
-												}
-											}
-										},
-										"right" : 
-										{
-											"data" : 3.4699758197053705,
-											"left" : 
-											{
-												"data" : 3.4542746941569566,
-												"left" : 
-												{
-													"data" : 3.4521983335521189,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												},
-												"right" : 
-												{
-													"data" : 3.4543605648022591,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												}
-											},
-											"right" : 
-											{
-												"data" : 3.5346940200396499,
-												"left" : 
-												{
-													"data" : 3.506139983059438,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : null
-													}
-												},
-												"right" : 
-												{
-													"data" : 3.81600423054403,
-													"left" : 
-													{
-														"data" : null
-													},
-													"right" : 
-													{
-														"data" : 3.8641525781850912,
-														"left" : 
-														{
-															"data" : null
-														},
-														"right" : 
-														{
-															"data" : null
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							},
-							"right" : 
-							{
-								"data" : 4.034193660177765,
-								"left" : 
-								{
-									"data" : 3.9264235180638178,
-									"left" : 
-									{
-										"data" : 3.8944616094376587,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : null
-										}
-									},
-									"right" : 
-									{
-										"data" : 3.9447422035697874,
+										"data" : 0.66871135990290853,
 										"left" : 
 										{
 											"data" : null
@@ -1106,34 +87,42 @@
 								{
 									"data" : null
 								}
+							},
+							"right" : 
+							{
+								"data" : null
 							}
-						},
-						"right" : 
+						}
+					},
+					"right" : 
+					{
+						"data" : 4.7942748342099746,
+						"left" : 
 						{
-							"data" : 4.167597031728703,
+							"data" : 1.1305548061958854,
 							"left" : 
 							{
 								"data" : null
 							},
 							"right" : 
 							{
-								"data" : 4.318875145495662,
+								"data" : 3.0899537357373785,
 								"left" : 
 								{
-									"data" : 4.2839576298366993,
+									"data" : 2.5874980632632782,
 									"left" : 
 									{
-										"data" : 4.2012538592001629,
+										"data" : 1.3944743789212248,
 										"left" : 
 										{
 											"data" : null
 										},
 										"right" : 
 										{
-											"data" : 4.2450701834270124,
+											"data" : 2.5377722928721864,
 											"left" : 
 											{
-												"data" : 4.2343761415152663,
+												"data" : 1.7844155297052819,
 												"left" : 
 												{
 													"data" : null
@@ -1151,46 +140,46 @@
 									},
 									"right" : 
 									{
-										"data" : 4.2931286008998653,
+										"data" : 3.0885391363856933,
+										"left" : 
+										{
+											"data" : 2.9964967082930154,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 3.0158514399847802,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : 3.3784779005461982,
+									"left" : 
+									{
+										"data" : 3.1078618680725087,
 										"left" : 
 										{
 											"data" : null
 										},
 										"right" : 
 										{
-											"data" : 4.3076449015943759,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 4.3783718061426784,
-									"left" : 
-									{
-										"data" : 4.3540013203609975,
-										"left" : 
-										{
-											"data" : 4.3194661486918546,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										},
-										"right" : 
-										{
-											"data" : 4.3553776074718051,
+											"data" : 3.2691987120873622,
 											"left" : 
 											{
 												"data" : null
@@ -1203,170 +192,133 @@
 									},
 									"right" : 
 									{
-										"data" : 4.4014628644199583,
+										"data" : 3.6339247836001576,
 										"left" : 
 										{
 											"data" : null
 										},
 										"right" : 
 										{
-											"data" : null
+											"data" : 3.9718318344627472,
+											"left" : 
+											{
+												"data" : 3.935456469318003,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : 4.789896189978669,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
 										}
 									}
-								}
-							}
-						}
-					},
-					"right" : 
-					{
-						"data" : 4.506520250322664,
-						"left" : 
-						{
-							"data" : 4.4928402339016227,
-							"left" : 
-							{
-								"data" : 4.4826483902403016,
-								"left" : 
-								{
-									"data" : null
-								},
-								"right" : 
-								{
-									"data" : null
-								}
-							},
-							"right" : 
-							{
-								"data" : 4.4952405729911318,
-								"left" : 
-								{
-									"data" : null
-								},
-								"right" : 
-								{
-									"data" : null
 								}
 							}
 						},
 						"right" : 
 						{
-							"data" : 4.7143217067215035,
+							"data" : 4.9958004798347879,
 							"left" : 
 							{
-								"data" : 4.5087424198267376,
-								"left" : 
-								{
-									"data" : null
-								},
-								"right" : 
-								{
-									"data" : 4.6699689838693805,
-									"left" : 
-									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : null
-									}
-								}
+								"data" : null
 							},
 							"right" : 
 							{
-								"data" : 4.931638180645745,
-								"left" : 
-								{
-									"data" : 4.782920566988409,
-									"left" : 
-									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : 4.8940123395111081,
-										"left" : 
-										{
-											"data" : null
-										},
-										"right" : 
-										{
-											"data" : 4.9133757960570055,
-											"left" : 
-											{
-												"data" : null
-											},
-											"right" : 
-											{
-												"data" : null
-											}
-										}
-									}
-								},
-								"right" : 
-								{
-									"data" : 4.9330063156803527,
-									"left" : 
-									{
-										"data" : null
-									},
-									"right" : 
-									{
-										"data" : null
-									}
-								}
+								"data" : null
 							}
 						}
-					}
-				},
-				"fila" : 2,
-				"frutosPerdidos" : 13,
-				"frutosVendidos" : 0,
-				"letra" : "O",
-				"montoTotal" : 268.51216856386696,
-				"plaga" : "Oveja"
-			},
-			null,
-			null,
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
-			{
-				"cantidadFrutos" : 2,
-				"columna" : 7,
-				"datosArbol" : 
-				{
-					"data" : 2.8174290500181574,
-					"left" : 
-					{
-						"data" : 1.6390592319390844,
-						"left" : 
-						{
-							"data" : null
-						},
-						"right" : 
-						{
-							"data" : null
-						}
-					},
-					"right" : 
-					{
-						"data" : null
 					}
 				},
 				"fila" : 3,
 				"frutosPerdidos" : 0,
 				"frutosVendidos" : 0,
 				"letra" : "O",
-				"montoTotal" : 4.4564882819572418,
-				"plaga" : "Gusano"
+				"montoTotal" : 62.461277917252346,
+				"plaga" : "Oveja"
+			},
+			null,
+			{
+				"cantidadFrutos" : 1,
+				"columna" : 1,
+				"datosArbol" : 
+				{
+					"data" : 4.8909021930246679,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 1,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 4.890902193024667,
+				"plaga" : "Cuervo"
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 1,
+				"columna" : 3,
+				"datosArbol" : 
+				{
+					"data" : 3.4084785720132755,
+					"left" : 
+					{
+						"data" : null
+					},
+					"right" : 
+					{
+						"data" : null
+					}
+				},
+				"fila" : 7,
+				"frutosPerdidos" : 1,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 3.4084785720132755,
+				"plaga" : "Cuervo"
 			},
 			null,
 			null
@@ -1374,132 +326,49 @@
 		[
 			null,
 			null,
+			null,
+			null,
 			{
-				"cantidadFrutos" : 12,
-				"columna" : 2,
+				"cantidadFrutos" : 2,
+				"columna" : 4,
 				"datosArbol" : 
 				{
 					"arr" : 
 					[
-						3.4966728248941852,
-						3.1433153025250649,
-						3.3871380538017237,
-						2.470981284777741,
-						2.7754721128425843,
-						2.9699034129397726,
-						1.7551425981565167,
-						0.15746009416072174,
-						0.64182522754795901,
-						1.6566372236716216,
-						1.6050579985539331,
-						2.300434100557577
+						1.6974737902004702,
+						0.08314278276831473
 					],
-					"tamano" : 12,
+					"tamano" : 2,
 					"tamanoMaximo" : 30
 				},
 				"fila" : 4,
-				"frutosPerdidos" : 30,
+				"frutosPerdidos" : 0,
 				"frutosVendidos" : 0,
 				"letra" : "H",
-				"montoTotal" : 26.360040234429402,
+				"montoTotal" : 1.7806165729687848,
 				"plaga" : "Gusano"
 			},
 			null,
 			{
-				"cantidadFrutos" : 0,
+				"cantidadFrutos" : 2,
 				"columna" : 4,
 				"datosArbol" : 
 				{
-					"arr" : [],
-					"tamano" : 0,
+					"arr" : 
+					[
+						2.4117599131705849,
+						1.9640755300347894
+					],
+					"tamano" : 2,
 					"tamanoMaximo" : 30
 				},
-				"fila" : 4,
-				"frutosPerdidos" : 6,
+				"fila" : 6,
+				"frutosPerdidos" : 0,
 				"frutosVendidos" : 0,
 				"letra" : "H",
-				"montoTotal" : 0.0,
-				"plaga" : "Oveja"
+				"montoTotal" : 4.3758354432053741,
+				"plaga" : "Gusano"
 			},
-			{
-				"cantidadFrutos" : 0,
-				"columna" : 5,
-				"datosArbol" : 
-				{
-					"data" : 10.940030572045554,
-					"left" : 
-					{
-						"data" : 5.3263631400230702,
-						"left" : 
-						{
-							"data" : 5.131537599763873,
-							"left" : 
-							{
-								"data" : null
-							},
-							"right" : 
-							{
-								"data" : null
-							}
-						},
-						"right" : 
-						{
-							"data" : 10.239571264654412,
-							"left" : 
-							{
-								"data" : 8.3342774922944081,
-								"left" : 
-								{
-									"data" : null
-								},
-								"right" : 
-								{
-									"data" : null
-								}
-							},
-							"right" : 
-							{
-								"data" : 10.655652042296545,
-								"left" : 
-								{
-									"data" : null
-								},
-								"right" : 
-								{
-									"data" : null
-								}
-							}
-						}
-					},
-					"right" : 
-					{
-						"data" : 11.017669026379679,
-						"left" : 
-						{
-							"data" : null
-						},
-						"right" : 
-						{
-							"data" : 14.551208775599001,
-							"left" : 
-							{
-								"data" : null
-							},
-							"right" : 
-							{
-								"data" : null
-							}
-						}
-					}
-				},
-				"fila" : 4,
-				"frutosPerdidos" : 8,
-				"frutosVendidos" : 0,
-				"letra" : "A",
-				"montoTotal" : 31.196309913056538,
-				"plaga" : "Oveja"
-			},
-			null,
 			null,
 			null,
 			null
@@ -1512,30 +381,64 @@
 			null,
 			null,
 			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
 			{
-				"cantidadFrutos" : 0,
-				"columna" : 7,
+				"cantidadFrutos" : 30,
+				"columna" : 6,
 				"datosArbol" : 
 				{
-					"data" : null
+					"arr" : 
+					[
+						4.8300213166124815,
+						4.7203387573851954,
+						4.8148976867882327,
+						4.3447532894624903,
+						3.9425433883406917,
+						4.6710073550284958,
+						4.7494339133934496,
+						3.4928944708315015,
+						3.5472185310673647,
+						2.5018879763454467,
+						2.0604974514528593,
+						4.0976824647570842,
+						3.4941960256115037,
+						4.5046684821905094,
+						2.5514638705426829,
+						0.85098644499948095,
+						3.102935823898076,
+						1.6102362956496656,
+						1.8119009533257275,
+						1.1521090040316695,
+						1.7135637575089055,
+						1.5827903681820392,
+						2.0288841956581143,
+						1.1444616336826596,
+						0.69927942204390026,
+						0.82858989809025829,
+						2.295157086534092,
+						0.93138412737038334,
+						1.800409673476896,
+						1.5725638278591121
+					],
+					"tamano" : 30,
+					"tamanoMaximo" : 30
 				},
 				"fila" : 5,
-				"frutosPerdidos" : 2,
+				"frutosPerdidos" : 0,
 				"frutosVendidos" : 0,
-				"letra" : "O",
-				"montoTotal" : 0.0,
-				"plaga" : "Oveja"
+				"letra" : "H",
+				"montoTotal" : 81.448757492120961,
+				"plaga" : "Cuervo"
 			},
-			null,
-			null
-		],
-		[
-			null,
-			null,
-			null,
-			null,
-			null,
-			null,
 			null,
 			null,
 			null,
@@ -1590,11 +493,11 @@
 	"SettingPorcentCuervos" : 100,
 	"SettingPorcentOveja" : 100,
 	"SettingPorcentPlagas" : 100,
-	"SettingTiempoCuervos" : 15,
-	"SettingTiempoFrutosCuervos" : 5,
-	"SettingTiempoFrutosOveja" : 5,
-	"SettingTiempoOveja" : 5,
-	"SettingTiempoPlagas" : 10,
+	"SettingTiempoCuervos" : 5,
+	"SettingTiempoFrutosCuervos" : 90,
+	"SettingTiempoFrutosOveja" : 90,
+	"SettingTiempoOveja" : 10,
+	"SettingTiempoPlagas" : 15,
 	"SettingfrutosCuervos" : 1,
 	"SettingfrutosOveja" : 1,
 	"SettingsMercadoAparicion" : 10,

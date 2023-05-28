@@ -14,7 +14,6 @@
 #include <algorithm>  
 #include <vector>
 #include <cmath>
-#include <mutex>
 
 namespace CoolFarm {
 	
@@ -49,9 +48,6 @@ namespace CoolFarm {
 	
 	public:
 	public:
-		Mutex^ mtxO;
-		Mutex^ mtxC;
-		Mutex^ mtxG;
 		bool hayArboles = false;
 		MyForm(void)
 		{
@@ -126,11 +122,6 @@ namespace CoolFarm {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			mtxO = gcnew Mutex();
-
-			mtxC = gcnew Mutex();
-
-			mtxG = gcnew Mutex();
 			this->components = (gcnew System::ComponentModel::Container());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -476,8 +467,7 @@ namespace CoolFarm {
 		
 		System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 
-			BinarioOrdenado * b = new BinarioOrdenado();
-			colaBinarioOrdenado.push(b);
+			
 
 			botones = gcnew cli::array<System::Windows::Forms::Button^, 2>(FILAS, COLUMNAS);
 			hilos = gcnew cli::array<System::Threading::Thread^>(1000);
@@ -528,14 +518,11 @@ namespace CoolFarm {
 			int fila = pos.X;
 			int columna = pos.Y;
 			System::String^ plaga = msclr::interop::marshal_as<System::String^>(arbolesBinarios[fila][columna]->plaga);
-			if (arbolesBinarios[fila][columna]!=nullptr) {
+			if (arbolesBinarios[fila][columna]!=NULL) {
 				MessageBox::Show("Ubicacion: "+ arbolesBinarios[fila][columna]->fila+","+ arbolesBinarios[fila][columna]->columna+
 					"\nCantidad de frutos: " + arbolesBinarios[fila][columna]->cantidadFrutosA+ "\nMonto total: "+ arbolesBinarios
 				[fila][columna]->montoTotal+ "\nVendidos: "+ arbolesBinarios[fila][columna]->cantidadFrutosVendidos+ "\nPerdidos: "
 				+ arbolesBinarios[fila][columna]->cantidadFrutosPerdidos+ "\nPlaga: "+ plaga);
-			}
-			else {
-				MessageBox::Show("No hay arbol en esta posicion");
 			}
 			
 		}
@@ -854,20 +841,18 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 
 			   std::this_thread::sleep_for(std::chrono::seconds(creceBinario));
 			   botones[arbol->columna, arbol->fila]->Text = "O";
-			   while (true) {
-				   if (isRunning) {
-					   // Esperar 5 segundos
-					   botones[arbol->columna, arbol->fila]->Text = "O";
-					   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaB));
-					   for (int i = 0; i < cosechaB; i++) {
-						   double random = generateRandomNumber(0.001, 5.0);
-						   arbol->insertNode(arbol->root, random);
-						   label1->Text = System::Convert::ToString(random);
-						   this->Refresh();
-					   }
-
-
+			   if (isRunning) {
+				// Esperar 5 segundos
+				   botones[arbol->columna, arbol->fila]->Text = "O";
+				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaB));
+				   for (int i = 0; i < cosechaB; i++) {
+					   double random = generateRandomNumber(0.001, 5.0);
+					   arbol->insertNode(arbol->root, random);
+					   label1->Text = System::Convert::ToString(random);
+					   this->Refresh();
 				   }
+
+				   
 			   }
 
 			   // Espera 5 segundos
@@ -880,27 +865,25 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   std::this_thread::sleep_for(std::chrono::seconds(creceH));
 		   botones[arbol->columna, arbol->fila]->Text = "H";
 		   int counter=0;
-		   while (true) {
-			   if (isRunning) {
-				   if (counter < arbol->tamanoMaximo) {
-					   counter++;
-					   // Esperar 5 segundos
-					   botones[arbol->columna, arbol->fila]->Text = "H";
-					   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaH));
-					   for (int i = 0; i < cosechaH; i++) {
-						   double random = generateRandomNumber(0.001, 5.0);
-						   arbol->insertar(random);
-						   label1->Text = System::Convert::ToString(random);
-						   this->Refresh();
-					   }
-
+		   if (isRunning) {
+			   if (counter < arbol->tamanoMaximo) {
+				   counter++;
+				   // Esperar 5 segundos
+				   botones[arbol->columna, arbol->fila]->Text = "H";
+				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaH));
+				   for (int i = 0; i < cosechaH;i++) {
+					   double random = generateRandomNumber(0.001, 5.0);
+					   arbol->insertar(random);
+					   label1->Text = System::Convert::ToString(random);
+					   this->Refresh();
 				   }
-				   else {
-					   botones[arbol->columna, arbol->fila]->Text = "H";
-				   }
-
 
 			   }
+			   else {
+				   botones[arbol->columna, arbol->fila]->Text = "H";
+			   }
+
+		   
 		   }
 		   // Espera 5 segundos
 	   }
@@ -910,17 +893,15 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   // Esperar 5 segundos
 		   std::this_thread::sleep_for(std::chrono::seconds(creceA));
 		   botones[arbol->columna, arbol->fila]->Text = "A";
-		   while (true) {
-			   if (isRunning) {
-				   // Esperar 5 segundos
-				   botones[arbol->columna, arbol->fila]->Text = "A";
-				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
-				   for (int i = 0; i < cosechaA; i++) {
-					   double random = generateRandomNumber(2.0, 20.0);
-					   arbol->r = arbol->insert(arbol->r, random);
-					   label1->Text = System::Convert::ToString(random);
-					   this->Refresh();
-				   }
+		   if (isRunning) {
+			   // Esperar 5 segundos
+			   botones[arbol->columna, arbol->fila]->Text = "A";
+			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaA));
+			   for (int i = 0; i < cosechaA;i++) {
+				   double random = generateRandomNumber(2.0, 20.0);
+				   arbol->r=arbol->insert(arbol->r, random);
+				   label1->Text = System::Convert::ToString(random);
+				   this->Refresh();
 			   }
 		   }
 		   // Espera 5 segundos
@@ -930,18 +911,17 @@ private: System::Void buttonPonerEspanta_Click(System::Object^ sender, System::E
 		   std::this_thread::sleep_for(std::chrono::seconds(creceS));
 		   
 		   botones[arbol->columna, arbol->fila]->Text = "S";
-		   while (true) {
-			   if (isRunning) {
-				   // Esperar 5 segundos
-				   botones[arbol->columna, arbol->fila]->Text = "S";
-				   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaS));
+		   
+			if (isRunning) {
+			   // Esperar 5 segundos
+			   botones[arbol->columna, arbol->fila]->Text = "S";
+			   std::this_thread::sleep_for(std::chrono::seconds(tiempoCosechaS));
 
-				   for (int i = 0; i < cosechaS; i++) {
-					   double random = generateRandomNumber(5.0, 50.0);
-					   arbol->root = arbol->Insert(random);
-					   label1->Text = System::Convert::ToString(random);
-					   this->Refresh();
-				   }
+			   for (int i = 0; i < cosechaS; i++) {
+				   double random = generateRandomNumber(5.0, 50.0);
+				   arbol->root=arbol->Insert(random);
+				   label1->Text = System::Convert::ToString(random);
+				   this->Refresh();
 			   }
 		   }
 	   }
@@ -1222,55 +1202,6 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			nombreJson = root["NombrePartida"].asString();
 			MessageBox::Show(toSystemString(nombreJson));
 			hayArboles = true;
-			porcentOvejas = root["SettingPorcentOveja"].asInt();
-			aparicionOvejas = root["SettingAparicionOveja"].asInt();
-			tiempoAparicionOvejas = root["SettingTiempoOveja"].asInt();
-			frutosOvejas = root["SettingfrutosOveja"].asInt();
-			tiempoFrutosOvejas = root["SettingTiempoFrutosOveja"].asInt();
-
-			porcentCuervos = root["SettingPorcentCuervos"].asInt();
-			aparicionCuervos = root["SettingAparicionCuervos"].asInt();
-			tiempoAparicionCuervos = root["SettingTiempoCuervos"].asInt();
-			frutosCuervos = root["SettingfrutosCuervos"].asInt();
-			tiempoFrutosCuervos = root["SettingTiempoFrutosCuervos"].asInt();
-
-			porcentPlagas = root["SettingPorcentPlagas"].asInt();
-			aparicionPlagas = root["SettingAparicionPlagas"].asInt();
-			tiempoAparicionPlagas = root["SettingTiempoPlagas"].asInt();
-
-			mercadoAparicion = root["SettingsMercadoAparicion"].asInt();
-			mercadoApertura = root["SettingsMercadoApertura"].asInt();
-
-			frutosBinario = root["FrutosBinario"].asInt();
-			frutosHeap = root["FrutosHeap"].asInt();
-			frutosAVL = root["FrutosAVL"].asInt();
-			frutosSplay = root["FrutosSplay"].asInt();
-
-			precioBinario = root["PrecioBinario"].asFloat();
-			creceBinario = root["creceBinario"].asInt();
-			cosechaB = root["cosechaB"].asInt();
-			tiempoCosechaB = root["tiempoCosechaB"].asInt();
-
-			precioHeap = root["PrecioHeap"].asFloat();
-			creceH = root["creceH"].asInt();
-			cosechaH = root["cosechaH"].asInt();
-			tiempoCosechaH = root["tiempoCosechaH"].asInt();
-
-			precioAVL = root["PrecioAVL"].asFloat();
-			creceA = root["creceA"].asInt();
-			cosechaA = root["cosechaA"].asInt();
-			tiempoCosechaA = root["tiempoCosechaA"].asInt();
-
-			precioSplay = root["PrecioSplay"].asFloat();
-			creceS = root["creceS"].asInt();
-			cosechaS = root["cosechaH"].asInt();
-			tiempoCosechaS = root["tiempoCosechaS"].asInt();
-
-			precioEspanta = root["PrecioEspanta"].asFloat();
-
-			espantapajarosDispo = root["EspantapajarosDispo"].asInt();
-
-			dinero = root["Dinero"].asFloat();
 			
 			for (int i = 0; i < 10; ++i) {
 				for (int j = 0; j < 10; ++j) {
@@ -1392,7 +1323,55 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 				}
 			}
 			
-			
+			porcentOvejas = root["SettingPorcentOveja"].asInt();
+			aparicionOvejas = root["SettingAparicionOveja"].asInt();
+			tiempoAparicionOvejas = root["SettingTiempoOveja"].asInt();
+			frutosOvejas = root["SettingfrutosOveja"].asInt();
+			tiempoFrutosOvejas = root["SettingTiempoFrutosOveja"].asInt();
+
+			porcentCuervos = root["SettingPorcentCuervos"].asInt();
+			aparicionCuervos = root["SettingAparicionCuervos"].asInt();
+			tiempoAparicionCuervos = root["SettingTiempoCuervos"].asInt();
+			frutosCuervos = root["SettingfrutosCuervos"].asInt();
+			tiempoFrutosCuervos = root["SettingTiempoFrutosCuervos"].asInt();
+
+			porcentPlagas = root["SettingPorcentPlagas"].asInt();
+			aparicionPlagas = root["SettingAparicionPlagas"].asInt();
+			tiempoAparicionPlagas = root["SettingTiempoPlagas"].asInt();
+
+			mercadoAparicion = root["SettingsMercadoAparicion"].asInt();
+			mercadoApertura = root["SettingsMercadoApertura"].asInt();
+
+			frutosBinario = root["FrutosBinario"].asInt();
+			frutosHeap = root["FrutosHeap"].asInt();
+			frutosAVL = root["FrutosAVL"].asInt();
+			frutosSplay = root["FrutosSplay"].asInt();
+
+			precioBinario = root["PrecioBinario"].asFloat();
+			creceBinario = root["creceBinario"].asInt();
+			cosechaB = root["cosechaB"].asInt();
+			tiempoCosechaB = root["tiempoCosechaB"].asInt();
+
+			precioHeap = root["PrecioHeap"].asFloat();
+			creceH = root["creceH"].asInt();
+			cosechaH = root["cosechaH"].asInt();
+			tiempoCosechaH = root["tiempoCosechaH"].asInt();
+
+			precioAVL = root["PrecioAVL"].asFloat();
+			creceA = root["creceA"].asInt();
+			cosechaA = root["cosechaA"].asInt();
+			tiempoCosechaA = root["tiempoCosechaA"].asInt();
+
+			precioSplay = root["PrecioSplay"].asFloat();
+			creceS = root["creceS"].asInt();
+			cosechaS = root["cosechaH"].asInt();
+			tiempoCosechaS = root["tiempoCosechaS"].asInt();
+
+			precioEspanta = root["PrecioEspanta"].asFloat();
+
+			espantapajarosDispo = root["EspantapajarosDispo"].asInt();
+
+			dinero = root["Dinero"].asFloat();
 
 			int a = root["ColaBinario"].asInt();
 			int b = root["ColaEspanta"].asInt();
@@ -1761,32 +1740,28 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	delegate void OvejasComerDelegate(int x, int y);
 
 	void OvejasComer() {
-		mtxO->WaitOne();
 		const int x = xTemp;
 		const int y = yTemp;
-		mtxO->ReleaseMutex();
-		while (true) {
-			if (isRunning) {
-				if (arbolesBinarios[y][x]->plaga == "Oveja") {
-					arbolesBinarios[y][x]->deleteFruits(frutosOvejas, "c");
-					std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas));
-				}
-				
+		while (isRunning) {
+			if (!isRunning) { break; }
+			if (arbolesBinarios[y][x]->plaga == "Oveja") {
+				arbolesBinarios[y][x]->deleteFruits(frutosOvejas, "c");
+				std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosOvejas));
+			}
+			else {
+				break;
 			}
 		}
 	}
 
 	void CuervosComer() {
-		mtxC->WaitOne();
 		const int x = xTempC;
 		const int y = yTempC;
-		mtxC->ReleaseMutex();
-		while (true) {
-			if (isRunning) {
-				if (arbolesBinarios[y][x]->plaga == "Cuervo") {
-					arbolesBinarios[y][x]->deleteFruits(frutosCuervos, "c");
-					std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosCuervos));
-				}
+		while (isRunning) {
+			if (!isRunning) { break; }
+			if (arbolesBinarios[y][x]->plaga == "Cuervo") {
+				arbolesBinarios[y][x]->deleteFruits(frutosCuervos, "c");
+				std::this_thread::sleep_for(std::chrono::seconds(tiempoFrutosCuervos));
 			}
 		}
 	}
@@ -1794,20 +1769,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	void PlagasComer(){
 		int tiempo_total = 60; // Tiempo total en segundos
 		int intervalo = 5;     // Intervalo de tiempo para eliminar frutos (ejemplo: cada 5 segundos)
-		
-		mtxG->WaitOne();
+
 		const int x = xTempG;
 		const int y = yTempG;
-		mtxG->ReleaseMutex();
 		//label1->Text = "x : "+x+ " y: "+ y;
-		while (true) {
-			if (isRunning) {
-				if (arbolesBinarios[y][x]->plaga == "Gusano") {
-					std::this_thread::sleep_for(std::chrono::seconds(60));
-					arbolesBinarios[y][x]->cantidadFrutosPerdidos = arbolesBinarios[y][x]->cantidadFrutosA;
-					arbolesBinarios[y][x]->deleteAllFruits();
+		while (isRunning) {
+			if (arbolesBinarios[y][x]->plaga == "Gusano") {
+				if (!isRunning) { break; }
+				std::this_thread::sleep_for(std::chrono::seconds(60));
+				if (!isRunning) { break; }
+				arbolesBinarios[y][x]->cantidadFrutosPerdidos = arbolesBinarios[y][x]->cantidadFrutosA;
+				arbolesBinarios[y][x]->deleteAllFruits();
 
-				}
 			}
 
 		}
