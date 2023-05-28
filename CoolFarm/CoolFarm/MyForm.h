@@ -476,18 +476,17 @@ namespace CoolFarm {
 			OvejasH = gcnew Thread(gcnew ThreadStart(this, &MyForm::Ovejas));
 			numHilos++;
 			hilos[numHilos - 1] = OvejasH;
-			OvejasH->Start();
 
 
 			CuervosH = gcnew Thread(gcnew ThreadStart(this, &MyForm::Cuervos));
 			numHilos++;
 			hilos[numHilos - 1] = CuervosH;
-			CuervosH->Start();
+			
 
 			GusanosH = gcnew Thread(gcnew ThreadStart(this, &MyForm::Gusanos));
 			numHilos++;
 			hilos[numHilos - 1] = GusanosH;
-			GusanosH->Start();
+			
 
 			for (int fila = 0; fila < FILAS; fila++)
 			{
@@ -965,6 +964,9 @@ private: System::Void buttonNuevaPartida_Click(System::Object^ sender, System::E
 	nombrePartida = toStandardString(this->textboxNomPartida->Text);
 	this->timer1->Interval = (mercadoAparicion * 1000);
 	this->timer2->Interval = (mercadoApertura * 1000);
+	OvejasH->Start();
+	CuervosH->Start();
+	GusanosH->Start();
 	isRunning = true;
 	if (isRunning) {
 		MessageBox::Show("Comenzando Partida " + this->textboxNomPartida->Text);
@@ -1208,6 +1210,7 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 		if (Json::parseFromStream(builder, archivo, &root, &errs)) {
 			nombreJson = root["NombrePartida"].asString();
 			MessageBox::Show(toSystemString(nombreJson));
+			hayArboles = true;
 			
 			for (int i = 0; i < 10; ++i) {
 				for (int j = 0; j < 10; ++j) {
@@ -1395,6 +1398,9 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			this->timer1->Interval = (mercadoAparicion * 1000);
 			this->timer2->Interval = (mercadoApertura * 1000);
 			timer1->Start();
+			OvejasH->Start();
+			CuervosH->Start();
+			GusanosH->Start();
 			
 		}
 		else {
