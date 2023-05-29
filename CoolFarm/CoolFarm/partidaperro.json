@@ -1,0 +1,1964 @@
+{
+	"ColaAVL" : 0,
+	"ColaBinario" : 1,
+	"ColaEspanta" : 0,
+	"ColaHEAP" : 0,
+	"ColaSplay" : 0,
+	"Dinero" : 98319.0,
+	"EspantapajarosDispo" : 0,
+	"FrutosAVL" : 15,
+	"FrutosBinario" : 170,
+	"FrutosHeap" : 12,
+	"FrutosSplay" : 24,
+	"Matriz" : 
+	[
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 0,
+				"columna" : 3,
+				"fila" : 3,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "E",
+				"montoTotal" : 0.0,
+				"plaga" : ""
+			},
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 0,
+				"columna" : 7,
+				"fila" : 3,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "E",
+				"montoTotal" : 0.0,
+				"plaga" : ""
+			},
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 86,
+				"columna" : 4,
+				"datosArbol" : 
+				{
+					"data" : 1.2855861662066044,
+					"left" : 
+					{
+						"data" : 0.83537902596983804,
+						"left" : 
+						{
+							"data" : 0.18993056972133737,
+							"left" : 
+							{
+								"data" : 0.14375734303103008,
+								"left" : 
+								{
+									"data" : 0.037667341286341492,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 0.086966652220695231,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 0.69758790467118725,
+								"left" : 
+								{
+									"data" : 0.29545961032185242,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 0.62751401236315052,
+										"left" : 
+										{
+											"data" : 0.49799593603195541,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : 0.76661049296127859,
+									"left" : 
+									{
+										"data" : 0.7279657294530798,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : 0.77446089561891951,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 1.243698897453906,
+							"left" : 
+							{
+								"data" : 1.028913883215429,
+								"left" : 
+								{
+									"data" : 0.87152201182643607,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : 1.1968609170560942,
+									"left" : 
+									{
+										"data" : 1.1799133607213645,
+										"left" : 
+										{
+											"data" : 1.1426161727401498,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : 1.2171913246399544,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 1.2191915974062073,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : 1.2710118596729969,
+								"left" : 
+								{
+									"data" : 1.2516674969070078,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 1.2670421462985924,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 2.9214340448428611,
+						"left" : 
+						{
+							"data" : 1.3475607913704744,
+							"left" : 
+							{
+								"data" : 1.3403996375733356,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 2.7454865062425355,
+								"left" : 
+								{
+									"data" : 2.2667388897009499,
+									"left" : 
+									{
+										"data" : 1.9284769394860648,
+										"left" : 
+										{
+											"data" : 1.4395579406281784,
+											"left" : 
+											{
+												"data" : 1.3802430016942993,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : 1.6100259488709419,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : 1.6280272760626355,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : 1.782878336051126,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													}
+												}
+											}
+										},
+										"right" : 
+										{
+											"data" : 2.0381110935320654,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 2.0683649427647408,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : 2.1062039092332179,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : 2.1072001286974209,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : 2.1666183887689052,
+															"left" : 
+															{
+																"data" : null
+															},
+															"right" : 
+															{
+																"data" : null
+															}
+														}
+													}
+												}
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 2.4138489072399825,
+										"left" : 
+										{
+											"data" : 2.3533314827843492,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : 2.4272622883371002,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 2.580139852606016,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : 2.7192758955183431,
+													"left" : 
+													{
+														"data" : 2.6342587239586819,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : 2.6910868291468941,
+															"left" : 
+															{
+																"data" : null
+															},
+															"right" : 
+															{
+																"data" : null
+															}
+														}
+													},
+													"right" : 
+													{
+														"data" : 2.7216161697344274,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : 2.8560853289390136,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 2.8983725943473715,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 4.2212951352129489,
+							"left" : 
+							{
+								"data" : 2.9677480695075875,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 3.1574732642419674,
+									"left" : 
+									{
+										"data" : 3.0990136873528034,
+										"left" : 
+										{
+											"data" : 2.9800498230753769,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : 3.2109642131285874,
+										"left" : 
+										{
+											"data" : 3.2046514632798986,
+											"left" : 
+											{
+												"data" : 3.1694706757506843,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : 3.2076358115460435,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										},
+										"right" : 
+										{
+											"data" : 4.1864150463808665,
+											"left" : 
+											{
+												"data" : 3.6648870629647305,
+												"left" : 
+												{
+													"data" : 3.503678355594487,
+													"left" : 
+													{
+														"data" : 3.3028703615402542,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : 3.4689447223636578,
+															"left" : 
+															{
+																"data" : 3.4157335490499316,
+																"left" : 
+																{
+																	"data" : null
+																},
+																"right" : 
+																{
+																	"data" : null
+																}
+															},
+															"right" : 
+															{
+																"data" : null
+															}
+														}
+													},
+													"right" : 
+													{
+														"data" : 3.6414120065259654,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													}
+												},
+												"right" : 
+												{
+													"data" : 3.9118117238567232,
+													"left" : 
+													{
+														"data" : 3.719214152610637,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													},
+													"right" : 
+													{
+														"data" : 4.1601840253957461,
+														"left" : 
+														{
+															"data" : 4.0001113096703262,
+															"left" : 
+															{
+																"data" : null
+															},
+															"right" : 
+															{
+																"data" : 4.0931527990218095,
+																"left" : 
+																{
+																	"data" : null
+																},
+																"right" : 
+																{
+																	"data" : null
+																}
+															}
+														},
+														"right" : 
+														{
+															"data" : 4.1610494569140375,
+															"left" : 
+															{
+																"data" : null
+															},
+															"right" : 
+															{
+																"data" : null
+															}
+														}
+													}
+												}
+											},
+											"right" : 
+											{
+												"data" : 4.2181615615216081,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										}
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : 4.8906519251535965,
+								"left" : 
+								{
+									"data" : 4.6216742727941105,
+									"left" : 
+									{
+										"data" : 4.2746383296540467,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 4.423268237455205,
+											"left" : 
+											{
+												"data" : 4.3405919570761267,
+												"left" : 
+												{
+													"data" : 4.286142335032495,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												},
+												"right" : 
+												{
+													"data" : 4.3561278187980417,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												}
+											},
+											"right" : 
+											{
+												"data" : 4.4541903579242925,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 4.8656187065469982,
+										"left" : 
+										{
+											"data" : 4.8405982857347878,
+											"left" : 
+											{
+												"data" : 4.6758717558845513,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : 4.8838496631960551,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : 4.9344038381183868,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							}
+						}
+					}
+				},
+				"fila" : 4,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 219.54267295580271,
+				"plaga" : ""
+			},
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 84,
+				"columna" : 4,
+				"datosArbol" : 
+				{
+					"data" : 3.9821838614843545,
+					"left" : 
+					{
+						"data" : 2.8853165538520535,
+						"left" : 
+						{
+							"data" : 1.7194292597355834,
+							"left" : 
+							{
+								"data" : 0.024274328929467643,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 0.84887531130543836,
+									"left" : 
+									{
+										"data" : 0.26143654536779742,
+										"left" : 
+										{
+											"data" : 0.21687190909314899,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : 0.28538679744235079,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 0.71401609000083344,
+												"left" : 
+												{
+													"data" : 0.70495063781611444,
+													"left" : 
+													{
+														"data" : 0.50868865767855698,
+														"left" : 
+														{
+															"data" : 0.3863351828598538,
+															"left" : 
+															{
+																"data" : 0.38327217591852841,
+																"left" : 
+																{
+																	"data" : 0.29049323241784392,
+																	"left" : 
+																	{
+																		"data" : null
+																	},
+																	"right" : 
+																	{
+																		"data" : null
+																	}
+																},
+																"right" : 
+																{
+																	"data" : null
+																}
+															},
+															"right" : 
+															{
+																"data" : null
+															}
+														},
+														"right" : 
+														{
+															"data" : 0.53023663633619389,
+															"left" : 
+															{
+																"data" : null
+															},
+															"right" : 
+															{
+																"data" : 0.57399949523309501,
+																"left" : 
+																{
+																	"data" : 0.55817545018575532,
+																	"left" : 
+																	{
+																		"data" : null
+																	},
+																	"right" : 
+																	{
+																		"data" : null
+																	}
+																},
+																"right" : 
+																{
+																	"data" : null
+																}
+															}
+														}
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												},
+												"right" : 
+												{
+													"data" : 0.78618158680218841,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												}
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 1.4353566084378873,
+										"left" : 
+										{
+											"data" : 1.2311427681728844,
+											"left" : 
+											{
+												"data" : 1.2021023099359684,
+												"left" : 
+												{
+													"data" : 0.85912576089641146,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : 0.8697195236651708,
+														"left" : 
+														{
+															"data" : 0.86656011881993367,
+															"left" : 
+															{
+																"data" : null
+															},
+															"right" : 
+															{
+																"data" : null
+															}
+														},
+														"right" : 
+														{
+															"data" : 1.0329857608734814,
+															"left" : 
+															{
+																"data" : null
+															},
+															"right" : 
+															{
+																"data" : null
+															}
+														}
+													}
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : 1.3156536048882788,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : 1.3594473435542156,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												}
+											}
+										},
+										"right" : 
+										{
+											"data" : 1.4565376181638534,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 1.5090137132210972,
+												"left" : 
+												{
+													"data" : 1.4779509192727207,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												},
+												"right" : 
+												{
+													"data" : 1.6499578972238238,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : 1.6788448908915057,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : 1.9425826294459223,
+								"left" : 
+								{
+									"data" : 1.7595226392148229,
+									"left" : 
+									{
+										"data" : 1.7347767882013152,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : 1.7976321756859099,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : 2.1977247045002226,
+									"left" : 
+									{
+										"data" : 2.1730024110056827,
+										"left" : 
+										{
+											"data" : 2.0278604911690188,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 2.166091502183884,
+												"left" : 
+												{
+													"data" : 2.0465649105916968,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : 2.1033569737405302,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													}
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										},
+										"right" : 
+										{
+											"data" : 2.1952748760789675,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 2.5101913284306954,
+										"left" : 
+										{
+											"data" : 2.5099099167716918,
+											"left" : 
+											{
+												"data" : 2.2299180405104546,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : 2.7476664048650807,
+											"left" : 
+											{
+												"data" : 2.6848261423717337,
+												"left" : 
+												{
+													"data" : 2.5438486767865527,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												},
+												"right" : 
+												{
+													"data" : 2.7229932822308411,
+													"left" : 
+													{
+														"data" : 2.6890311187364384,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													},
+													"right" : 
+													{
+														"data" : 2.7327405867900953,
+														"left" : 
+														{
+															"data" : null
+														},
+														"right" : 
+														{
+															"data" : null
+														}
+													}
+												}
+											},
+											"right" : 
+											{
+												"data" : 2.7678691895895011,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 3.9801253868159905,
+							"left" : 
+							{
+								"data" : 3.7786463823368805,
+								"left" : 
+								{
+									"data" : 3.2075441204654034,
+									"left" : 
+									{
+										"data" : 3.0858257817134946,
+										"left" : 
+										{
+											"data" : 3.0174361266384793,
+											"left" : 
+											{
+												"data" : 2.9963224986607435,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : 3.0664414167186784,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										},
+										"right" : 
+										{
+											"data" : 3.0952195809837924,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 3.1132480985907534,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : 3.5166659815964758,
+										"left" : 
+										{
+											"data" : 3.3433199466397312,
+											"left" : 
+											{
+												"data" : 3.2628575606170127,
+												"left" : 
+												{
+													"data" : 3.2425022285569609,
+													"left" : 
+													{
+														"data" : null
+													},
+													"right" : 
+													{
+														"data" : null
+													}
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : 3.6044673684202575,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : 3.6343090702153429,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											}
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : 3.8051424502226565,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 3.8119135203953989,
+										"left" : 
+										{
+											"data" : 3.8110961401065988,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 4.400769938677942,
+						"left" : 
+						{
+							"data" : 4.2965774474999048,
+							"left" : 
+							{
+								"data" : 4.0702874409543908,
+								"left" : 
+								{
+									"data" : 4.0646627427933231,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : 4.2528105264049625,
+									"left" : 
+									{
+										"data" : 4.1389603475143515,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 4.163625191463189,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						},
+						"right" : 
+						{
+							"data" : 4.6781986044935007,
+							"left" : 
+							{
+								"data" : 4.408074141297992,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 4.4356956730357755,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 4.5054364764389963,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : 4.6503035336513072,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										}
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : 4.8236741564465904,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					}
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 0,
+				"frutosVendidos" : 0,
+				"letra" : "O",
+				"montoTotal" : 200.15006721974433,
+				"plaga" : "Oveja\u0000"
+			},
+			null,
+			{
+				"cantidadFrutos" : 24,
+				"columna" : 6,
+				"datosArbol" : 
+				{
+					"data" : 46.899708099863986,
+					"left" : 
+					{
+						"data" : 23.071549286461213,
+						"left" : 
+						{
+							"data" : 20.085837514364783,
+							"left" : 
+							{
+								"data" : 19.818375938974476,
+								"left" : 
+								{
+									"data" : 13.382643236506309,
+									"left" : 
+									{
+										"data" : 12.608232660612675,
+										"left" : 
+										{
+											"data" : 11.378440878401559,
+											"left" : 
+											{
+												"data" : 5.1407104426925212,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : 14.676176070696849,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 20.234600740516221,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 29.168439728380783,
+							"left" : 
+							{
+								"data" : 23.276008775329036,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 26.385610468479094,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : 28.586430659040378,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : 38.346303092367641,
+								"left" : 
+								{
+									"data" : 37.065639131141232,
+									"left" : 
+									{
+										"data" : 36.627533122765136,
+										"left" : 
+										{
+											"data" : 34.555253525609302,
+											"left" : 
+											{
+												"data" : 29.905399119606539,
+												"left" : 
+												{
+													"data" : null
+												},
+												"right" : 
+												{
+													"data" : null
+												}
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : 41.804704528607743,
+									"left" : 
+									{
+										"data" : 41.78008834753301,
+										"left" : 
+										{
+											"data" : null
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									},
+									"right" : 
+									{
+										"data" : 46.855314095773373,
+										"left" : 
+										{
+											"data" : 46.690332108415127,
+											"left" : 
+											{
+												"data" : null
+											},
+											"right" : 
+											{
+												"data" : null
+											}
+										},
+										"right" : 
+										{
+											"data" : null
+										}
+									}
+								}
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 48.693682919192298,
+						"left" : 
+						{
+							"data" : null
+						},
+						"right" : 
+						{
+							"data" : null
+						}
+					}
+				},
+				"fila" : 5,
+				"frutosPerdidos" : 58,
+				"frutosVendidos" : 0,
+				"letra" : "S",
+				"montoTotal" : 697.03701449133132,
+				"plaga" : "Gusano"
+			},
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"cantidadFrutos" : 15,
+				"columna" : 5,
+				"datosArbol" : 
+				{
+					"data" : 10.492888212039869,
+					"left" : 
+					{
+						"data" : 5.7554419897699844,
+						"left" : 
+						{
+							"data" : 3.7098379670134829,
+							"left" : 
+							{
+								"data" : 2.2156738271996215,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 4.0654944142248191,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 5.6786775671361109,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 8.6398601051254253,
+							"left" : 
+							{
+								"data" : 6.8088456646907254,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : 10.208066555025514,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							}
+						}
+					},
+					"right" : 
+					{
+						"data" : 17.566476208060578,
+						"left" : 
+						{
+							"data" : 15.096018392343778,
+							"left" : 
+							{
+								"data" : 13.293691293912593,
+								"left" : 
+								{
+									"data" : 10.803207983796122,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								},
+								"right" : 
+								{
+									"data" : 14.243247636456845,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							},
+							"right" : 
+							{
+								"data" : 15.520922826061575,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : 15.821126836062021,
+									"left" : 
+									{
+										"data" : null
+									},
+									"right" : 
+									{
+										"data" : null
+									}
+								}
+							}
+						},
+						"right" : 
+						{
+							"data" : 18.540478303779231,
+							"left" : 
+							{
+								"data" : 18.247877222400689,
+								"left" : 
+								{
+									"data" : null
+								},
+								"right" : 
+								{
+									"data" : null
+								}
+							},
+							"right" : 
+							{
+								"data" : null
+							}
+						}
+					}
+				},
+				"fila" : 6,
+				"frutosPerdidos" : 56,
+				"frutosVendidos" : 0,
+				"letra" : "A",
+				"montoTotal" : 187.70783300509896,
+				"plaga" : "Oveja"
+			},
+			null,
+			{
+				"cantidadFrutos" : 12,
+				"columna" : 7,
+				"datosArbol" : 
+				{
+					"arr" : 
+					[
+						4.92635029500914,
+						4.2456160736620285,
+						4.5415413312274504,
+						2.7913690558587763,
+						4.0717725812998804,
+						3.9856878277286034,
+						2.5969244263073858,
+						1.8282804586062504,
+						0.60752964488696914,
+						0.36789665455966908,
+						2.4215974588425215,
+						2.5823471933105098
+					],
+					"tamano" : 12,
+					"tamanoMaximo" : 30
+				},
+				"fila" : 6,
+				"frutosPerdidos" : 30,
+				"frutosVendidos" : 0,
+				"letra" : "H",
+				"montoTotal" : 34.96691300129919,
+				"plaga" : "Gusano"
+			},
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		]
+	],
+	"NombrePartida" : "partidaperro.json",
+	"PrecioAVL" : 350.01998901367188,
+	"PrecioBinario" : 100.01999664306641,
+	"PrecioEspanta" : 200.02000427246094,
+	"PrecioHeap" : 130.02000427246094,
+	"PrecioSplay" : 600.02001953125,
+	"SettingAparicionCuervos" : 1,
+	"SettingAparicionOveja" : 1,
+	"SettingAparicionPlagas" : 1,
+	"SettingPorcentCuervos" : 100,
+	"SettingPorcentOveja" : 100,
+	"SettingPorcentPlagas" : 100,
+	"SettingTiempoCuervos" : 7,
+	"SettingTiempoFrutosCuervos" : 7,
+	"SettingTiempoFrutosOveja" : 7,
+	"SettingTiempoOveja" : 7,
+	"SettingTiempoPlagas" : 7,
+	"SettingfrutosCuervos" : 1,
+	"SettingfrutosOveja" : 1,
+	"SettingsMercadoAparicion" : 10,
+	"SettingsMercadoApertura" : 30,
+	"cosechaA" : 2,
+	"cosechaB" : 2,
+	"cosechaH" : 2,
+	"cosechaS" : 2,
+	"creceA" : 2,
+	"creceBinario" : 2,
+	"creceH" : 2,
+	"creceS" : 2,
+	"tiempoCosechaA" : 2,
+	"tiempoCosechaB" : 2,
+	"tiempoCosechaH" : 2,
+	"tiempoCosechaS" : 2
+}

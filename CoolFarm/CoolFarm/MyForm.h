@@ -1395,37 +1395,38 @@ private: System::Void buttonCargarPartida_Click(System::Object^ sender, System::
 			
 			
 
-			int a = root["ColaBinario"].asInt();
-			int b = root["ColaEspanta"].asInt();
-			int c = root["ColaHEAP"].asInt();
-			int d = root["ColaAVL"].asInt();
-			int e = root["ColaSplay"].asInt();
+			int countA = root["ColaBinario"].asInt();
+			int countB = root["ColaEspanta"].asInt();
+			int countC = root["ColaHEAP"].asInt();
+			int countD = root["ColaAVL"].asInt();
+			int countE = root["ColaSplay"].asInt();
 
-			while (a != 0) {
-				BinarioOrdenado* a = new BinarioOrdenado();
-				colaBinarioOrdenado.push(a);
-				a--;
+			while (countA != 0) {
+				BinarioOrdenado* newBinario = new BinarioOrdenado();
+				colaBinarioOrdenado.push(newBinario);
+				countA--;
 			}
-			while (b != 0) {
-				Espantapajaros* a = new Espantapajaros();
-				colaEspantapajaro.push(a);
-				b--;
+			while (countB != 0) {
+				Espantapajaros* newEspantapajaros = new Espantapajaros();
+				colaEspantapajaro.push(newEspantapajaros);
+				countB--;
 			}
-			while (c != 0) {
-				Heap* a = new Heap(10);
-				colaHeap.push(a);
-				c--;
+			while (countC != 0) {
+				Heap* newHeap = new Heap(10);
+				colaHeap.push(newHeap);
+				countC--;
 			}
-			while (d != 0) {
-				avl_tree* a = new avl_tree();
-				colaAVL.push(a);
-				d--;
+			while (countD != 0) {
+				avl_tree* newAVL = new avl_tree();
+				colaAVL.push(newAVL);
+				countD--;
 			}
-			while (e != 0) {
-				SplayTree* a = new SplayTree();
-				colaSplay.push(a);
-				e--;
+			while (countE != 0) {
+				SplayTree* newSplay = new SplayTree();
+				colaSplay.push(newSplay);
+				countE--;
 			}
+
 			archivo.close();
 			MessageBox::Show("cargado");
 			
